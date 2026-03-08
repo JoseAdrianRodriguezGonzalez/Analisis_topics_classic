@@ -1,8 +1,5 @@
 pandas
-unicodedata
-regex
-math
-string
 spacy
 nltk
 openpyxl
+regex
