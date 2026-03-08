@@ -139,6 +139,8 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
     if("comentario" in df.columns):
         df["comentario_tokens"] = df["comentario"].apply(lambda x: process_nlp_tokens(x, nlp))
         df["comentario_cleaned"] = df["comentario_tokens"].apply(lambda x: " ".join(x))
+        # OPTIONAL: Normalize comentario_cleaned
+        df["comentario_cleaned"] = df["comentario_cleaned"].apply(clean_general_text)
         print("Step 4: Tokenize-stopwords-lemmatize done")
     else: 
         print("WARNING: Column 'comentario' not found. Skipping NLP")
