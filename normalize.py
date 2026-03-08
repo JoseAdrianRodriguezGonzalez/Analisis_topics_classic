@@ -12,16 +12,25 @@ from nltk.util import ngrams
 # python -m spacy download es_core_news_sm
 
 # ======================================== #
-#              NORMALIZATION               #
+#          GENERAL NORMALIZATION           #
 # ======================================== #
-def normalize_text(text):
+def clean_general_text(text):
     if(pd.isna(text)):
         return text
+
     text = str(text).strip().lower()
+    text = text.replace("\n", " ").replace("\r", " ")
     text = unicodedata.normalize("NFKD", text)
-    text = ''.join(c for c in text if not unicodedata.combining(c))
+    text = " ".join(c for c in text if not unicodedata.combining(c))
+    spanish_signs = string.punctuation + "¿¡"
+    text = text.translate(str.maketrans("","", spanish_signs))
+    text = re.sub(r"\s+", " ", text).strip()
+
     return text
 
+# ======================================== #
+#          SPECIFIC NORMALIZATION          #
+# ======================================== #
 def clean_ages(value):
     if(pd.isna(value)):
         return None
@@ -31,14 +40,6 @@ def clean_ages(value):
         return math.floor(number)
     return None
 
-def remove_line_breaks(text):
-    if(pd.isna(text)):
-        return text
-    return str(text).replace("\n", " ").replace("\r", " ").strip()
-
-# ======================================== #
-#            FIX PLACE OF ORIGIN           #
-# ======================================== #
 municipios_guanajuato = [
     "abasolo","acambaro","apaseo el alto","apaseo el grande","atarjea",
     "celaya","comonfort","coroneo","cortazar","cueramaro",
@@ -68,15 +69,6 @@ def fix_place_of_origin(value):
 # ======================================== #
 #               NLP FUNCTIONS              #
 # ======================================== #
-def remove_punct_and_lower_global(text):
-    if(pd.isna(text)):
-        return text
-    text = str(text).lower()
-    spanish_signs = string.punctuation + "¿¡"
-    text =  text.translate(str.maketrans("", "", spanish_signs))
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
-
 def process_nlp_tokens(text, nlp_model):
     if(pd.isna(text) or text == ""):
         return []
@@ -107,27 +99,33 @@ def build_ngrams_and_frequency(texts_tokens, n):
     df_frequencies = pd.DataFrame(results, columns=["ngram", "total_frequency", "relative_frequency"])
     return df_frequencies
 
+# ======================================== #
+#                  PIPELINE                #
+# ======================================== #
 def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv="data/processed/data_nlp.csv"):
     print("---"*10)
     print("STARTING NLP PIPELINE")
     print("---"*10)
 
-    # =============================== #
     #           LOAD DATA             #
-    # =============================== #
     df = pd.read_csv(input_csv)
+    if("Unnamed: 0" in df.columns):
+        df = df.drop(columns=["Unnamed: 0"])
     print("Step 1: Data loaded")
 
-    # =============================== #
     #         CLEAN DATA              #
-    # =============================== #
     for col in df.select_dtypes(include=["object", "string"]).columns:
-        df[col] = df[col].apply(remove_punct_and_lower_global)
+        df[col] = df[col].apply(clean_general_text)
     print("Step 2: Data cleaned")
 
-    # =============================== #
+    #      CLEAN SPECIFIC DATA        #
+    if("lugar" in df.columns):
+        df["lugar"] = df["lugar"].apply(fix_place_of_origin)
+    if("edad" in df.columns):
+        df["edad"] = df["edad"].apply(clean_ages)
+    print("Step 3: Specific data cleaned")
+
     #         LOAD NLP MODEL          #
-    # =============================== #
     try:
         nlp = spacy.load("es_core_news_sm")
     except OSError:
@@ -136,17 +134,17 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
         nlp = spacy.load("es_core_news_sm")
     print("Step 3: NLP model loaded")
 
-    # =============================== #
     #   TOKENIZE-STOPWORDS-LEMMATIZE  #
-    # =============================== #
     #  This process only applies to the "comentario" column
-    df["comentario_tokens"] = df["comentario"].apply(lambda x: process_nlp_tokens(x, nlp))
-    df["comentario_cleaned"] = df["comentario_tokens"].apply(lambda x: " ".join(tokens))
-    print("Step 4: Tokenize-stopwords-lemmatize done")
+    if("comentario" in df.columns):
+        df["comentario_tokens"] = df["comentario"].apply(lambda x: process_nlp_tokens(x, nlp))
+        df["comentario_cleaned"] = df["comentario_tokens"].apply(lambda x: " ".join(x))
+        print("Step 4: Tokenize-stopwords-lemmatize done")
+    else: 
+        print("WARNING: Column 'comentario' not found. Skipping NLP")
+        return
 
-    # =============================== #
     #           BUILD NGRAMS          #
-    # =============================== #
     tokens_list = df["comentario_tokens"].tolist()
     df_unigrams = build_ngrams_and_frequency(tokens_list, 1)
     df_bigrams = build_ngrams_and_frequency(tokens_list, 2)
@@ -158,7 +156,7 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
     # =============================== #
     df.drop(columns=["comentario_tokens"].to_csv(output_csv, index=False))
 
-    rankings_path = "data/processed/rankings_frequencies.csv"
+    rankings_path = "data/processed/rankings_frequencies.xlsx"
     with pd.ExcelWriter(rankings_path) as writer:
         df_unigrams.to_excel(writer, sheet_name="unigrams", index=False)
         df_bigrams.to_excel(writer, sheet_name="bigrams", index=False)
