@@ -21,7 +21,7 @@ def clean_general_text(text):
     text = str(text).strip().lower()
     text = text.replace("\n", " ").replace("\r", " ")
     text = unicodedata.normalize("NFKD", text)
-    text = " ".join(c for c in text if not unicodedata.combining(c))
+    text = "".join(c for c in text if not unicodedata.combining(c))
     spanish_signs = string.punctuation + "¿¡"
     text = text.translate(str.maketrans("","", spanish_signs))
     text = re.sub(r"\s+", " ", text).strip()
@@ -151,10 +151,8 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
     df_trigrams = build_ngrams_and_frequency(tokens_list, 3)
     print("Step 5: Ngrams built")
 
-    # =============================== #
     #           SAVE DATA             #
-    # =============================== #
-    df.drop(columns=["comentario_tokens"].to_csv(output_csv, index=False))
+    df.drop(columns=["comentario_tokens"]).to_csv(output_csv, index=False)
 
     rankings_path = "data/processed/rankings_frequencies.xlsx"
     with pd.ExcelWriter(rankings_path) as writer:
@@ -166,3 +164,6 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
     print("---"*10)
     print("NLP PIPELINE FINISHED")
     print("---"*10)
+
+if(__name__ == "__main__"):
+    pipeline_nlp_analysis()
