@@ -1,0 +1,171 @@
+import pandas as pd
+import unicodedata
+import re
+import math
+import string
+import spacy
+import os
+from collections import Counter
+from nltk.util import ngrams
+
+# IMPORTANT: Install spanish model for spacy
+# python -m spacy download es_core_news_sm
+
+# ======================================== #
+#          GENERAL NORMALIZATION           #
+# ======================================== #
+def clean_general_text(text):
+    if(pd.isna(text)):
+        return text
+
+    text = str(text).strip().lower()
+    text = text.replace("\n", " ").replace("\r", " ")
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(c for c in text if not unicodedata.combining(c))
+    spanish_signs = string.punctuation + "¿¡"
+    text = text.translate(str.maketrans("","", spanish_signs))
+    text = re.sub(r"\s+", " ", text).strip()
+
+    return text
+
+# ======================================== #
+#          SPECIFIC NORMALIZATION          #
+# ======================================== #
+def clean_ages(value):
+    if(pd.isna(value)):
+        return None
+    match = re.search(r"\d+\.?\d*", str(value))
+    if(match):
+        number = float(match.group())
+        return math.floor(number)
+    return None
+
+municipios_guanajuato = [
+    "abasolo","acambaro","apaseo el alto","apaseo el grande","atarjea",
+    "celaya","comonfort","coroneo","cortazar","cueramaro",
+    "doctor mora","dolores hidalgo","guanajuato","huanimaro","irapuato",
+    "jaral del progreso","jerécuaro","leon","manuel doblado","moroleon",
+    "ocampo","penjamo","pueblo nuevo","purisima del rincon",
+    "romita","salamanca","salvatierra","san diego de la union",
+    "san felipe","san francisco del rincon","san jose iturbide",
+    "san luis de la paz","santa catarina","santiago maravatío",
+    "silao","tarandacuao","tarimoro","tierra blanca",
+    "uriangato","valle de santiago","victoria","villagran",
+    "xichu","yuriria"
+]
+
+municipios_estados=["orizaba","michoacan","oaxaca","arandas"]
+
+def fix_place_of_origin(value):
+    if(pd.isna(value)):
+        return "otro"
+    text = str(value)
+    municipios_mix = municipios_guanajuato + municipios_estados
+    for municipio in municipios_mix:
+        if(municipio in text):
+            return municipio
+    return "otro"
+
+# ======================================== #
+#               NLP FUNCTIONS              #
+# ======================================== #
+def process_nlp_tokens(text, nlp_model):
+    if(pd.isna(text) or text == ""):
+        return []
+
+    doc = nlp_model(text)
+    tokens = []
+    for token in doc:
+        if not token.is_stop and not token.is_punct and token.text.strip() != "":
+            tokens.append(token.lemma_)
+    return tokens
+
+def build_ngrams_and_frequency(texts_tokens, n):
+    all_ngrams = []
+    for tokens in texts_tokens:
+        if(len(tokens) >= n):
+            n_grams = list(ngrams(tokens, n))
+            n_grams_str = [" ".join(gram) for gram in n_grams]
+            all_ngrams.extend(n_grams_str)
+
+    frequency_count = Counter(all_ngrams)
+    total_ngrams = sum(frequency_count.values())
+
+    results = []
+    for ngram, count in frequency_count.most_common():
+        relative_frequency = count / total_ngrams if total_ngrams > 0 else 0
+        results.append((ngram, count, relative_frequency))
+    
+    df_frequencies = pd.DataFrame(results, columns=["ngram", "total_frequency", "relative_frequency"])
+    return df_frequencies
+
+# ======================================== #
+#                  PIPELINE                #
+# ======================================== #
+def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv="data/processed/data_nlp.csv"):
+    print("---"*10)
+    print("STARTING NLP PIPELINE")
+    print("---"*10)
+
+    #           LOAD DATA             #
+    df = pd.read_csv(input_csv)
+    if("Unnamed: 0" in df.columns):
+        df = df.drop(columns=["Unnamed: 0"])
+    print("Step 1: Data loaded")
+
+    #         CLEAN DATA              #
+    for col in df.select_dtypes(include=["object", "string"]).columns:
+        df[col] = df[col].apply(clean_general_text)
+    print("Step 2: Data cleaned")
+
+    #      CLEAN SPECIFIC DATA        #
+    if("lugar" in df.columns):
+        df["lugar"] = df["lugar"].apply(fix_place_of_origin)
+    if("edad" in df.columns):
+        df["edad"] = df["edad"].apply(clean_ages)
+    print("Step 3: Specific data cleaned")
+
+    #         LOAD NLP MODEL          #
+    try:
+        nlp = spacy.load("es_core_news_sm")
+    except OSError:
+        print("Downloading spacy model...")
+        os.system("python -m spacy download es_core_news_sm")
+        nlp = spacy.load("es_core_news_sm")
+    print("Step 3: NLP model loaded")
+
+    #   TOKENIZE-STOPWORDS-LEMMATIZE  #
+    #  This process only applies to the "comentario" column
+    if("comentario" in df.columns):
+        df["comentario_tokens"] = df["comentario"].apply(lambda x: process_nlp_tokens(x, nlp))
+        df["comentario_cleaned"] = df["comentario_tokens"].apply(lambda x: " ".join(x))
+        # OPTIONAL: Normalize comentario_cleaned
+        df["comentario_cleaned"] = df["comentario_cleaned"].apply(clean_general_text)
+        print("Step 4: Tokenize-stopwords-lemmatize done")
+    else: 
+        print("WARNING: Column 'comentario' not found. Skipping NLP")
+        return
+
+    #           BUILD NGRAMS          #
+    tokens_list = df["comentario_tokens"].tolist()
+    df_unigrams = build_ngrams_and_frequency(tokens_list, 1)
+    df_bigrams = build_ngrams_and_frequency(tokens_list, 2)
+    df_trigrams = build_ngrams_and_frequency(tokens_list, 3)
+    print("Step 5: Ngrams built")
+
+    #           SAVE DATA             #
+    df.drop(columns=["comentario_tokens"]).to_csv(output_csv, index=False)
+
+    rankings_path = "data/processed/rankings_frequencies.xlsx"
+    with pd.ExcelWriter(rankings_path) as writer:
+        df_unigrams.to_excel(writer, sheet_name="unigrams", index=False)
+        df_bigrams.to_excel(writer, sheet_name="bigrams", index=False)
+        df_trigrams.to_excel(writer, sheet_name="trigrams", index=False)
+    print("Step 6: Rankings saved")
+
+    print("---"*10)
+    print("NLP PIPELINE FINISHED")
+    print("---"*10)
+
+if(__name__ == "__main__"):
+    pipeline_nlp_analysis()
