@@ -4,6 +4,7 @@ import re
 import math
 import string
 import spacy
+import os
 from collections import Counter
 from nltk.util import ngrams
 
@@ -106,52 +107,64 @@ def build_ngrams_and_frequency(texts_tokens, n):
     df_frequencies = pd.DataFrame(results, columns=["ngram", "total_frequency", "relative_frequency"])
     return df_frequencies
 
-def pipeline_normalize_raw_data():
-    print("---"*18)
-    print("# Conjunto de datos del primer instrumento #")
-    print("---"*18)
-    df = pd.read_excel("data/raw/data_956.xlsx")
-    df.columns = (
-        df.columns.str.strip().str.lower().str.normalize("NFKD").str.encode("ascii", errors="ignore").str.decode("utf-8")
-    )
-    print("Step 1 completed: Normalize columns")
+def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv="data/processed/data_nlp.csv"):
+    print("---"*10)
+    print("STARTING NLP PIPELINE")
+    print("---"*10)
+
+    # =============================== #
+    #           LOAD DATA             #
+    # =============================== #
+    df = pd.read_csv(input_csv)
+    print("Step 1: Data loaded")
+
+    # =============================== #
+    #         CLEAN DATA              #
+    # =============================== #
     for col in df.select_dtypes(include=["object", "string"]).columns:
-        df[col] = df[col].apply(normalize_text)
-    print("Step 2 completed: Normalization")
-    df = df.drop_duplicates(subset=["correo electronico"])
-    print("Step 3 completed: Delete duplicate emails")
-    df["cual es tu edad?"] = df["cual es tu edad?"].apply(clean_ages) 
-    print("Step 4 completed: Clean ages")
-    df["de que lugar procedes?"] = df["de que lugar procedes?"].apply(fix_place_of_origin)
-    print("Step 5 completed: Fix place of origin")
-    df["en el siguiente espacio, expresa tu opinion general acerca de salamanca"] = df["en el siguiente espacio, expresa tu opinion general acerca de salamanca"].apply(remove_line_breaks)
-    print("Step 6 completed: Remove line breaks")
-    df.to_csv("data/processed/cleaned_data.csv", index=False)
-    print("Step 7 completed: Save cleaned data")
-    print("---"*21)
-    print("# Conjunto de datos del segundo instrumento instrumento #")
-    print("---"*21)
-    df = pd.read_csv("data/raw/data_survey.csv")
-    df.columns = (
-        df.columns.str.strip().str.lower().str.normalize("NFKD").str.encode("ascii", errors="ignore").str.decode("utf-8")
-    )
-    print("Step 1 completed: Normalize columns")
-    for col in df.select_dtypes(include=["object", "string"]).columns:
-        df[col] = df[col].apply(normalize_text)
-    print("Step 2 completed: Normalization")
-    #df = df.drop_duplicates(subset=["correo electronico"])
-    #print("Step 3 completed: Delete duplicate emails")
-    df["edad"] = df["edad"].apply(clean_ages) 
-    print("Step 3 completed: Clean ages")
-    df["ciudad de origen"] = df["ciudad de origen"].apply(fix_place_of_origin)
-    print("step 4 completed: fix place of origin")
-    print(df.columns)
-    df["en tus propias palabras, que opinas de salamanca y que palabra, frase o recuerdo usarias para describirla principalmente?"] = df["en tus propias palabras, que opinas de salamanca y que palabra, frase o recuerdo usarias para describirla principalmente?"].apply(remove_line_breaks)
-    print("Step 5 completed: Remove line breaks")
-    df.to_csv("data/processed/cleaned_data_survey_2.csv", index=False)
-    print("Step 6 completed: Save cleaned data")
-    print("---"*21)
-    print("# Uniendo conjunto de datos y normalizando columnas #")
-    print("---"*21)
-    df_final=join_datasets("data/processed/cleaned_data.csv","data/processed/cleaned_data_survey_2.csv")
-    df_final.to_csv("data/processed/data_basis.csv")
+        df[col] = df[col].apply(remove_punct_and_lower_global)
+    print("Step 2: Data cleaned")
+
+    # =============================== #
+    #         LOAD NLP MODEL          #
+    # =============================== #
+    try:
+        nlp = spacy.load("es_core_news_sm")
+    except OSError:
+        print("Downloading spacy model...")
+        os.system("python -m spacy download es_core_news_sm")
+        nlp = spacy.load("es_core_news_sm")
+    print("Step 3: NLP model loaded")
+
+    # =============================== #
+    #   TOKENIZE-STOPWORDS-LEMMATIZE  #
+    # =============================== #
+    #  This process only applies to the "comentario" column
+    df["comentario_tokens"] = df["comentario"].apply(lambda x: process_nlp_tokens(x, nlp))
+    df["comentario_cleaned"] = df["comentario_tokens"].apply(lambda x: " ".join(tokens))
+    print("Step 4: Tokenize-stopwords-lemmatize done")
+
+    # =============================== #
+    #           BUILD NGRAMS          #
+    # =============================== #
+    tokens_list = df["comentario_tokens"].tolist()
+    df_unigrams = build_ngrams_and_frequency(tokens_list, 1)
+    df_bigrams = build_ngrams_and_frequency(tokens_list, 2)
+    df_trigrams = build_ngrams_and_frequency(tokens_list, 3)
+    print("Step 5: Ngrams built")
+
+    # =============================== #
+    #           SAVE DATA             #
+    # =============================== #
+    df.drop(columns=["comentario_tokens"].to_csv(output_csv, index=False))
+
+    rankings_path = "data/processed/rankings_frequencies.csv"
+    with pd.ExcelWriter(rankings_path) as writer:
+        df_unigrams.to_excel(writer, sheet_name="unigrams", index=False)
+        df_bigrams.to_excel(writer, sheet_name="bigrams", index=False)
+        df_trigrams.to_excel(writer, sheet_name="trigrams", index=False)
+    print("Step 6: Rankings saved")
+
+    print("---"*10)
+    print("NLP PIPELINE FINISHED")
+    print("---"*10)
