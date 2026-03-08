@@ -51,6 +51,7 @@ municipios_guanajuato = [
     "uriangato","valle de santiago","victoria","villagran",
     "xichu","yuriria"
 ]
+
 municipios_estados=["orizaba","michoacan","oaxaca","arandas"]
 
 def fix_place_of_origin(value):
@@ -64,30 +65,46 @@ def fix_place_of_origin(value):
     return "otro"
 
 # ======================================== #
-#           SAVE CLEANED DATA              #
+#               NLP FUNCTIONS              #
 # ======================================== #
-def normalize_column_names(df, mapping):
-    df=df.rename(columns=lambda c :c.strip().lower())
-    df=df.rename(columns=mapping)
-    cols=set({v for v in mapping.values()})
-    return df[[c for c in cols if c in df.columns]]
-def join_datasets(path_df_1,path_df_2):
-    df_1=pd.read_csv(path_df_1)
-    df_2=pd.read_csv(path_df_1)
-    results={
-        "de que lugar procedes?": "lugar",
-        "cual es tu edad?":"edad",
-        "edad":"edad",
-        "ciudad de origen":"lugar",
-        "con que genero te identificas":"genero",
-        "genero":"genero",
-        "en tus propias palabras, que opinas de salamanca y que palabra, frase o recuerdo usarias para describirla principalmente?":"comentario",
-        "en el siguiente espacio, expresa tu opinion general acerca de salamanca":"comentario"
-    }
-    df_1=normalize_column_names(df_1,results)
-    df_2=normalize_column_names(df_2,results)
-    df_final=pd.concat([df_1,df_2],ignore_index=True)
-    return df_final
+def remove_punct_and_lower_global(text):
+    if(pd.isna(text)):
+        return text
+    text = str(text).lower()
+    spanish_signs = string.punctuation + "¿¡"
+    text =  text.translate(str.maketrans("", "", spanish_signs))
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+def process_nlp_tokens(text, nlp_model):
+    if(pd.isna(text) or text == ""):
+        return []
+
+    doc = nlp_model(text)
+    tokens = []
+    for token in doc:
+        if not token.is_stop and not token.is_punct and token.text.strip() != "":
+            tokens.append(token.lemma_)
+    return tokens
+
+def build_ngrams_and_frequency(texts_tokens, n):
+    all_ngrams = []
+    for tokens in texts_tokens:
+        if(len(tokens) >= n):
+            n_grams = list(ngrams(tokens, n))
+            n_grams_str = [" ".join(gram) for gram in n_grams]
+            all_ngrams.extend(n_grams_str)
+
+    frequency_count = Counter(all_ngrams)
+    total_ngrams = sum(frequency_count.values())
+
+    results = []
+    for ngram, count in frequency_count.most_common():
+        relative_frequency = count / total_ngrams if total_ngrams > 0 else 0
+        results.append((ngram, count, relative_frequency))
+    
+    df_frequencies = pd.DataFrame(results, columns=["ngram", "total_frequency", "relative_frequency"])
+    return df_frequencies
 
 def pipeline_normalize_raw_data():
     print("---"*18)
