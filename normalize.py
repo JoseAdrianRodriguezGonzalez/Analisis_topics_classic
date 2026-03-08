@@ -2,14 +2,13 @@ import pandas as pd
 import unicodedata
 import re
 import math
-import openpyxl
+import string
+import spacy
+from collections import Counter
+from nltk.util import ngrams
 
-# ======================================== #
-#              LOAD FILE DATA              #
-# ======================================== #
-# ======================================== #
-#            NORMALIZE COLUMNS             #
-# ======================================== #
+# IMPORTANT: Install spanish model for spacy
+# python -m spacy download es_core_news_sm
 
 # ======================================== #
 #              NORMALIZATION               #
@@ -21,22 +20,21 @@ def normalize_text(text):
     text = unicodedata.normalize("NFKD", text)
     text = ''.join(c for c in text if not unicodedata.combining(c))
     return text
-# ======================================== #
-#           DELETE DUPLICTE EMAILS         #
-# ======================================== #
-# ======================================== #
-#                CLEAN AGES                #
-# ======================================== #
 
 def clean_ages(value):
     if(pd.isna(value)):
         return None
-    
     match = re.search(r"\d+\.?\d*", str(value))
     if(match):
         number = float(match.group())
         return math.floor(number)
     return None
+
+def remove_line_breaks(text):
+    if(pd.isna(text)):
+        return text
+    return str(text).replace("\n", " ").replace("\r", " ").strip()
+
 # ======================================== #
 #            FIX PLACE OF ORIGIN           #
 # ======================================== #
@@ -53,24 +51,18 @@ municipios_guanajuato = [
     "uriangato","valle de santiago","victoria","villagran",
     "xichu","yuriria"
 ]
-municipios_estados=["orizaba","michoacan","oaxaca","arandas","oaxaca"]
+municipios_estados=["orizaba","michoacan","oaxaca","arandas"]
+
 def fix_place_of_origin(value):
     if(pd.isna(value)):
         return "otro"
-
     text = str(value)
-    municipios_guanajuato.extend(municipios_estados)
-    for municipio in municipios_guanajuato:
+    municipios_mix = municipios_guanajuato + municipios_estados
+    for municipio in municipios_mix:
         if(municipio in text):
             return municipio
     return "otro"
-# ======================================== #
-#            REMOVE LINE BREAKS            #
-# ======================================== #
-def remove_line_breaks(text):
-    if(pd.isna(text)):
-        return text
-    return str(text).replace("\n", " ").replace("\r", " ").strip()
+
 # ======================================== #
 #           SAVE CLEANED DATA              #
 # ======================================== #
