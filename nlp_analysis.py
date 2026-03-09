@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import unicodedata
 import re
 import math
@@ -7,6 +8,7 @@ import spacy
 import os
 from collections import Counter
 from nltk.util import ngrams
+from wordcloud import WordCloud
 
 # IMPORTANT: Install spanish model for spacy
 # python -m spacy download es_core_news_sm
@@ -100,6 +102,31 @@ def build_ngrams_and_frequency(texts_tokens, n):
     return df_frequencies
 
 # ======================================== #
+#              VISUALIZATION               #
+# ======================================== #
+def generate_wordcloud(text_series, output_path="data/processed/wordcloud.png"):
+    all_text = " ".join(text_series.dropna().astype(str))
+
+    if not all_text.strip():
+        print("WARNING: No text to generate wordcloud")
+        return
+
+    wordcloud = WordCloud(
+        width=800, 
+        height=400, 
+        background_color="white",
+        colormap="viridis",
+        max_words=100
+    ).generate(all_text)
+
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")
+    
+    plt.savefig(output_path, bbox_inches="tight")
+    plt.close()
+    
+# ======================================== #
 #                  PIPELINE                #
 # ======================================== #
 def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv="data/processed/data_nlp.csv"):
@@ -162,6 +189,10 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
         df_bigrams.to_excel(writer, sheet_name="bigrams", index=False)
         df_trigrams.to_excel(writer, sheet_name="trigrams", index=False)
     print("Step 6: Rankings saved")
+
+    #       GENERATE WORDCLOUDS       #
+    generate_wordcloud(df["comentario_cleaned"])
+    print("Step 7: Wordcloud generated")   
 
     print("---"*10)
     print("NLP PIPELINE FINISHED")
