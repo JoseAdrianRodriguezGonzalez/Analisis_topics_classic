@@ -75,11 +75,16 @@ def process_nlp_tokens(text, nlp_model):
     if(pd.isna(text) or text == ""):
         return []
 
+    protected_words = municipios_guanajuato + municipios_estados
+
     doc = nlp_model(text)
     tokens = []
     for token in doc:
         if not token.is_stop and not token.is_punct and token.text.strip() != "":
-            tokens.append(token.lemma_)
+            if(token.text in protected_words):
+                tokens.append(token.text)
+            else:
+                tokens.append(token.lemma_)
     return tokens
 
 def build_ngrams_and_frequency(texts_tokens, n):
