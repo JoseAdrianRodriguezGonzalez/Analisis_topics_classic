@@ -103,6 +103,12 @@ def process_nlp_tokens(text, nlp_model):
     tokens = []
     for token in doc:
         if not token.is_stop and not token.is_punct and token.text.strip() != "":
+            if(len(token.text.strip()) <= 2):
+                continue
+
+            if(token.text.lower() in {"etc", "asi", "tmb", "tqm"}):
+                continue
+
             # 1. Remove accents to the original token to check if it is a protected word
             word_no_accents = remove_accents_and_punct(token.text)
             
