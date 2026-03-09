@@ -30,6 +30,28 @@ def clean_general_text(text):
 
     return text
 
+def clean_text_light(text):
+    if(pd.isna(text)):
+        return text
+    
+    text = str(text).strip().lower()
+    text = text.replace("\n", " ").replace("\r", " ")
+    text = re.sub(r"\s+", " ", text).strip()
+    
+    return text
+
+def remove_accents_and_punct(text):
+    if(pd.isna(text)):
+        return text
+    
+    text = str(text)
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(c for c in text if not unicodedata.combining(c))
+    spanish_signs = string.punctuation + "¿¡"
+    text = text.translate(str.maketrans("", "", spanish_signs))
+    
+    return text
+
 # ======================================== #
 #          SPECIFIC NORMALIZATION          #
 # ======================================== #
@@ -75,11 +97,28 @@ def process_nlp_tokens(text, nlp_model):
     if(pd.isna(text) or text == ""):
         return []
 
+    protected_words = set(municipios_guanajuato + municipios_estados)
+
     doc = nlp_model(text)
     tokens = []
     for token in doc:
         if not token.is_stop and not token.is_punct and token.text.strip() != "":
-            tokens.append(token.lemma_)
+            if(len(token.text.strip()) <= 2):
+                continue
+
+            if(token.text.lower() in {"etc", "asi", "tmb", "tqm"}):
+                continue
+
+            # 1. Remove accents to the original token to check if it is a protected word
+            word_no_accents = remove_accents_and_punct(token.text)
+            
+            if(word_no_accents in protected_words):
+                tokens.append(word_no_accents)
+            else:
+                # 2. If it is not a protected word, lemmatize it, then remove accents
+                lemma_no_accents = remove_accents_and_punct(token.lemma_)
+                if(lemma_no_accents):
+                    tokens.append(lemma_no_accents)      
     return tokens
 
 def build_ngrams_and_frequency(texts_tokens, n):
@@ -142,7 +181,10 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
 
     #         CLEAN DATA              #
     for col in df.select_dtypes(include=["object", "string"]).columns:
-        df[col] = df[col].apply(clean_general_text)
+        if(col == "comentario"):
+            df[col] = df[col].apply(clean_text_light)
+        else:
+            df[col] = df[col].apply(clean_general_text)
     print("Step 2: Data cleaned")
 
     #      CLEAN SPECIFIC DATA        #
@@ -166,8 +208,6 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
     if("comentario" in df.columns):
         df["comentario_tokens"] = df["comentario"].apply(lambda x: process_nlp_tokens(x, nlp))
         df["comentario_cleaned"] = df["comentario_tokens"].apply(lambda x: " ".join(x))
-        # OPTIONAL: Normalize comentario_cleaned
-        df["comentario_cleaned"] = df["comentario_cleaned"].apply(clean_general_text)
         print("Step 4: Tokenize-stopwords-lemmatize done")
     else: 
         print("WARNING: Column 'comentario' not found. Skipping NLP")
