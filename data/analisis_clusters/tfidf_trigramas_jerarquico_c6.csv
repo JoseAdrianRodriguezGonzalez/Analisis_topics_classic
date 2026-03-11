@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+6,1,lugar peligroso adaptar,0.5,1.405465,1,6
+6,2,pesimo sistema transporte,0.098058,1.405465,1,6
+6,3,calle gobierno hablar,0.098058,1.405465,1,6
+6,4,hablar cultura valorar,0.098058,1.405465,1,6
+6,5,valorar paisaje natural,0.098058,1.405465,1,6
+6,6,paisaje natural increibl,0.098058,1.405465,1,6
+6,7,natural increibl privatizado,0.098058,1.405465,1,6
+6,8,increibl privatizado ecoparque,0.098058,1.405465,1,6
+6,9,privatizado ecoparque agradable,0.098058,1.405465,1,6
+6,10,ecoparque agradable seco,0.098058,1.405465,1,6
+6,11,agradable seco estanque,0.098058,1.405465,1,6
+6,12,seco estanque variedad,0.098058,1.405465,1,6
+6,13,estanque variedad gastronomia,0.098058,1.405465,1,6
+6,14,variedad gastronomia precio,0.098058,1.405465,1,6
+6,15,gastronomia precio turistico,0.098058,1.405465,1,6

@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+0,1,lugar vivir,0.030769,4.091042,2,76
+0,2,lugar inseguro,0.027197,3.80336,3,76
+0,3,salamanca ciudad,0.02619,3.110213,7,76
+0,4,lugar atractivo,0.0242,3.397895,5,76
+0,5,oler feo,0.021757,4.091042,2,76
+0,6,feo refineria,0.021757,4.091042,2,76
+0,7,lugar lindo,0.020328,3.80336,3,76
+0,8,ciudad opinion,0.019164,4.091042,2,76
+0,9,opinion descuidado,0.019164,4.091042,2,76
+0,10,gastronomia lugar,0.018761,4.091042,2,76
+0,11,atractivo visitar,0.018761,4.091042,2,76
+0,12,cosa cambiar,0.018181,4.091042,2,76
+0,13,lindo cosa,0.018181,4.091042,2,76
+0,14,pequeno atraccion,0.017765,4.091042,2,76
+0,15,peligroso salir,0.017765,4.091042,2,76

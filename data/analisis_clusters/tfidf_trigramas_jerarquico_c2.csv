@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+2,1,gastronomia lugar atractivo,0.094281,2.673976,2,18
+2,2,lugar atractivo visitar,0.094281,2.673976,2,18
+2,3,transporte caro comida,0.04714,3.079442,1,18
+2,4,inseguro transporte caro,0.04714,3.079442,1,18
+2,5,lugar lindo cosa,0.04714,3.079442,1,18
+2,6,lindo cosa cambiar,0.04714,3.079442,1,18
+2,7,seguridad delincuencia municipio,0.03849,3.079442,1,18
+2,8,contaminacion seguridad delincuencia,0.03849,3.079442,1,18
+2,9,general contaminacion seguridad,0.03849,3.079442,1,18
+2,10,lugar familiar turistico,0.033333,3.079442,1,18
+2,11,familiar turistico faltar,0.033333,3.079442,1,18
+2,12,turistico faltar arreglo,0.033333,3.079442,1,18
+2,13,faltar arreglo paisaje,0.033333,3.079442,1,18
+2,14,empezar inseguridad ayudar,0.029814,3.079442,1,18
+2,15,salamanca empezar inseguridad,0.029814,3.079442,1,18

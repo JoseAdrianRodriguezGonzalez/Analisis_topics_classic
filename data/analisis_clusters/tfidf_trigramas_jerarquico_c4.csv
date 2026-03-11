@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+4,1,lugar asentar foraneo,0.142857,2.609438,2,20
+4,2,oler feo refineria,0.071429,3.014903,1,20
+4,3,lugar sucio aire,0.035714,3.014903,1,20
+4,4,sucio aire nivel,0.035714,3.014903,1,20
+4,5,aire nivel inseguridad,0.035714,3.014903,1,20
+4,6,nivel inseguridad alto,0.035714,3.014903,1,20
+4,7,inseguro contaminado aburrido,0.031944,3.014903,1,20
+4,8,contaminado aburrido atractivo,0.031944,3.014903,1,20
+4,9,aburrido atractivo apto,0.031944,3.014903,1,20
+4,10,lugar inseguro contaminado,0.031944,3.014903,1,20
+4,11,atractivo apto turismo,0.031944,3.014903,1,20
+4,12,encuesta visitar centro,0.031944,3.014903,1,20
+4,13,aspecto preguntar encuesta,0.031944,3.014903,1,20
+4,14,preguntar encuesta visitar,0.031944,3.014903,1,20
+4,15,mayoria aspecto preguntar,0.031944,3.014903,1,20

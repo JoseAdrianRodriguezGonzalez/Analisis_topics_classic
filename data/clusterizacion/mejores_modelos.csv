@@ -1,0 +1,10 @@
+﻿rank,ngrama,modelo,reduccion,score_ranking,silhouette,n_clusters,n_ruido,pct_ruido,inercia,codo_k,hiperparametros
+1,bigramas,dbscan,UMAP,0.815992,0.815992,7,0,0.0,,,"eps=0.5,min_samples=2"
+1,bigramas,jerarquico,UMAP,0.905199,0.905199,4,0,0.0,,,"k=4,metodo=ward"
+1,bigramas,kmeans,TSNE,1.0,0.354888,3,0,0.0,5405561.0,3.0,k=3
+1,trigramas,dbscan,UMAP,0.11041,0.126908,16,13,0.13,,,"eps=0.3,min_samples=2"
+1,trigramas,jerarquico,PCA,0.494757,0.494757,10,0,0.0,,,"k=10,metodo=ward"
+1,trigramas,kmeans,UMAP,1.0,0.348804,3,0,0.0,59.9994,3.0,k=3
+1,unigramas,dbscan,UMAP,0.567097,0.567097,11,0,0.0,,,"eps=0.5,min_samples=2"
+1,unigramas,jerarquico,UMAP,0.574338,0.574338,10,0,0.0,,,"k=10,metodo=ward"
+1,unigramas,kmeans,PCA,1.0,0.518816,3,0,0.0,2.5533,3.0,k=3

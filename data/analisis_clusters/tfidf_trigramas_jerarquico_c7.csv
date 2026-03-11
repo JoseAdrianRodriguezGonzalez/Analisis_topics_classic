@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+7,1,inseguro contaminado aburrido,0.149071,1.693147,1,4
+7,2,provenir inseguridad falta,0.149071,1.693147,1,4
+7,3,lugar inseguro contaminado,0.149071,1.693147,1,4
+7,4,falta zona recreativo,0.149071,1.693147,1,4
+7,5,atractivo apto turismo,0.149071,1.693147,1,4
+7,6,aburrido atractivo apto,0.149071,1.693147,1,4
+7,7,contaminado aburrido atractivo,0.149071,1.693147,1,4
+7,8,inseguridad falta zona,0.149071,1.693147,1,4
+7,9,malo salamanca provenir,0.149071,1.693147,1,4
+7,10,salamanca provenir inseguridad,0.149071,1.693147,1,4
+7,11,chico ende variedad,0.096225,1.693147,1,4
+7,12,ende variedad comida,0.096225,1.693147,1,4
+7,13,variedad comida lugar,0.096225,1.693147,1,4
+7,14,sentir tanto cultura,0.096225,1.693147,1,4
+7,15,atraccion aparte sentir,0.096225,1.693147,1,4

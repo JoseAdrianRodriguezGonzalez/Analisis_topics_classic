@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+4,1,lugar peligroso,0.101015,2.386294,1,8
+4,2,peligroso adaptar,0.101015,2.386294,1,8
+4,3,salamanca ciudad,0.053995,2.386294,1,8
+4,4,calid gente,0.053995,2.386294,1,8
+4,5,ciudad gobierno,0.053995,2.386294,1,8
+4,6,gobierno querer,0.053995,2.386294,1,8
+4,7,querer hacer,0.053995,2.386294,1,8
+4,8,hacer crecer,0.053995,2.386294,1,8
+4,9,crecer inseguridad,0.053995,2.386294,1,8
+4,10,inseguridad descuidado,0.053995,2.386294,1,8
+4,11,principal calid,0.053995,2.386294,1,8
+4,12,jardin principal,0.053995,2.386294,1,8
+4,13,visito universidad,0.053995,2.386294,1,8
+4,14,gustar jardin,0.053995,2.386294,1,8
+4,15,universidad gustar,0.053995,2.386294,1,8

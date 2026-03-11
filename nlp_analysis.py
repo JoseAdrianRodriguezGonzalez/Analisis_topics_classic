@@ -78,6 +78,8 @@ municipios_guanajuato = [
     "xichu","yuriria"
 ]
 
+STOPWORDS_EXTRA = {"el", "la", "lo", "le", "yo", "tu", "mi", "su", "un", "al", "etc", "nan"}
+
 municipios_estados=["orizaba","michoacan","oaxaca","arandas"]
 
 def fix_place_of_origin(value):
@@ -105,25 +107,37 @@ def process_nlp_tokens(text, nlp_model):
         if not token.is_stop and not token.is_punct and token.text.strip() != "":
             if(len(token.text.strip()) <= 2):
                 continue
-
+            if re.sub(r'[^a-zA-Z0-9]', '', token.text.strip()).isdigit():
+                continue
             if(token.text.lower() in {"etc", "asi", "tmb", "tqm"}):
                 continue
 
             # 1. Remove accents to the original token to check if it is a protected word
             word_no_accents = remove_accents_and_punct(token.text)
-            
             if(word_no_accents in protected_words):
                 tokens.append(word_no_accents)
             else:
                 # 2. If it is not a protected word, lemmatize it, then remove accents
                 lemma_no_accents = remove_accents_and_punct(token.lemma_)
-                if(lemma_no_accents):
-                    tokens.append(lemma_no_accents)      
+
+                # Filtrar si el lemma contiene alguna palabra de <= 2 chars o en STOPWORDS_EXTRA
+                partes = lemma_no_accents.split()
+                partes_limpias = [p for p in partes if len(p) > 2 and p not in STOPWORDS_EXTRA]
+                if not partes_limpias:
+                    continue
+                # Usar solo las partes limpias
+                token_limpio = " ".join(partes_limpias)
+                tokens.append(token_limpio)
+                #print(f"APPEND: text={token.text!r} lemma={lemma_no_accents!r}")
+                #tokens.append(lemma_no_accents)
     return tokens
 
 def build_ngrams_and_frequency(texts_tokens, n):
     all_ngrams = []
     for tokens in texts_tokens:
+        #verificar que cada token tenga una longitud de al menos 3 caracteres
+        temporal = [token for token in tokens if len(token) <= 3]
+        #print(f"Tokens removed for being too short: {temporal}")
         if(len(tokens) >= n):
             n_grams = list(ngrams(tokens, n))
             n_grams_str = [" ".join(gram) for gram in n_grams]
@@ -215,6 +229,7 @@ def pipeline_nlp_analysis(input_csv="data/processed/data_basis.csv", output_csv=
 
     #           BUILD NGRAMS          #
     tokens_list = df["comentario_tokens"].tolist()
+    #Exportar los ngramas a csv
     df_unigrams = build_ngrams_and_frequency(tokens_list, 1)
     df_bigrams = build_ngrams_and_frequency(tokens_list, 2)
     df_trigrams = build_ngrams_and_frequency(tokens_list, 3)
