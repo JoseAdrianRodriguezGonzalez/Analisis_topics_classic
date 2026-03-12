@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+5,1,peligroso salir noche,0.04714,3.079442,1,18
+5,2,lugar pequeno atraccion,0.04714,3.079442,1,18
+5,3,pequeno atraccion llamativo,0.04714,3.079442,1,18
+5,4,feo peligroso salir,0.04714,3.079442,1,18
+5,5,encuesta visitar centro,0.029814,3.079442,1,18
+5,6,preguntar encuesta visitar,0.029814,3.079442,1,18
+5,7,aspecto preguntar encuesta,0.029814,3.079442,1,18
+5,8,mayoria aspecto preguntar,0.029814,3.079442,1,18
+5,9,desconocer mayoria aspecto,0.029814,3.079442,1,18
+5,10,contaminacion peligroso interesante,0.027217,3.079442,1,18
+5,11,querer hacer crecer,0.027217,3.079442,1,18
+5,12,gobierno querer hacer,0.027217,3.079442,1,18
+5,13,ciudad gobierno querer,0.027217,3.079442,1,18
+5,14,salamanca ciudad gobierno,0.027217,3.079442,1,18
+5,15,inter demasiado contaminacion,0.027217,3.079442,1,18

@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+3,1,saquenmir ayudo,0.166667,2.252763,1,8
+3,2,salamanca descuidado,0.099381,1.847298,2,8
+3,3,potencial turistico,0.074536,2.252763,1,8
+3,4,abandonado descuidar,0.074536,2.252763,1,8
+3,5,brutalmente abandonado,0.074536,2.252763,1,8
+3,6,turistico brutalmente,0.074536,2.252763,1,8
+3,7,ciudad potencial,0.074536,2.252763,1,8
+3,8,ayudar general,0.068041,2.252763,1,8
+3,9,empezar inseguridad,0.068041,2.252763,1,8
+3,10,salamanca empezar,0.068041,2.252763,1,8
+3,11,cosa salamanca,0.068041,2.252763,1,8
+3,12,faltar cosa,0.068041,2.252763,1,8
+3,13,inseguridad ayudar,0.068041,2.252763,1,8
+3,14,punto inter,0.055556,2.252763,1,8
+3,15,lugar excelente,0.055556,2.252763,1,8

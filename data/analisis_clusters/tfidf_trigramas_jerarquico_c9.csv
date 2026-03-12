@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+9,1,potencial especial gastronomia,0.288675,1.405465,1,2
+9,2,especial gastronomia actividad,0.288675,1.405465,1,2
+9,3,gastronomia actividad cultural,0.288675,1.405465,1,2
+9,4,finta ciudad general,0.114708,1.405465,1,2
+9,5,quedar recomendar vengar,0.114708,1.405465,1,2
+9,6,gustariar quedar recomendar,0.114708,1.405465,1,2
+9,7,realmente gustariar quedar,0.114708,1.405465,1,2
+9,8,experiencia realmente gustariar,0.114708,1.405465,1,2
+9,9,mala experiencia realmente,0.114708,1.405465,1,2
+9,10,general mala experiencia,0.114708,1.405465,1,2
+9,11,ciudad general mala,0.114708,1.405465,1,2
+9,12,poner malo finta,0.114708,1.405465,1,2
+9,13,malo finta ciudad,0.114708,1.405465,1,2
+9,14,vengar vivir estudiar,0.114708,1.405465,1,2
+9,15,violencia poner malo,0.114708,1.405465,1,2

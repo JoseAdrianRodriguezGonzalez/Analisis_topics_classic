@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+3,1,punto malo malo,0.102062,1.916291,1,6
+3,2,naci visito universidad,0.102062,1.916291,1,6
+3,3,intentar cosa comodidad,0.102062,1.916291,1,6
+3,4,malo intentar cosa,0.102062,1.916291,1,6
+3,5,malo malo intentar,0.102062,1.916291,1,6
+3,6,comodidad convivencia mayormente,0.102062,1.916291,1,6
+3,7,cosa comodidad convivencia,0.102062,1.916291,1,6
+3,8,visito universidad gustar,0.102062,1.916291,1,6
+3,9,universidad gustar jardin,0.102062,1.916291,1,6
+3,10,gustar jardin principal,0.102062,1.916291,1,6
+3,11,jardin principal calid,0.102062,1.916291,1,6
+3,12,principal calid gente,0.102062,1.916291,1,6
+3,13,contaminado humo salir,0.05,1.916291,1,6
+3,14,salir empresa pemex,0.05,1.916291,1,6
+3,15,empresa pemex destino,0.05,1.916291,1,6

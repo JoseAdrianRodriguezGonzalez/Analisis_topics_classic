@@ -1,0 +1,15 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+8,1,ciudad potencial turistico,0.25,1.405465,1,2
+8,2,potencial turistico brutalmente,0.25,1.405465,1,2
+8,3,turistico brutalmente abandonado,0.25,1.405465,1,2
+8,4,brutalmente abandonado descuidar,0.25,1.405465,1,2
+8,5,cerca refineria disgustar,0.158114,1.405465,1,2
+8,6,tanto inseguridad suciedad,0.158114,1.405465,1,2
+8,7,ciudad tanto inseguridad,0.158114,1.405465,1,2
+8,8,sede ciudad tanto,0.158114,1.405465,1,2
+8,9,disgustar colocar sede,0.158114,1.405465,1,2
+8,10,refineria disgustar colocar,0.158114,1.405465,1,2
+8,11,colocar sede ciudad,0.158114,1.405465,1,2
+8,12,mexico cerca refineria,0.158114,1.405465,1,2
+8,13,sucio mexico cerca,0.158114,1.405465,1,2
+8,14,ciudad sucio mexico,0.158114,1.405465,1,2

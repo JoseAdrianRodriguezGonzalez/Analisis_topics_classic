@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+1,1,llevar tiempo vivir,0.074536,2.466337,2,12
+1,2,tiempo vivir general,0.074536,2.466337,2,12
+1,3,vivir general evito,0.074536,2.466337,2,12
+1,4,general evito salir,0.074536,2.466337,2,12
+1,5,evito salir inseguridad,0.074536,2.466337,2,12
+1,6,salamanca ciudad opinion,0.058926,2.871802,1,12
+1,7,ciudad opinion descuidado,0.058926,2.871802,1,12
+1,8,aire nivel inseguridad,0.041667,2.871802,1,12
+1,9,nivel inseguridad alto,0.041667,2.871802,1,12
+1,10,lugar sucio aire,0.041667,2.871802,1,12
+1,11,ciudad potencial turistico,0.041667,2.871802,1,12
+1,12,potencial turistico brutalmente,0.041667,2.871802,1,12
+1,13,turistico brutalmente abandonado,0.041667,2.871802,1,12
+1,14,brutalmente abandonado descuidar,0.041667,2.871802,1,12
+1,15,sucio aire nivel,0.041667,2.871802,1,12

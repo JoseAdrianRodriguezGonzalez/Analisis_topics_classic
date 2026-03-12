@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+1,1,peligroso bonito,0.166667,2.252763,1,8
+1,2,ciudad potencial,0.074536,2.252763,1,8
+1,3,turistico brutalmente,0.074536,2.252763,1,8
+1,4,brutalmente abandonado,0.074536,2.252763,1,8
+1,5,potencial turistico,0.074536,2.252763,1,8
+1,6,abandonado descuidar,0.074536,2.252763,1,8
+1,7,mayoria aspecto,0.068041,2.252763,1,8
+1,8,desconocer mayoria,0.068041,2.252763,1,8
+1,9,visitar centro,0.068041,2.252763,1,8
+1,10,encuesta visitar,0.068041,2.252763,1,8
+1,11,preguntar encuesta,0.068041,2.252763,1,8
+1,12,aspecto preguntar,0.068041,2.252763,1,8
+1,13,universidad gustar,0.062994,2.252763,1,8
+1,14,visito universidad,0.062994,2.252763,1,8
+1,15,naci visito,0.062994,2.252763,1,8
