@@ -1,0 +1,50 @@
+--- INICIO ---
+
+## Análisis de Tópicos LDA: Experiencias y Percepciones Turísticas en Salamanca
+
+### Grupo 0 — "Habitabilidad y Entorno Ambiental"
+
+* Tema central: La valoración de Salamanca como lugar de residencia condicionada por la hostilidad del entorno físico.
+* Interpretación: Se percibe una ciudad pequeña donde la presencia de la refinería genera un impacto sensorial negativo (olores). A pesar de esto, existe una visión de resiliencia donde el lugar se considera aceptable para vivir o estudiar si se logran ignorar las carencias de atracciones llamativas.
+* Tono: Mixto
+
+### Grupo 1 — "Infraestructura y Gestión Pública"
+
+* Tema central: Crítica sistémica al descuido de la imagen urbana, el mantenimiento y los servicios básicos.
+* Interpretación: Los informantes señalan un abandono notable en la infraestructura de calles, plazas y rancherías por parte de las autoridades. Se asocia la falta de inversión pública con precios elevados en servicios y transporte que no cumplen con los estándares mínimos de calidad y seguridad.
+* Tono: Negativo
+
+### Grupo 2 — "Dualidad Sensorial: Sabor y Suciedad"
+
+* Tema central: Contraste entre la riqueza gastronómica local y el deterioro ambiental del espacio público.
+* Interpretación: Se destaca positivamente la oferta de comida y restaurantes en el centro histórico, valorando la variedad culinaria como un activo real. Sin embargo, esta experiencia se ve empañada por la suciedad del aire y una sensación de inseguridad que limita la libertad de caminar y disfrutar la ciudad.
+* Tono: Mixto
+
+### Grupo 3 — "Potencial Cultural y Recreativo"
+
+* Tema central: Identificación de Salamanca como un destino con activos turísticos y culturales latentes por aprovechar.
+* Interpretación: Este grupo enfatiza el potencial de las actividades culturales y la gastronomía como motores de desarrollo para atraer visitantes. Predomina una visión que reconoce el valor de las tradiciones y la calidez social, aunque reconoce que están supeditadas a una mejora necesaria en la impresión general de la ciudad.
+* Tono: Propositivo / Positivo
+
+### Grupo 4 — "Estigma Industrial e Inseguridad"
+
+* Tema central: La delincuencia y la industria como los principales detractores de la imagen y reputación turística.
+* Interpretación: La refinería es percibida como un factor de degradación ambiental que, sumado a la violencia, proyecta una "mala finta" hacia el exterior. Existe un consenso en que la mayoría de los problemas de atracción turística derivan de este estigma de inseguridad que opaca cualquier otro atributo.
+* Tono: Negativo
+
+### Grupo 5 — "Restricción Social y Miedo"
+
+* Tema central: El impacto directo de la inseguridad percibida en la movilidad y el comportamiento de las personas.
+* Interpretación: El patrón de respuesta indica que los usuarios evitan salir de sus hogares o centros de estudio debido a la peligrosidad, lo que genera una sensación de vacío urbano. Se reclama la falta de zonas recreativas seguras, lo que convierte la estancia en la ciudad en una experiencia de confinamiento.
+* Tono: Negativo
+
+### Grupo 6 — "Barreras Logísticas para el Visitante"
+
+* Tema central: Desafíos en servicios, transporte y costos que desalientan la integración del turista y el foráneo.
+* Interpretación: Se identifica una ciudad con oportunidades académicas y laborales que se ven limitadas por un transporte caro y deficiente. Los encuestados sugieren que el municipio corre el riesgo de volverse un "lugar fantasma" si no se atienden los costos de vida y la seguridad para quienes no son residentes permanentes.
+* Tono: Negativo / Mixto
+
+## SÍNTESIS
+
+El análisis revela una ciudad en tensión: posee un núcleo cultural y gastronómico con alto potencial, pero se encuentra sofocado por una crisis de seguridad y un entorno industrial agresivo. La refinería y la delincuencia son los ejes transversales que definen el estigma negativo de Salamanca. Emergen patrones de insatisfacción con la gestión gubernamental y la infraestructura urbana, lo que transforma la experiencia turística en una vivencia de resiliencia. En conclusión, Salamanca es percibida como un lugar de oportunidades funcionales, pero con barreras críticas que impiden su consolidación como un destino recreativo atractivo.
+--- FIN ---

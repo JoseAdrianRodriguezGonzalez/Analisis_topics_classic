@@ -1,0 +1,68 @@
+--- INICIO ---
+
+## Análisis Cualitativo de Percepciones Turísticas: Salamanca, Guanajuato
+
+### Grupo 0 — "Inseguridad y estancamiento del crecimiento"
+
+* Tema central: La delincuencia y la violencia como los principales obstáculos para el desarrollo urbano y turístico.
+* Interpretación: Los informantes perciben una ciudad con potencial de crecimiento que se ve frenado por la inseguridad y la falta de acción gubernamental. Existe una sensación de decepción al considerar que la delincuencia "pone en mala finta" a la ciudad ante posibles residentes o visitantes.
+* Tono: Negativo
+
+### Grupo 1 — "Deterioro urbano y contaminación industrial"
+
+* Tema central: Crítica a la infraestructura deficiente y al impacto negativo de la refinería en la imagen pública.
+* Interpretación: Este grupo asocia directamente la suciedad y la falta de mantenimiento (baches, falta de árboles) con la presencia de la industria petrolera. Se manifiesta un descontento por la ubicación de instituciones educativas en una zona percibida como insalubre e insegura.
+* Tono: Negativo
+
+### Grupo 2 — "Calidad de vida y confinamiento social"
+
+* Tema central: El impacto del entorno inseguro y contaminado en la vida cotidiana de los habitantes.
+* Interpretación: Representa una experiencia de restricción donde las personas evitan salir de sus hogares por miedo a la delincuencia o por la mala calidad del aire. Aunque se rescata la calidez de la gente y el jardín principal, el sentimiento de vulnerabilidad predomina sobre los aspectos positivos.
+* Tono: Mixto (marcadamente pesimista)
+
+### Grupo 3 — "Potencial cultural frente a servicios deficientes"
+
+* Tema central: Valoración de las tradiciones locales y la gastronomía como pilares de una identidad desaprovechada.
+* Interpretación: Los usuarios identifican activos valiosos como las ferias (del nopal o el elote) y el centro histórico, pero los consideran insuficientes ante la falta de limpieza y áreas verdes. Se sugiere que la inversión en seguridad y mantenimiento básico es clave para reactivar el comercio local y la identidad.
+* Tono: Propositivo / Mixto
+
+### Grupo 4 — "Percepción de ciudad de paso"
+
+* Tema central: Visión de Salamanca como un destino funcional sin oferta turística relevante.
+* Interpretación: Agrupa a personas, principalmente foráneos, que ven la ciudad meramente como un lugar de tránsito o residencia temporal ("lugar promedio"). No encuentran elementos diferenciadores que motiven una estancia prolongada o una recomendación turística.
+* Tono: Neutral / Negativo
+
+### Grupo 5 — "Riqueza gastronómica y retos ambientales"
+
+* Tema central: Contraste entre el deleite culinario y el rechazo a la gestión ambiental y vial.
+* Interpretación: Se destaca con entusiasmo la comida local (nieves, empanadas) y los espacios culturales, pero se critica duramente el "aroma asqueroso" de la refinería y la mala cultura vial. Es una visión que reconoce el valor del patrimonio inmaterial mientras sufre las consecuencias del entorno industrial.
+* Tono: Mixto
+
+### Grupo 6 — "Desarraigo y ausencia de atractivos"
+
+* Tema central: Rechazo total a la oferta turística debido a la degradación ambiental por Pemex.
+* Interpretación: Representa la postura más radical, donde la contaminación visual (humo) y la inseguridad anulan cualquier posibilidad de considerar a la ciudad un destino que "valga la pena". El vínculo afectivo se mantiene solo por relaciones personales, no por los atributos del lugar.
+* Tono: Negativo
+
+### Grupo 7 — "Deficiencias en servicios y transporte público"
+
+* Tema central: Frustración por la mala gestión de los servicios básicos y la infraestructura operativa.
+* Interpretación: Se enfoca en problemas logísticos como un sistema de transporte pésimo, caro e inseguro, especialmente de noche. Existe una queja recurrente sobre la falta de interés del gobierno en valorar los paisajes naturales y la cultura existente.
+* Tono: Negativo / Propositivo
+
+### Grupo 8 — "Logística favorable vs. riesgos estructurales"
+
+* Tema central: Identificación de ventajas operativas mínimas en un entorno de alta peligrosidad.
+* Interpretación: Algunos usuarios aprecian aspectos pragmáticos como la falta de tráfico y traslados rápidos, pero concluyen que estos no compensan la inseguridad y la contaminación. Es una evaluación de costo-beneficio donde el riesgo personal termina pesando más que la comodidad logística.
+* Tono: Mixto
+
+### Grupo 9 — "Abandono de recursos naturales y turísticos"
+
+* Tema central: El descuido estatal de activos recreativos y paisajes potenciales.
+* Interpretación: Se reconoce la existencia de lugares lindos a las afueras para actividades como hiking o rutas de bici, pero se lamenta que la ciudad esté "brutalmente abandonada". La falta de infraestructura para la estancia y la inseguridad actual convierten el potencial en una oportunidad perdida.
+* Tono: Negativo / Mixto
+
+## SÍNTESIS
+
+El análisis cualitativo revela una profunda dicotomía en Salamanca. Por un lado, emerge un núcleo de identidad fuerte basado en la gastronomía, tradiciones y potencial para el ecoturismo. Por otro lado, estos activos son sistemáticamente sofocados por una "triada de rechazo": inseguridad crítica, contaminación industrial (refinería) y un marcado abandono institucional en infraestructura y servicios básicos. La percepción predominante es la de un destino con alma cultural atrapado en un entorno físico y social degradado, lo que limita su función a una ciudad de paso o residencia restrictiva.
+--- FIN ---

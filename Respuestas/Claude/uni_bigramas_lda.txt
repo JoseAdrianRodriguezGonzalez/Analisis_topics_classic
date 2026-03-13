@@ -1,0 +1,57 @@
+--- INICIO ---
+## Análisis Cualitativo — LDA | Unigramas + Bigramas | 7 Tópicos
+
+### Grupo 0 — "Lugar contaminado, poco recomendable"
+- Tema central: Percepción de Salamanca como lugar contaminado, inseguro y sin atractivos suficientes para visitar o recomendar.
+- Interpretación: El tópico de mayor peso léxico —"lugar"— domina con amplia ventaja, acompañado de "vivir", "contaminado", "único" y el bigrama "lugar poder", lo que sugiere una evaluación desde la perspectiva del que habita o conoce el lugar de cerca. Los comentarios asignados oscilan entre el rechazo directo ("sáquenme de aquí", "vete lo más pronto posible") y valoraciones más moderadas ("un lugar un poco inseguro"), lo que indica que LDA agrupa aquí una masa heterogénea unida por la evaluación negativa general, aunque con intensidades distintas. El centro histórico se menciona como único espacio funcional, lo que delimita la experiencia positiva a un área muy reducida.
+- Tono: Negativo
+
+---
+
+### Grupo 1 — "Descuido urbano e infraestructura deteriorada"
+- Tema central: Denuncia del abandono físico y la falta de mantenimiento de Salamanca, con crítica explícita a precios elevados y gestión municipal deficiente.
+- Interpretación: Las palabras "descuidado", "precio", "calle", "mantenimiento" y "ranchería" construyen un diagnóstico infrastructural preciso y territorialmente situado. El comentario más largo del corpus —el del residente que describe el deterioro zona por zona, incluyendo las rancherías periféricas y los precios desconectados del salario local— domina este tópico con probabilidad cercana a 1.0. La irrupción del bigrama "salamanca ciudad" refuerza que quienes opinan aquí tienen conocimiento profundo e informado de la ciudad; no son turistas ocasionales sino residentes con memoria urbana acumulada.
+- Tono: Negativo
+
+---
+
+### Grupo 2 — "Ciudad con oferta puntual, imagen deteriorada"
+- Tema central: Reconocimiento de una oferta urbana concreta —gastronómica, cultural, peatonal— contrastada con una imagen ambiental y de seguridad que la eclipsa.
+- Interpretación: "Ciudad", "ofrecer", "centro", "comida", "restaurante", "caminar" y el bigrama "cruz peatonal" dibujan el tópico más detallado y espacialmente específico del análisis. El comentario más extenso del corpus —el del foráneo que describe Bellavista, el centro histórico, la movilidad en bici y los cruces peatonales— se asigna aquí con probabilidad casi perfecta, y funciona como síntesis del tópico: hay experiencias positivas concretas, pero la refinería y la conducción agresiva las contaminan literalmente. Es el único tópico donde la seguridad personal no aparece como barrera absoluta.
+- Tono: Mixto (con tendencia positiva)
+
+---
+
+### Grupo 3 — "Potencial reconocido, ciudad visitada por vínculos"
+- Tema central: Evaluación reflexiva de Salamanca por parte de visitantes con vínculos afectivos o funcionales, que reconocen potencial pero señalan deterioro de la imagen por contaminación e inseguridad.
+- Interpretación: "Ciudad", "salamanca", "visitar", el bigrama "salamanca ciudad", "vida", "considerar" y "local" configuran un tópico de perfil analítico y relacional. Los comentarios incluyen tanto la reflexión más detallada del corpus sobre la ciudad —la que describe el "toque de queda" informal y las ferias como reactivadores urbanos— como valoraciones afectivas de visitantes frecuentes por estudios o familia. La palabra "considerar" es semánticamente reveladora: este grupo no solo describe, sino que delibera sobre la ciudad, ponderando sus virtudes y deficiencias con distancia crítica.
+- Tono: Mixto / Propositivo
+
+---
+
+### Grupo 4 — "Inseguridad y mala imagen: rechazo explícito"
+- Tema central: Condena directa de la inseguridad y la imagen negativa de Salamanca, percibida como ciudad que se deteriora activamente y pierde su identidad cultural.
+- Interpretación: El peso combinado de "ciudad", "inseguridad", "malo", "atracción" y "refinería" construye el tópico más crítico del modelo. Los comentarios asignados incluyen tanto denuncias sistémicas —la ciudad opacada por la violencia, vista como ciudad industrial— como críticas específicas a la colocación de la UG en un contexto de inseguridad y suciedad. La descripción de Salamanca convirtiéndose en "ciudad fantasma" que pierde su gastronomía y cultura por falta de seguridad es la expresión más dramática del deterioro percibido, y marca la diferencia respecto a tópicos que señalan problemas pero reconocen potencial.
+- Tono: Negativo
+
+---
+
+### Grupo 5 — "Inseguridad vivida: salir es riesgo"
+- Tema central: Experiencia cotidiana de personas para quienes la inseguridad se ha convertido en un factor que limita o elimina la movilidad fuera del hogar.
+- Interpretación: "Inseguridad", "salir", "general", "peligroso", "feo" y "faltar" articulan un tópico conductual: la inseguridad no es solo percepción sino práctica de encierro. Los comentarios muestran perfiles muy distintos —quien evita salir por el mandado, quien dice que "todo lo malo proviene de la inseguridad", quien señala que "es peligroso salir de día o de noche"— pero todos comparten la misma restricción espacial. La combinación LDA de unigramas y bigramas permite capturar aquí tanto el patrón conductual ("evito salir") como el diagnóstico causal ("faltar cosa salamanca empezar inseguridad").
+- Tono: Negativo
+
+---
+
+### Grupo 6 — "Transporte deficiente, uso funcional de la ciudad"
+- Tema central: Crítica al transporte público costoso y con horarios limitados, enmarcada en una relación utilitaria con la ciudad mediada por la universidad, el trabajo o el tránsito diario.
+- Interpretación: "Lugar", "ciudad", "transporte", "inseguro", "amigo", "comer", "limitar" y "caro" construyen el perfil del usuario joven —probablemente estudiante universitario o foráneo— que experimenta Salamanca principalmente como espacio de circulación funcional. El comentario más elaborado sobre el transporte —con el detalle del límite de las 7pm, el Uber caro y el "precio de estudiante"— concentra la queja en términos muy concretos y económicos. La ciudad se acepta o se tolera por vínculos afectivos o necesidades prácticas, no por sus atractivos.
+- Tono: Negativo / Mixto
+
+---
+
+## SÍNTESIS
+
+El modelo LDA con unigramas y bigramas ofrece el mejor score de coherencia del conjunto (-0.64) y produce tópicos más nítidos que la versión unigrama pura. La incorporación de bigramas permite capturar relaciones causales y patrones conductuales que los unigramas solos no distinguen. Emergen con claridad tres dimensiones del problema: la inseguridad como restricción conductual (Tópico 5), como deterioro de imagen (Tópico 4) y como falla de gestión (Tópico 1). Frente a ellas, los Tópicos 2 y 3 articulan una ciudad con activos reales —gastronomía, centro histórico, paisaje— que permanecen subutilizados o invisibles para el visitante no vinculado.
+
+--- FIN ---

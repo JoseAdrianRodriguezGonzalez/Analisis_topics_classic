@@ -1,0 +1,39 @@
+--- INICIO SÍNTESIS CRUZADA ---
+
+## TEMAS ROBUSTOS
+
+### Binomio Inseguridad-Violencia — aparece en: todos los métodos (Clustering y LDA)
+
+* Interpretación integrada: Es el patrón más sólido y transversal. La inseguridad no se percibe solo como un dato estadístico, sino como un factor determinante que dicta la dinámica social, provocando un fenómeno de "confinamiento voluntario" y restringiendo la actividad turística y recreativa a horarios y zonas mínimas.
+
+### Estigma de la Contaminación Industrial — aparece en: todos los métodos (Clustering y LDA)
+
+* Interpretación integrada: La presencia de la refinería Pemex se identifica como el principal detractor de la imagen urbana. El impacto sensorial (olores fétidos y contaminación visual) genera una "mala finta" que anula el potencial estético de la ciudad, convirtiéndola en un entorno percibido como insalubre para el visitante.
+
+### Valor de la Gastronomía y Calidez Humana — aparece en: todos los métodos (Clustering y LDA)
+
+* Interpretación integrada: Representa el contrapeso positivo. La identidad culinaria (ferias locales, antojitos) y la hospitalidad de los habitantes emergen como los únicos activos resilientes. Sin embargo, los informantes coinciden en que estos elementos son insuficientes para consolidar un destino turístico frente a las barreras ambientales y de seguridad.
+
+### Deterioro de la Infraestructura Urbana — aparece en: Jerárquico (Unigramas, Bigramas, Trigramas), DBSCAN y LDA
+
+* Interpretación integrada: Existe una crítica recurrente al abandono del mantenimiento básico (baches, falta de áreas verdes, suciedad). La percepción es la de una ciudad "brutalmente descuidada" donde la infraestructura recreativa y el transporte público son deficientes o inexistentes.
+
+## TEMAS ÚNICOS
+
+### Paisajes naturales privatizados — solo en: Jerárquico Trigramas
+
+* Interpretación: Este hallazgo es específico debido a la capacidad de los trigramas para capturar estructuras sintácticas más complejas. Revela una frustración particular sobre el acceso limitado a recursos naturales como el Ecoparque, sugiriendo que incluso los pocos activos recreativos están restringidos.
+
+### Burbuja económica por sueldos petroleros — solo en: DBSCAN (Bigramas)
+
+* Interpretación: El método DBSCAN, al aislar grupos con alta densidad semántica, logró identificar una queja sociopolítica única: Salamanca es una ciudad cara debido a la influencia de los salarios de la refinería, lo que genera una disparidad en el costo de vida que afecta a quienes no pertenecen a dicha industria.
+
+## NARRATIVA FINAL
+
+La percepción turística de Salamanca, Guanajuato, está definida por una contradicción estructural entre su riqueza inmaterial y un entorno físico hostil. La experiencia del visitante y del residente temporal se encuentra bajo el asedio constante de una "tríada de rechazo": inseguridad crítica, contaminación industrial omnipresente y un marcado abandono institucional. La refinería Pemex actúa como el eje de esta identidad conflictiva, proveyendo relevancia económica pero degradando la calidad ambiental y la imagen pública mediante olores y paisajes industriales que desalientan la estancia prolongada.
+
+Ante este panorama, emerge un patrón de resiliencia social donde la calidez de los habitantes y la profundidad de sus tradiciones gastronómicas (ferias y mercados) se convierten en los únicos motores de atracción. No obstante, estos activos operan en un estado de vulnerabilidad; el miedo a la violencia ha transformado la dinámica urbana en una experiencia de confinamiento, donde la vida nocturna es inexistente y los espacios públicos se perciben vandalizados o privatizados.
+
+Salamanca no es vista como un destino recreativo, sino como una ciudad de paso o un centro funcional (laboral/universitario) con una infraestructura en colapso. El sentimiento predominante en los discursos es el de una oportunidad desperdiciada: una ciudad con potencial estético y cultural que ha sido "brutalmente descuidada", donde el estigma de la delincuencia e insalubridad invisibiliza cualquier esfuerzo de promoción turística. Para los informantes, la recuperación del destino depende estrictamente de una intervención gubernamental que logre mitigar la inseguridad y rehabilitar el paisaje urbano degradado.
+
+--- FIN SÍNTESIS CRUZADA ---

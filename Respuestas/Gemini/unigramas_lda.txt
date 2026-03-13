@@ -1,0 +1,68 @@
+--- INICIO ---
+
+## Análisis de Tópicos mediante Modelado LDA: Percepciones Turísticas de Salamanca
+
+### Grupo 0 — "Crisis de seguridad y recreación"
+
+* Tema central: La convergencia de la violencia, la contaminación y la falta de espacios recreativos como barreras para la visita.
+* Interpretación: Se identifica un patrón donde la inseguridad opaca las oportunidades laborales o estudiantiles que la ciudad ofrece. Los visitantes perciben un entorno "hostil" o "fantasma" donde la degradación ambiental por la industria y el peligro constante anulan el interés por explorar la zona.
+* Tono: Negativo
+
+### Grupo 1 — "Experiencia de vida y confinamiento"
+
+* Tema central: La restricción de la movilidad personal y social debido a la percepción de riesgo en el entorno habitado.
+* Interpretación: Refleja la vivencia de residentes y foráneos que limitan sus salidas al mínimo necesario por miedo a la delincuencia. Existe una sensación de resignación ante la suciedad del aire y los altos niveles de inseguridad, lo que impacta directamente en la calidad de vida y la integración social.
+* Tono: Negativo
+
+### Grupo 2 — "Balance de imagen y eventos"
+
+* Tema central: Evaluación de la ciudad que contrasta la mala reputación por delincuencia con activos específicos como las ferias locales.
+* Interpretación: El patrón muestra una visión crítica hacia la gestión urbana pero que rescata tradiciones puntuales, como la feria del nopal o el elote. Se reconoce que, aunque la delincuencia pone una "mala finta" a la ciudad, hay aspectos positivos en su identidad cultural que aún persisten.
+* Tono: Mixto
+
+### Grupo 3 — "Funcionalidad y oferta promedio"
+
+* Tema central: Percepción de Salamanca como un destino con atractivos limitados y oferta turística estancada.
+* Interpretación: Las opiniones sugieren que la ciudad es un lugar "promedio" que no ofrece factores diferenciadores o llamativos para el turista. Se valoran aspectos logísticos prácticos, como la facilidad de traslado por el poco tráfico, pero se lamenta la falta de variedad en actividades recreativas.
+* Tono: Neutral / Negativo
+
+### Grupo 4 — "Limitaciones en servicios y movilidad"
+
+* Tema central: Frustración ante el alto costo de la vida y la deficiencia en el transporte público.
+* Interpretación: Los usuarios señalan una infraestructura de servicios que limita la experiencia nocturna y gastronómica, calificando el transporte como caro e insuficiente. Se percibe una desconexión entre las necesidades de movilidad de los habitantes y la oferta actual, lo que condiciona las decisiones de consumo y ocio.
+* Tono: Negativo / Propositivo
+
+### Grupo 5 — "Dualidad industrial y activos culturales"
+
+* Tema central: Contraste entre el estigma ambiental de la refinería y la riqueza del centro histórico.
+* Interpretación: Este grupo resalta la gastronomía y los espacios culturales (como el Centro de las Artes) como el corazón positivo de la ciudad. Sin embargo, esta experiencia se ve constantemente amenazada por el "aroma asqueroso" y la mala imagen ambiental que proyecta la industria petrolera.
+* Tono: Mixto
+
+### Grupo 6 — "Resiliencia social y gestión gubernamental"
+
+* Tema central: El valor de la calidez humana como mecanismo de defensa ante la falta de apoyo institucional.
+* Interpretación: Se destaca a la población local como "resiliente" y cálida, capaz de generar una buena convivencia a pesar de la inseguridad. Existe un reclamo implícito hacia un gobierno que no ayuda a potenciar la cultura o a proteger los espacios que los ciudadanos intentan mantener vivos.
+* Tono: Mixto / Propositivo
+
+### Grupo 7 — "Potencial aspiracional y actividades externas"
+
+* Tema central: Identificación de oportunidades de crecimiento a través del turismo activo y la gastronomía.
+* Interpretación: Representa una visión más optimista que ve en los alrededores de la ciudad (hiking, rutas de bici) y en la cocina local un potencial de desarrollo. Se sugiere que Salamanca podría prosperar si existiera una voluntad política orientada a mejorar la seguridad y la infraestructura turística.
+* Tono: Positivo / Propositivo
+
+### Grupo 8 — "Deterioro urbano e infraestructura"
+
+* Tema central: Descontento por el abandono físico de las calles y la falta de mantenimiento en zonas periféricas.
+* Interpretación: Los informantes denuncian una infraestructura que "se cae a pedazos", con especial énfasis en el descuido de baches, áreas verdes y rancherías. La opinión general se inclina hacia una ciudad que ha perdido su brillo por la falta de inversión básica en el paisaje urbano.
+* Tono: Negativo
+
+### Grupo 9 — "Identidad visual y potencial abandonado"
+
+* Tema central: Reconocimiento de la belleza estética del centro frente al descuido de la identidad turística.
+* Interpretación: Se rescatan espacios emblemáticos como el Jardín Principal y la calidez de la gente, pero se lamenta que el potencial turístico esté "brutalmente abandonado". El sentimiento predominante es que la ciudad posee elementos bonitos que son invisibilizados por la hostilidad del entorno y la falta de visión gubernamental.
+* Tono: Mixto
+
+## SÍNTESIS
+
+El análisis revela una ciudad fracturada entre su identidad como motor industrial y su potencial como destino cultural. Emergen patrones críticos donde la inseguridad y la contaminación actúan como fuerzas centrífugas que desalientan la estancia. No obstante, existe un núcleo de resiliencia basado en la gastronomía, la vida universitaria y la calidez social. La narrativa general transita desde el descontento por el deterioro físico hasta el reconocimiento de activos culturales infrautilizados, sugiriendo que Salamanca es percibida más como una ciudad de paso resiliente que como un destino turístico consolidado.
+--- FIN ---

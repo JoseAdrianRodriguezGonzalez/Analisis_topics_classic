@@ -1,0 +1,78 @@
+--- INICIO ---
+## Análisis Cualitativo — LDA | Unigramas | 10 Tópicos
+
+### Grupo 0 — "Ciudad peligrosa con uso funcional"
+- Tema central: Percepción de Salamanca como ciudad peligrosa y poco recomendable para el turismo, pero con usos prácticos relacionados con estudios, compras y empleo.
+- Interpretación: Las palabras dominantes "ciudad", "lugar", "peligroso", "contaminación" y "recreación" dibujan un perfil urbano donde el riesgo coexiste con la funcionalidad cotidiana. Los comentarios muestran personas que visitan o han vivido en la ciudad por razones instrumentales —estudios, trabajo, compras— y construyen una imagen mixta: reconocen oportunidades laborales y educativas, pero la inseguridad, la contaminación y la falta de recreación degradan la experiencia. La ciudad se usa, pero no se disfruta ni se recomienda.
+- Tono: Mixto (con tendencia negativa)
+
+---
+
+### Grupo 1 — "Vivir aquí: inseguridad y adaptación"
+- Tema central: Experiencia de residentes y foráneos que han construido una relación cotidiana con la inseguridad como condición de vida normalizada.
+- Interpretación: El eje semántico "lugar → inseguridad → vivir → salir" describe una vida urbana restringida por el miedo. La co-presencia de "foráneo" y "persona" sugiere que este tópico captura sobre todo a quienes llegaron desde fuera y han debido adaptar sus rutinas. El comentario "es un buen lugar para vivir" coexiste con "evito salir por la inseguridad", ilustrando la paradoja central de este grupo: la ciudad es habitable pero no libre. La inseguridad no expulsa, pero sí limita.
+- Tono: Mixto (con tendencia negativa)
+
+---
+
+### Grupo 2 — "Salamanca: ciudad con aspectos negativos"
+- Tema central: Evaluación crítica y reflexiva de Salamanca que identifica múltiples dimensiones de deterioro, con especial énfasis en la inseguridad y la vida cotidiana.
+- Interpretación: Las palabras "malo", "salamanca", "aspecto", "considerar" y "feria" sugieren un perfil de respondente analítico que evalúa la ciudad desde múltiples ángulos. Los comentarios incluyen reflexiones sobre la vida nocturna reducida, la inversión en seguridad pendiente y el contraste entre el deterioro cotidiano y eventos especiales como la feria del elote que reactivan temporalmente la vida urbana. LDA captura aquí una voz ciudadana que no solo describe sino que razona sobre las causas y posibilidades de mejora.
+- Tono: Negativo / Propositivo
+
+---
+
+### Grupo 3 — "Ciudad pequeña, oferta turística mínima"
+- Tema central: Salamanca percibida como un lugar de tamaño reducido con escasas atracciones, actividades limitadas y sin diferenciadores turísticos claros.
+- Interpretación: Con solo seis documentos, este tópico es semánticamente compacto y preciso: "variedad", "atracción", "promedio", "tráfico" y "encontrar" construyen una imagen de ciudad funcional pero anodina. La ausencia de tráfico como ventaja práctica —mencionada en varios comentarios— es el único atributo positivo consistente, lo que ilustra lo bajo de la barra evaluativa aplicada. La ciudad no genera experiencias turísticas memorables; simplemente se atraviesa o se usa como punto de paso.
+- Tono: Negativo / Neutral
+
+---
+
+### Grupo 4 — "Transporte caro, ciudad insegura"
+- Tema central: Crítica a la movilidad urbana deficiente y costosa, enmarcada en una percepción general de inseguridad que limita el uso del espacio público.
+- Interpretación: La combinación de "inseguro", "transporte", "salir", "comer", "limitar" y "caro" revela una experiencia urbana restringida tanto por el riesgo como por los costos. Los comentarios muestran jóvenes —probablemente estudiantes universitarios— para quienes el transporte público que termina temprano y los precios de comida elevados son obstáculos concretos a la vida cotidiana. La inseguridad agrava estas limitaciones, convirtiendo la ciudad en un espacio de circulación mínima y necesaria, no de disfrute.
+- Tono: Negativo
+
+---
+
+### Grupo 5 — "Refinería, violencia e imagen urbana"
+- Tema central: La refinería como símbolo físico y simbólico del deterioro de la imagen de Salamanca, amplificado por la violencia y la suciedad urbana.
+- Interpretación: "Ciudad", "refinería", "ofrecer", "centro", "variedad" y "sentir" construyen un tópico donde la industria petrolera funciona como metonimia de todos los problemas ambientales y reputacionales de la ciudad. Los comentarios critican explícitamente la decisión de instalar una sede universitaria en un contexto tan deteriorado, y contrastan la oferta gastronómica y cultural existente con la imagen dominante de suciedad e inseguridad. La violencia no es local sino sistémica, comparable a otros municipios de Guanajuato.
+- Tono: Negativo
+
+---
+
+### Grupo 6 — "Lugar accesible pero culturalmente limitado"
+- Tema central: Reconocimiento de la accesibilidad económica y la calidez humana de Salamanca, contrastado con la falta de variedad y oferta cultural.
+- Interpretación: Las palabras "poder", "tanto", "cultura", "gobierno" y "ayudar" sugieren un tópico que valora lo que la ciudad ofrece en términos relacionales y económicos, pero señala la ausencia institucional como freno al desarrollo cultural. El comentario sobre la "resiliencia" del lugar es el más positivo del corpus completo, y convive con la crítica a una ciudad "chica" sin variedad de comida, souvenirs ni atracciones. LDA agrupa aquí una tensión entre lo que la gente aporta a la ciudad y lo que la ciudad ofrece formalmente.
+- Tono: Mixto
+
+---
+
+### Grupo 7 — "Potencial percibido, gobierno cuestionado"
+- Tema central: Reconocimiento del potencial turístico, gastronómico y natural de Salamanca, con la gestión gubernamental identificada como obstáculo central para su desarrollo.
+- Interpretación: "Ciudad", "inseguridad", "salamanca", "lindo", "querer" y "gobierno" dibujan un tópico propositivo donde el diagnóstico es claro: la ciudad tiene atributos, pero el gobierno no los desarrolla. Los comentarios incluyen referencias a actividades al aire libre, lugares bonitos en las afueras, gastronomía y cultura como activos reconocidos. La inseguridad no es fatalismo aquí sino falla de gestión atribuible a un actor específico: el gobierno municipal. Es el tópico con mayor agencia política percibida.
+- Tono: Mixto / Propositivo
+
+---
+
+### Grupo 8 — "Opiniones dispersas: descuido y contaminación"
+- Tema central: Conjunto heterogéneo de opiniones que coinciden en señalar el descuido urbano y la contaminación como rasgos definitorios de Salamanca.
+- Interpretación: Con "salamanca", "descuidado", "precio", "calle" y "mantenimiento" como palabras clave, este tópico agrupa respuestas muy diversas en forma —desde "aventura" y "neutral" hasta análisis detallados del deterioro infraestructural— pero convergentes en el diagnóstico de abandono. La presencia de respuestas muy cortas junto a comentarios extensos sobre rancherías y zonas sur sugiere que LDA captura aquí una coincidencia temática de fondo más que un perfil discursivo homogéneo. El mantenimiento como categoría explícita indica que el deterioro se percibe como resultado de omisión, no de falta de recursos.
+- Tono: Negativo
+
+---
+
+### Grupo 9 — "Ciudad con potencial, poco visitada y conocida"
+- Tema central: Percepción de Salamanca como ciudad con potencial turístico y aspectos bonitos que permanecen desconocidos o inaccesibles para la mayoría de los visitantes.
+- Interpretación: Las palabras "turístico", "bonito", "potencial", "gente" y "agradable" conforman el tópico más positivo del análisis LDA, aunque su co-presencia con "gobierno" y "mayoría" revela que el potencial sigue siendo percibido como no realizado. Los comentarios incluyen tanto la descripción hostil de la ciudad como el elogio a su jardín principal y la calidez de su gente, sugiriendo que el atractivo de Salamanca es selectivo y dependiente del tipo de visitante y su nivel de conocimiento local. Quienes no han visitado el centro simplemente no han accedido a lo que la ciudad podría ofrecer.
+- Tono: Mixto (con tendencia positiva)
+
+---
+
+## SÍNTESIS
+
+El modelo LDA con unigramas produce tópicos temáticamente plausibles aunque con cierta superposición, consistente con un score de coherencia moderado. Los diez tópicos revelan una estructura de opinión estratificada: desde el rechazo radical y la inseguridad vivida hasta el reconocimiento del potencial cultural y gastronómico. La refinería, el gobierno ausente y el deterioro infraestructural son ejes transversales. A diferencia de los métodos de clustering, LDA captura mixturas discursivas dentro de cada documento, permitiendo identificar tópicos propositivos y analíticos que los métodos de asignación dura tienden a fragmentar. La inseguridad permea todos los tópicos sin excepción.
+
+--- FIN ---

@@ -1,0 +1,123 @@
+## Análisis Cualitativo de Opiniones Turísticas
+
+**Método:** LDA con Unigramas + Bigramas
+**Número de tópicos:** 7
+**Coherence UMass:** -0.6432 | **Perplexity:** 766.32
+
+El análisis LDA identifica siete patrones discursivos principales en las opiniones de los encuestados sobre Salamanca, Guanajuato. Los tópicos reflejan percepciones relacionadas con seguridad, infraestructura urbana, oferta turística, experiencia cotidiana y potencial de desarrollo. A continuación se presenta la interpretación cualitativa de cada uno.
+
+---
+
+# Grupo 0 — Evaluación general del lugar para vivir o visitar
+
+**Tema central:** Valoración general de Salamanca como espacio cotidiano y potencial destino.
+
+**Interpretación:**
+Este tópico agrupa comentarios amplios donde los encuestados describen a Salamanca como un “lugar” en términos generales. Aparecen referencias a vivir, visitar o conocer la ciudad, lo que sugiere evaluaciones globales más que observaciones específicas sobre infraestructura o servicios turísticos. En estas opiniones se mezclan percepciones positivas —como la posibilidad de conocer lugares o convivir con personas— con menciones a aspectos negativos como contaminación o limitaciones del entorno urbano.
+
+En muchos casos los participantes reconocen ciertos aspectos agradables de la ciudad, pero al mismo tiempo cuestionan su atractivo turístico o su capacidad para ofrecer experiencias destacadas a los visitantes.
+
+**Tono predominante:** mixto
+
+---
+
+# Grupo 1 — Infraestructura urbana descuidada y gestión pública
+
+**Tema central:** Críticas al mantenimiento urbano y a la gestión gubernamental.
+
+**Interpretación:**
+Las palabras clave de este tópico (descuidado, mantenimiento, calle, gobierno) reflejan percepciones relacionadas con el estado físico de la ciudad y la gestión institucional. Los comentarios enfatizan problemas de infraestructura como calles deterioradas, falta de mantenimiento en espacios públicos y abandono de algunas zonas urbanas y rurales.
+
+También aparece la idea de que Salamanca posee recursos o espacios que podrían ser turísticos, pero que no reciben la atención adecuada por parte de las autoridades. En este sentido, el discurso combina críticas hacia la administración pública con la percepción de que el desarrollo turístico podría mejorar mediante inversión y mantenimiento urbano.
+
+**Tono predominante:** negativo con elementos propositivos
+
+---
+
+# Grupo 2 — Experiencia urbana en el centro y oferta gastronómica
+
+**Tema central:** Actividades cotidianas y experiencia de recorrer el centro de la ciudad.
+
+**Interpretación:**
+Este tópico se relaciona con la experiencia práctica de visitar Salamanca, particularmente en el centro urbano. Las palabras asociadas —comida, restaurante, caminar, centro— indican que muchos comentarios describen actividades comunes como comer, pasear o recorrer espacios urbanos.
+
+En general, la gastronomía aparece como uno de los elementos más valorados dentro de la experiencia turística local. Sin embargo, estas menciones suelen presentarse dentro de evaluaciones moderadas, donde el centro es percibido como uno de los pocos espacios con actividades disponibles para visitantes.
+
+**Tono predominante:** moderadamente positivo
+
+---
+
+# Grupo 3 — Potencial turístico y valoración cultural
+
+**Tema central:** Reconocimiento del potencial cultural y turístico de Salamanca.
+
+**Interpretación:**
+En este grupo aparecen discursos más reflexivos sobre el papel de la ciudad como destino turístico. Los comentarios mencionan aspectos culturales, vida local y características urbanas que podrían contribuir a una experiencia turística interesante.
+
+Muchos encuestados señalan que Salamanca cuenta con elementos culturales, tradiciones y espacios que podrían atraer visitantes. Sin embargo, estas opiniones también suelen señalar que dicho potencial no está plenamente desarrollado o promocionado.
+
+El tópico refleja una percepción relativamente equilibrada entre reconocimiento de virtudes y conciencia de limitaciones estructurales.
+
+**Tono predominante:** propositivo
+
+---
+
+# Grupo 4 — Inseguridad y deterioro de la imagen urbana
+
+**Tema central:** Impacto de la inseguridad en la percepción turística de la ciudad.
+
+**Interpretación:**
+Este tópico es uno de los más claramente definidos del modelo. Las palabras clave —inseguridad, malo, refinería, atractivo— indican que los encuestados vinculan directamente la seguridad pública con la imagen turística de Salamanca.
+
+Las opiniones destacan que la violencia o la percepción de peligro reduce el interés por visitar la ciudad y afecta la confianza de turistas potenciales. Además, la presencia de la refinería aparece como un elemento simbólico que contribuye a una imagen industrial y contaminada del entorno urbano.
+
+Este conjunto de opiniones sugiere que la seguridad y la imagen ambiental son factores críticos en la evaluación turística de Salamanca.
+
+**Tono predominante:** negativo
+
+---
+
+# Grupo 5 — Restricción de actividades por percepción de peligro
+
+**Tema central:** Adaptación de la vida cotidiana ante la inseguridad.
+
+**Interpretación:**
+En este grupo los comentarios describen cómo la inseguridad influye directamente en el comportamiento de residentes o visitantes frecuentes. Las palabras asociadas —salir, peligroso, general— reflejan experiencias donde las personas limitan sus actividades o evitan ciertos espacios urbanos.
+
+A diferencia del tópico anterior, donde se analiza la imagen de la ciudad, aquí el énfasis está en la experiencia personal: evitar salir de noche, reducir desplazamientos o percibir la ciudad como peligrosa.
+
+Este discurso revela cómo la percepción de riesgo afecta no solo la imagen turística sino también la dinámica cotidiana de la ciudad.
+
+**Tono predominante:** negativo
+
+---
+
+# Grupo 6 — Limitaciones de movilidad, costos y servicios urbanos
+
+**Tema central:** Experiencias prácticas relacionadas con transporte, precios y accesibilidad.
+
+**Interpretación:**
+Este tópico agrupa comentarios sobre aspectos funcionales de la vida urbana que influyen en la experiencia turística, como el transporte público, el costo de actividades o la accesibilidad de servicios.
+
+Los encuestados mencionan limitaciones en horarios de transporte, costos relativamente altos o dificultades para desplazarse. Estos factores afectan tanto a residentes como a visitantes y pueden influir en la percepción general de comodidad al recorrer la ciudad.
+
+En algunos casos también se menciona que estos problemas limitan las actividades recreativas disponibles.
+
+**Tono predominante:** mixto
+
+---
+
+# Síntesis Interpretativa
+
+El análisis cualitativo revela que las percepciones sobre Salamanca como destino turístico están fuertemente condicionadas por tres dimensiones principales:
+
+**1. Seguridad y percepción de riesgo**
+La inseguridad aparece como el factor más recurrente en las opiniones, influyendo tanto en la imagen de la ciudad como en la experiencia cotidiana de residentes y visitantes.
+
+**2. Infraestructura y gestión urbana**
+Las críticas al mantenimiento de calles, espacios públicos y zonas urbanas sugieren que el estado físico de la ciudad afecta la valoración turística del destino.
+
+**3. Potencial cultural y gastronómico**
+A pesar de las críticas, varios comentarios destacan la gastronomía, el centro urbano y algunas tradiciones locales como elementos que podrían fortalecer la oferta turística.
+
+En conjunto, las opiniones reflejan una percepción ambivalente de Salamanca: una ciudad con potencial cultural y gastronómico, pero cuya imagen turística se ve limitada por problemas de seguridad, contaminación y mantenimiento urbano.

@@ -1,0 +1,69 @@
+--- INICIO ---
+
+## Análisis Cualitativo de Opiniones Turísticas — Clustering Jerárquico (Trigramas)
+
+### Grupo 0 — "Ciudad promedio sin atractivos"
+
+* Tema central: Evaluaciones generales que describen a Salamanca como un lugar promedio con pocas ofertas turísticas.
+* Interpretación: Las opiniones de este grupo presentan a la ciudad como un destino con escasos atractivos distintivos. Se mencionan problemas como contaminación asociada a la refinería, inseguridad y falta de actividades. Aunque ocasionalmente se reconoce cierto potencial cultural o gastronómico, predomina la idea de que actualmente ofrece poco para el turismo.
+* Tono: mixto
+
+### Grupo 1 — "Vida cotidiana condicionada por inseguridad"
+
+* Tema central: Experiencias de residentes o visitantes frecuentes que limitan sus actividades debido a la inseguridad.
+* Interpretación: Este grupo refleja testimonios de personas que viven o pasan tiempo en la ciudad y que han modificado su comportamiento por la percepción de inseguridad. Se menciona evitar salir o participar en actividades recreativas, además de críticas al descuido urbano. La ciudad es percibida como un lugar con potencial, pero deteriorado por problemas estructurales.
+* Tono: negativo
+
+### Grupo 2 — "Reconocimiento gastronómico con limitaciones"
+
+* Tema central: Valoración positiva de la gastronomía local combinada con dudas sobre su atractivo turístico general.
+* Interpretación: Las respuestas destacan la calidad de la comida y algunos aspectos agradables de la ciudad. Sin embargo, estas cualidades se ven opacadas por preocupaciones sobre inseguridad, contaminación o falta de atractivos suficientes para motivar visitas turísticas. Se trata de un discurso que reconoce virtudes específicas dentro de una evaluación general moderada.
+* Tono: mixto
+
+### Grupo 3 — "Vínculos personales y experiencias locales"
+
+* Tema central: Opiniones influenciadas por experiencias personales vinculadas a estudio, origen o relaciones sociales en la ciudad.
+* Interpretación: En este grupo aparecen comentarios de personas que nacieron en la ciudad o la visitan por motivos académicos o familiares. Se mencionan elementos simbólicos como el jardín principal o la convivencia con la gente local. Aunque también se registran críticas a la infraestructura, el enfoque se centra más en la experiencia cotidiana que en el turismo.
+* Tono: mixto
+
+### Grupo 4 — "Contaminación, inseguridad y percepción urbana"
+
+* Tema central: Evaluación de Salamanca como ciudad poco atractiva debido a contaminación ambiental e inseguridad.
+* Interpretación: Este grupo reúne percepciones negativas sobre la calidad ambiental y la seguridad urbana. La presencia de la refinería y el mal estado del entorno urbano aparecen como factores que afectan la imagen de la ciudad. Aunque algunos comentarios reconocen aspectos sociales positivos o costos accesibles, predomina la percepción de un entorno poco atractivo para el turismo.
+* Tono: negativo
+
+### Grupo 5 — "Inseguridad y falta de oferta recreativa"
+
+* Tema central: Críticas a la falta de actividades, infraestructura turística y seguridad en la ciudad.
+* Interpretación: Las opiniones destacan la ausencia de atracciones llamativas y el temor a salir, especialmente durante la noche. También se menciona el deterioro urbano y deficiencias en transporte o servicios públicos. En algunos casos se reconoce que la ciudad podría tener potencial cultural o gastronómico, pero que este no se aprovecha.
+* Tono: negativo
+
+### Grupo 6 — "Potencial cultural y natural desaprovechado"
+
+* Tema central: Reconocimiento de recursos culturales o naturales que no han sido adecuadamente desarrollados.
+* Interpretación: Este grupo enfatiza la existencia de paisajes naturales, gastronomía y espacios recreativos que podrían fortalecer la oferta turística. Sin embargo, los comentarios también señalan problemas de gestión pública, privatización de espacios o deficiencias en transporte. La narrativa dominante plantea que el potencial existe pero está poco valorado o mal gestionado.
+* Tono: propositivo
+
+### Grupo 7 — "Ciudad insegura y poco recreativa"
+
+* Tema central: Percepción de Salamanca como un lugar inseguro, contaminado y con escasas opciones de ocio.
+* Interpretación: Los comentarios sintetizan múltiples críticas concentradas en seguridad, contaminación y falta de actividades recreativas. La ciudad es descrita como aburrida o poco atractiva para visitantes. Este grupo refleja evaluaciones contundentes sobre la limitada capacidad de Salamanca para funcionar como destino turístico.
+* Tono: negativo
+
+### Grupo 8 — "Potencial turístico abandonado"
+
+* Tema central: Críticas directas al abandono del potencial turístico de la ciudad.
+* Interpretación: Las respuestas señalan que Salamanca podría ser un destino atractivo si existiera mayor cuidado urbano y gestión turística. La percepción de abandono, suciedad e inseguridad domina la narrativa. El contraste entre potencial y realidad genera un discurso particularmente crítico hacia la administración y el estado de la ciudad.
+* Tono: negativo
+
+### Grupo 9 — "Potencial gastronómico y cultural"
+
+* Tema central: Reconocimiento explícito de la gastronomía y las actividades culturales como fortalezas de la ciudad.
+* Interpretación: Aunque se mencionan experiencias negativas o reservas sobre la ciudad, este grupo destaca elementos positivos relacionados con la cultura y la comida. Las opiniones sugieren que estos recursos podrían convertirse en pilares del turismo local si se desarrollaran adecuadamente. El discurso combina crítica con identificación de oportunidades.
+* Tono: propositivo
+
+## SÍNTESIS
+
+El análisis mediante trigramas identifica percepciones dominadas por preocupaciones sobre inseguridad, contaminación y escasez de atractivos turísticos. Sin embargo, también emergen narrativas que reconocen el potencial de la gastronomía, la cultura y algunos espacios naturales. Varias opiniones reflejan experiencias cotidianas de residentes o estudiantes, más que de turistas ocasionales. En conjunto, los resultados sugieren que Salamanca es percibida como una ciudad con recursos turísticos latentes, pero afectada por problemas urbanos y de gestión que limitan su consolidación como destino turístico.
+
+--- FIN ---

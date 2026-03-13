@@ -1,0 +1,51 @@
+--- INICIO SÍNTESIS CRUZADA ---
+
+## TEMAS ROBUSTOS
+
+### Inseguridad como factor dominante — aparece en: Clustering Jerárquico (Unigramas), Clustering Jerárquico (Bigramas), DBSCAN (Bigramas), Clustering adicional (10 grupos), LDA (Unigramas), LDA (Unigramas + Bigramas)
+
+* Interpretación integrada: La percepción de inseguridad emerge como el patrón más consistente en todos los enfoques analíticos. Los comentarios señalan que el riesgo percibido condiciona tanto la experiencia cotidiana como la valoración turística de la ciudad. Este factor no solo afecta la decisión de visitar Salamanca, sino que también limita las actividades recreativas, especialmente durante la noche, generando una imagen urbana asociada al peligro y reduciendo el atractivo del destino.
+
+### Infraestructura urbana descuidada — aparece en: Clustering Jerárquico (Unigramas), Clustering Jerárquico (Bigramas), DBSCAN (Bigramas), Clustering adicional (10 grupos), LDA (Unigramas), LDA (Unigramas + Bigramas)
+
+* Interpretación integrada: En múltiples métodos surge la percepción de abandono urbano, caracterizado por calles deterioradas, espacios públicos mal mantenidos y suciedad. Este deterioro físico de la ciudad afecta directamente la experiencia turística y contribuye a una imagen negativa del destino. Además, los encuestados suelen vincular este problema con una gestión gubernamental deficiente.
+
+### Potencial turístico desaprovechado — aparece en: Clustering Jerárquico (Unigramas), Clustering Jerárquico (Bigramas), DBSCAN (Bigramas), Clustering adicional (10 grupos), LDA (Unigramas), LDA (Unigramas + Bigramas)
+
+* Interpretación integrada: A pesar de las críticas, muchos participantes reconocen que Salamanca posee recursos culturales, gastronómicos o naturales que podrían convertirse en atractivos turísticos. Sin embargo, consideran que estos recursos no han sido desarrollados adecuadamente. Este patrón refleja una percepción ambivalente donde el potencial del destino contrasta con su situación actual.
+
+### Ciudad funcional para vivir más que para turistear — aparece en: Clustering Jerárquico (Unigramas), Clustering Jerárquico (Bigramas), DBSCAN (Bigramas), Clustering adicional (10 grupos), LDA (Unigramas), LDA (Unigramas + Bigramas)
+
+* Interpretación integrada: Los análisis coinciden en que Salamanca es percibida principalmente como un espacio cotidiano vinculado al trabajo, estudio o residencia. Muchos visitantes llegan por motivos personales o académicos, más que por interés turístico. Esta percepción refuerza la idea de una ciudad funcional que no se posiciona claramente como destino recreativo.
+
+### Gastronomía y convivencia social como elementos positivos — aparece en: Clustering Jerárquico (Unigramas), DBSCAN (Bigramas), Clustering adicional (10 grupos), LDA (Unigramas), LDA (Unigramas + Bigramas)
+
+* Interpretación integrada: Entre los pocos aspectos consistentemente positivos destaca la gastronomía local y la percepción de una comunidad amable. Restaurantes, comida y convivencia social aparecen como experiencias agradables dentro de la ciudad, lo que sugiere que estos elementos podrían constituir una base para fortalecer la identidad turística del destino.
+
+---
+
+## TEMAS ÚNICOS
+
+### Reacciones emocionales extremas — solo en: DBSCAN (Bigramas)
+
+* Interpretación: Este patrón corresponde a comentarios muy breves y emocionalmente intensos que expresan frustración o rechazo hacia la ciudad. DBSCAN, al detectar densidades semánticas atípicas, logra identificar estos microgrupos de expresiones emocionales que otros métodos tienden a diluir dentro de clusters más grandes.
+
+### Privatización o inaccesibilidad de espacios naturales — solo en: Clustering adicional (10 grupos)
+
+* Interpretación: Este tema surge en el análisis interpretativo que enfatiza críticas a la gestión de espacios naturales y áreas verdes. Probablemente aparece solo aquí porque el enfoque conceptual permitió identificar narrativas específicas sobre accesibilidad, mientras que los modelos basados en frecuencia léxica no detectaron suficiente recurrencia de estos términos.
+
+### Contaminación industrial asociada a la refinería como imagen turística — solo en: Clustering adicional (10 grupos)
+
+* Interpretación: Aunque la contaminación se menciona en otros modelos, este método resalta explícitamente el papel simbólico de la refinería como elemento central de la imagen negativa de la ciudad. La mayor riqueza interpretativa del análisis permitió identificar este componente narrativo con mayor claridad.
+
+---
+
+## NARRATIVA FINAL
+
+El análisis cruzado de múltiples métodos de minería de texto revela una percepción predominantemente crítica sobre Salamanca, Guanajuato, como destino turístico. El patrón más consistente entre los distintos enfoques es la preocupación por la inseguridad, la cual aparece como el principal factor que limita tanto la experiencia cotidiana de residentes como la disposición de los visitantes a explorar la ciudad. Esta percepción se complementa con una narrativa recurrente de deterioro urbano, donde los encuestados señalan problemas de mantenimiento en calles, espacios públicos e infraestructura, asociándolos frecuentemente con una gestión gubernamental insuficiente.
+
+A pesar de este panorama negativo, los resultados muestran una percepción ambivalente del destino. Diversos análisis coinciden en que Salamanca posee recursos culturales y gastronómicos valorados por los visitantes, particularmente en el centro urbano y en la oferta culinaria local. Asimismo, algunos participantes destacan la amabilidad de la población y ciertos espacios de convivencia social.
+
+No obstante, estas fortalezas suelen quedar eclipsadas por la percepción de que la ciudad carece de una oferta turística consolidada. Muchos encuestados describen Salamanca principalmente como un lugar funcional para vivir, estudiar o trabajar, más que como un destino recreativo. En consecuencia, emerge con fuerza la narrativa de un “potencial turístico desaprovechado”, donde los recursos culturales y sociales existentes no se han traducido en una experiencia turística atractiva ni en una estrategia clara de desarrollo del destino.
+
+--- FIN SÍNTESIS CRUZADA ---
