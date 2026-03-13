@@ -5,14 +5,16 @@ import os
 import re
 import json
 
-#Directorio/Rutas
-DIR_SCRIPT = os.path.dirname(os.path.abspath(__file__))
+#Directio/Rutas
+DIR_SCRIPT = os.path.dirname(os.path.abspath(__file__))  # carpeta llm_model/
 DIR_RAIZ = os.path.dirname(DIR_SCRIPT)
-DIR_DATOS = os.path.join(DIR_RAIZ, "data", "analisis_clusters")
+DIR_PROMPTS = os.path.join(DIR_RAIZ, "data", "analisis_clusters", "prompts")
+os.makedirs(DIR_PROMPTS, exist_ok=True)
 DIR_SALIDA = DIR_SCRIPT
 
-print("Inicializando Qwen 2.5 (7B)")
+print(f"Buscando prompts en: {DIR_PROMPTS}")
 
+#Configuración del modelo Qwen 2.5 (7B)
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_compute_dtype=torch.float16
@@ -33,79 +35,83 @@ generador = pipeline(
     return_full_text=False
 )
 
-#Función de análisis LLM
-def analizar_cluster_local(archivo_entrada, archivo_salida):
-    ruta_entrada = os.path.join(DIR_DATOS, archivo_entrada)
-    ruta_salida = os.path.join(DIR_SALIDA, archivo_salida)
 
-    if not os.path.exists(ruta_entrada):
-        print(f"\nError: No se encontró el archivo {ruta_entrada}")
+def procesar_texto_descriptores(nombre_archivo_txt, nombre_salida_csv):
+    ruta_txt = os.path.join(DIR_PROMPTS, nombre_archivo_txt)
+
+    if not os.path.exists(ruta_txt):
+        print(f"No se encontró {nombre_archivo_txt}")
         return
 
-    print(f"Analizando: {archivo_entrada}")
+    with open(ruta_txt, 'r', encoding='utf-8') as f:
+        contenido = f.read()
 
-    df_rep = pd.read_csv(ruta_entrada)
+    # Separar el contenido por clústeres
+    bloques = re.split(r'Cluster (\d+)', contenido)
     resultados_llm = []
 
-    for cluster_id, grupo in df_rep.groupby('cluster'):
-        respuestas = grupo['comentario'].dropna().tolist()[:10]
-        texto_respuestas = "\n".join([f"- {r}" for r in respuestas])
+    # Iterar sobre los bloques detectados
+    for i in range(1, len(bloques), 2):
+        id_cluster = bloques[i]
+        datos_cluster = bloques[i + 1].split('=' * 50)[0].strip()
+
+        print(f"Analizando descriptores estadísticos del Clúster {id_cluster}...")
+
+        prompt_ia = f"""Analiza las siguientes palabras clave y sus métricas TF-IDF que definen al Clúster {id_cluster}:
+{datos_cluster}
+
+Genera un análisis técnico y devuelve ÚNICAMENTE un JSON con esta estructura:
+{{
+  "sintesis": "Un párrafo breve del tema principal",
+  "interpretacion": "La percepción o queja ciudadana que proyectan estos términos",
+  "etiquetas": "4 palabras clave separadas por comas"
+}}"""
 
         mensajes = [
             {"role": "system",
-             "content": "Eres un analista de datos experto. Solo puedes responder con un objeto JSON válido. No escribas texto fuera del JSON."},
-            {"role": "user",
-             "content": f"Analiza estos textos del Clúster {cluster_id}:\n{texto_respuestas}\n\nDevuelve ÚNICAMENTE un JSON con esta estructura exacta:\n{{\n  \"sintesis\": \"Un párrafo resumiendo el tema principal\",\n  \"interpretacion\": \"Un párrafo interpretando el tono, queja o emoción de fondo\",\n  \"etiquetas\": \"4 palabras clave separadas por comas\"\n}}"}
+             "content": "Eres un analista de datos experto. Solo respondes con JSON válido sin texto adicional."},
+            {"role": "user", "content": prompt_ia}
         ]
 
-        prompt = tokenizer.apply_chat_template(mensajes, tokenize=False, add_generation_prompt=True)
-
-        print(f"Procesando Clúster {cluster_id}...")
+        full_prompt = tokenizer.apply_chat_template(mensajes, tokenize=False, add_generation_prompt=True)
 
         salida = generador(
-            prompt,
+            full_prompt,
             max_new_tokens=400,
             temperature=0.1,
             do_sample=True
         )
         texto_generado = salida[0]['generated_text'].strip()
 
-        #Extracción segura de JSON
-        sintesis, interpretacion, etiquetas = "", "", ""
         try:
+            # Extraer solo el contenido entre llaves por si el modelo añade texto extra
             match = re.search(r'\{.*\}', texto_generado, re.DOTALL)
             if match:
                 datos_json = json.loads(match.group(0))
-                sintesis = datos_json.get("sintesis", "")
-                interpretacion = datos_json.get("interpretacion", "")
-                etiquetas = datos_json.get("etiquetas", "")
-            else:
-                sintesis = "Error: La IA no generó el JSON correctamente."
-        except json.JSONDecodeError:
-            sintesis = "Error al leer el JSON. Texto crudo: " + texto_generado
+                resultados_llm.append({
+                    'Cluster': int(id_cluster),
+                    'Sintesis_Tema': datos_json.get("sintesis", ""),
+                    'Interpretacion_Semantica': datos_json.get("interpretacion", ""),
+                    'Etiquetas_Conceptuales': datos_json.get("etiquetas", "")
+                })
+        except Exception as e:
+            print(f"Error en JSON de clúster {id_cluster}: {e}")
 
-        resultados_llm.append({
-            'Cluster': cluster_id,
-            'Sintesis_Tema': sintesis,
-            'Interpretacion_Semantica': interpretacion,
-            'Etiquetas_Conceptuales': etiquetas
-        })
+    # Guardar en CSV
+    if resultados_llm:
+        df_final = pd.DataFrame(resultados_llm)
+        ruta_csv_final = os.path.join(DIR_SALIDA, nombre_salida_csv)
+        df_final.to_csv(ruta_csv_final, index=False)
+        print(f"CSV generado: {nombre_salida_csv}")
 
-    # Guardar resultados específicos
-    pd.DataFrame(resultados_llm).to_csv(ruta_salida, index=False)
-    print(f"Análisis guardado con éxito en: {archivo_salida}")
-
-#Ejecución por lotes
+#Ejecución
 if __name__ == "__main__":
-    #Diccionario con el archivo de entrada y el nombre que tendrá el archivo de salida
-    archivos_a_procesar = [
-        ("representativos_unigramas_jerarquico.csv", "llm_unigramas_jerarquico.csv"),
-        ("representativos_bigramas_jerarquico.csv", "llm_bigramas_jerarquico.csv"),
-        ("representativos_bigramas_dbscan.csv", "llm_bigramas_dbscan.csv"),
-        ("representativos_trigramas_jerarquico.csv", "llm_trigramas_jerarquico.csv")
+    tareas = [
+        ("top5_unigramas_jerarquico.txt", "llm_unigramas_jerarquico.csv"),
+        ("top5_bigramas_jerarquico.txt", "llm_bigramas_jerarquico.csv"),
+        ("top5_bigramas_dbscan.txt", "llm_bigramas_dbscan.csv"),
+        ("top5_trigramas_jerarquico.txt", "llm_trigramas_jerarquico.csv")
     ]
 
-    for entrada, salida in archivos_a_procesar:
-        analizar_cluster_local(entrada, salida)
-
-    print("\nTodos los análisis cualitativos guradados")
+    for txt, csv in tareas:
+        procesar_texto_descriptores(txt, csv)
