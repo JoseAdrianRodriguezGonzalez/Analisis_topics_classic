@@ -1,0 +1,68 @@
+TOP 5 PALABRAS POR CLUSTER
+Metodo: BIGRAMAS | DBSCAN
+==================================================
+
+Cluster 0 (76 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar vivir                 0.030769    4.091042                 2
+  2     lugar inseguro              0.027197    3.803360                 3
+  3     salamanca ciudad            0.026190    3.110213                 7
+  4     lugar atractivo             0.024200    3.397895                 5
+  5     oler feo                    0.021757    4.091042                 2
+
+Cluster 1 (4 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     visitar centro              0.136083    1.693147                 1
+  2     desconocer mayoria          0.136083    1.693147                 1
+  3     aspecto preguntar           0.136083    1.693147                 1
+  4     preguntar encuesta          0.136083    1.693147                 1
+  5     encuesta visitar            0.136083    1.693147                 1
+
+Cluster 2 (8 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     asentar foraneo             0.176777    2.098612                 2
+  2     lugar asentar               0.176777    2.098612                 2
+  3     lugar inseguro              0.125000    2.504077                 1
+  4     lugar peligroso             0.088388    2.504077                 1
+  5     peligroso adaptar           0.088388    2.504077                 1
+
+Cluster 3 (4 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     peligroso bonito            0.333333    1.693147                 1
+  2     abandonado descuidar        0.149071    1.693147                 1
+  3     ciudad potencial            0.149071    1.693147                 1
+  4     potencial turistico         0.149071    1.693147                 1
+  5     turistico brutalmente       0.149071    1.693147                 1
+
+Cluster 4 (8 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar peligroso             0.101015    2.386294                 1
+  2     peligroso adaptar           0.101015    2.386294                 1
+  3     salamanca ciudad            0.053995    2.386294                 1
+  4     calid gente                 0.053995    2.386294                 1
+  5     ciudad gobierno             0.053995    2.386294                 1
+
+Cluster 5 (4 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     salamanca descuidado        0.149071    1.510826                 2
+  2     turistico brutalmente       0.111803    1.916291                 1
+  3     abandonado descuidar        0.111803    1.916291                 1
+  4     brutalmente abandonado      0.111803    1.916291                 1
+  5     potencial turistico         0.111803    1.916291                 1
+
+Cluster 6 (4 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     saquenmir ayudo             0.500000    1.405465                 1
+  2     ayudar general              0.204124    1.405465                 1
+  3     faltar cosa                 0.204124    1.405465                 1
+  4     cosa salamanca              0.204124    1.405465                 1
+  5     salamanca empezar           0.204124    1.405465                 1
+
+==================================================

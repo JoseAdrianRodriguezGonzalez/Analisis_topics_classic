@@ -1,0 +1,78 @@
+--- INICIO ---
+## Análisis Cualitativo — Clustering Jerárquico Ward | Trigramas | UMAP | 10 Clusters
+
+### Grupo 0 — "Refinería, peligro y oferta turística escasa"
+- Tema central: Percepción de Salamanca como lugar con olor industrial, peligrosidad cotidiana y muy poco que ofrecer al turismo.
+- Interpretación: Los trigramas dominantes articulan dos quejas sensoriales y funcionales simultáneas: el olor de la refinería como experiencia física desagradable, y la pobreza de la oferta turística expresada en la cadena "lugar promedio → promedio ofrecer → ofrecer turísticamente". La gastronomía y las actividades culturales aparecen como excepción reconocida, aunque insuficiente para revertir la imagen general. El trigrama "lugar peligroso adaptar" indica que la inseguridad ya no se percibe como emergencia sino como condición normalizada.
+- Tono: Negativo
+
+---
+
+### Grupo 1 — "Residentes que evitan salir por inseguridad"
+- Tema central: Experiencia de personas que viven en Salamanca y han modificado sus rutinas cotidianas para evitar exponerse a la inseguridad.
+- Interpretación: La cadena trigrámica "llevar tiempo vivir → tiempo vivir general → vivir general evito → general evito salir → evito salir inseguridad" es notablemente coherente y construye una secuencia narrativa completa: residencia reciente, rutina restrictiva, causa explícita. Este cluster captura el impacto conductual de la inseguridad, no solo su percepción abstracta. La presencia de comentarios sobre el descuido urbano y el potencial turístico abandonado sugiere que estos residentes tienen conciencia del problema estructural más allá de su experiencia personal.
+- Tono: Negativo
+
+---
+
+### Grupo 2 — "Gastronomía valorada, destino poco atractivo"
+- Tema central: Reconocimiento de la oferta gastronómica como fortaleza genuina de Salamanca, contrastada con su débil atractivo turístico general.
+- Interpretación: Los bigramas principales "gastronomía lugar atractivo" y "lugar atractivo visitar" no son contradictorios sino tensionales: la gastronomía existe y se valora, pero no es suficiente para convertir a Salamanca en un destino atractivo. El trigrama "lugar lindo cosa cambiar" refuerza esta ambivalencia: hay belleza y potencial, pero también una demanda implícita de transformación. La mención del transporte caro y la comida de precio elevado introduce una dimensión de accesibilidad económica que penaliza adicionalmente la experiencia del visitante.
+- Tono: Mixto
+
+---
+
+### Grupo 3 — "Vínculos afectivos y experiencia universitaria"
+- Tema central: Experiencias de visitantes cuyo contacto con Salamanca está mediado por la universidad, el afecto y la valoración de espacios cotidianos como el jardín principal.
+- Interpretación: Este cluster agrupa un perfil específico: personas que visitan Salamanca por razones académicas o familiares y construyen su opinión desde esa proximidad afectiva. Los trigramas "naci visito universidad → visito universidad gustar → universidad gustar jardín → gustar jardín principal" trazan una narrativa de pertenencia y nostalgia urbana. La frase "comodidad convivencia mayormente" sugiere una valoración basada en la habitabilidad social antes que en los atractivos turísticos formales.
+- Tono: Positivo / Mixto
+
+---
+
+### Grupo 4 — "Foráneos ante contaminación e inseguridad"
+- Tema central: Percepción de visitantes y foráneos que identifican la contaminación del aire y la inseguridad como las barreras principales para disfrutar o recomendar la ciudad.
+- Interpretación: El trigrama "lugar asentar foráneo" como palabra clave de mayor score revela que hay quienes consideran la ciudad habitable para establecerse, pero la cadena "lugar sucio aire → sucio aire nivel → aire nivel inseguridad → nivel inseguridad alto" construye un perfil ambiental y de seguridad que desalienta al visitante externo. La co-presencia de "oler feo refinería" refuerza que la contaminación no es solo estadística sino experiencia sensorial inmediata. Es el cluster que más claramente vincula contaminación ambiental e inseguridad como sistema de problemas.
+- Tono: Negativo
+
+---
+
+### Grupo 5 — "Ciudad pequeña, peligrosa y poco llamativa"
+- Tema central: Evaluación de Salamanca como ciudad de dimensiones limitadas que no logra ofrecer experiencias significativas ni seguras al visitante.
+- Interpretación: Los trigramas "lugar pequeño atracción → pequeño atracción llamativo" y "feo peligroso salir" sugieren que el tamaño reducido de la ciudad se percibe como desventaja en términos de oferta, y que la peligrosidad nocturna limita el uso del espacio público. La inclusión de respuestas que reconocen explícitamente no conocer el centro histórico indica que parte de esta valoración negativa se basa en un acceso restringido o no intencionado a los espacios turísticos. La ciudad se experimenta desde la periferia o desde fuera.
+- Tono: Negativo
+
+---
+
+### Grupo 6 — "Adaptación al peligro, paisaje ignorado"
+- Tema central: Reconocimiento de que la ciudad es peligrosa pero habitable, acompañado de una crítica a la falta de valoración institucional del paisaje natural y cultural.
+- Interpretación: El trigrama de mayor score —"lugar peligroso adaptar"— sintetiza una postura de resignación activa: el peligro existe pero no impide vivir ahí. El contraste con la cadena "valorar paisaje natural → paisaje natural increíble → natural increíble privatizado → privatizado ecoparque" es revelador: hay riqueza natural reconocida, pero está privatizada o descuidada, lo que impide que se convierta en recurso turístico accesible. El transporte deficiente y el gobierno indiferente completan un diagnóstico de oportunidades perdidas por omisión institucional.
+- Tono: Mixto / Propositivo
+
+---
+
+### Grupo 7 — "Inseguridad como causa de todo lo malo"
+- Tema central: Diagnóstico causal donde la inseguridad es identificada como el origen de todos los problemas recreativos y turísticos de la ciudad.
+- Interpretación: El trigrama "malo Salamanca provenir → provenir inseguridad falta → inseguridad falta zona recreativo" construye una explicación causal explícita y directa: no se trata de falta de recursos sino de falta de seguridad que impide desarrollarlos. La descripción de la ciudad como "inseguro, contaminado, aburrido y poco atractivo" en una sola respuesta comprime múltiples dimensiones del problema en una sola sentencia. Este cluster es el más analítico del corpus en cuanto a su capacidad de establecer relaciones causales entre fenómenos.
+- Tono: Negativo / Propositivo
+
+---
+
+### Grupo 8 — "Refinería y abandono turístico: denuncia directa"
+- Tema central: Condena explícita del abandono turístico de la ciudad y de la presencia de la refinería como factor contaminante e incompatible con una imagen universitaria y turística.
+- Interpretación: Con solo dos documentos, este cluster presenta los scores TF-IDF más altos del análisis trigráfico (0.25 cada trigrama), indicando una densidad semántica excepcional. La cadena "ciudad potencial turístico → potencial turístico brutalmente → turístico brutalmente abandonado → brutalmente abandonado descuidar" es la más citada en todo el corpus y funciona casi como un slogan colectivo. La referencia a la instalación de la UG en una ciudad "con tanta inseguridad y suciedad" introduce una crítica institucional a la decisión de localización universitaria.
+- Tono: Negativo (con énfasis propositivo implícito)
+
+---
+
+### Grupo 9 — "Potencial gastronómico y cultural desaprovechado"
+- Tema central: Reconocimiento del potencial genuino de Salamanca en gastronomía y cultura, contrastado con la experiencia de una ciudad que no logra recomendarse a sí misma.
+- Interpretación: La cadena "potencial especial gastronomía → especial gastronomía actividad → gastronomía actividad cultural" construye un argumento positivo sólido: la ciudad tiene activos reales en dos dimensiones altamente valoradas por el turismo contemporáneo. Sin embargo, la co-presencia del trigrama "mala experiencia realmente → realmente gustaría quedar → gustaría quedar recomendar" revela que este potencial no se traduce en recomendación ni en deseo de retorno. La brecha entre lo que la ciudad tiene y lo que comunica o gestiona es el núcleo de este cluster.
+- Tono: Mixto (con potencial positivo no realizado)
+
+---
+
+## SÍNTESIS
+
+El análisis trigráfico produce la segmentación más específica y narrativamente rica de los métodos aplicados. Los trigramas capturan relaciones causales, secuencias conductuales y argumentos completos que los unigramas y bigramas solo insinúan. Emergen con claridad tres patrones transversales: la inseguridad como condición estructural que modifica comportamientos, la refinería como símbolo de contaminación e identidad industrial negativa, y la gastronomía y cultura como activos reconocidos pero desaprovechados. La granularidad del método permite distinguir entre quienes describen, quienes explican y quienes proponen, revelando una ciudadanía con diagnóstico claro pero sin agencia percibida.
+
+--- FIN ---

@@ -1,0 +1,57 @@
+--- INICIO ---
+## Análisis Cualitativo — Clustering DBSCAN | Bigramas | UMAP | 7 Clusters
+
+### Grupo 0 — "Percepción general: inseguridad y ciudad industrial"
+- Tema central: Visión amplia y heterogénea de Salamanca donde la inseguridad y la imagen industrial de la refinería dominan la percepción colectiva.
+- Interpretación: Como cluster mayoritario (76 documentos), agrupa la masa central de opiniones que no comparten un rasgo semántico ultra-específico pero convergen en un diagnóstico compartido: la ciudad tiene aspectos vivibles y atractivos que quedan sistemáticamente opacados por la violencia, la inseguridad y la presencia industrial de PEMEX. La coexistencia de bigramas como "lugar lindo" y "lugar inseguro" en el mismo espacio denso refleja la ambivalencia estructural de la percepción ciudadana. Es el cluster que mejor representa la experiencia promedio del encuestado.
+- Tono: Mixto (con tendencia negativa)
+
+---
+
+### Grupo 1 — "Visitantes con conocimiento limitado"
+- Tema central: Respondentes que conocen poco o nada el centro histórico de Salamanca y basan su opinión en experiencias parciales o mediadas.
+- Interpretación: La cadena bigrámica "aspecto preguntar → preguntar encuesta → encuesta visitar → visitar centro" revela que este grupo está formado por personas que reconocen explícitamente los límites de su conocimiento sobre la ciudad. La mención de la universidad y el jardín principal como únicos referentes sugiere que su contacto con Salamanca es puntual y funcional, no turístico. DBSCAN los aisla como una zona densa propia porque su patrón discursivo —la autoexclusión epistémica— es semánticamente distintivo respecto al resto.
+- Tono: Neutral
+
+---
+
+### Grupo 2 — "Foráneos resilientes que se asientan"
+- Tema central: Experiencia de personas que llegaron de fuera y han construido una relación positiva y pragmática con Salamanca como lugar de residencia.
+- Interpretación: El bigrama "asentar foráneo" concentra el mayor score TF-IDF y define la identidad del grupo: son migrantes internos que eligieron o fueron asignados a Salamanca y han desarrollado un vínculo funcional con ella. La resiliencia aparece como categoría valorativa explícita, y la calidez de la gente compensa las deficiencias institucionales. La inseguridad se reconoce pero no paraliza; se convive con ella mediante estrategias de adaptación cotidiana. Es el cluster con el tono más favorable de todo el análisis.
+- Tono: Mixto (con tendencia positiva)
+
+---
+
+### Grupo 3 — "Belleza y abandono como contradicción"
+- Tema central: Reconocimiento simultáneo de cualidades estéticas y del deterioro por abandono institucional, sintetizados en la tensión "peligroso pero bonito".
+- Interpretación: El bigrama "peligroso bonito" tiene el score TF-IDF más alto del cluster y funciona como oxímoron conceptual que condensa toda la ambivalencia de este grupo. La cadena semántica del potencial turístico abandonado se repite aquí con fuerza, pero ahora acompañada de referencias concretas al vandalismo, la falta de árboles y los baches, lo que ancla el diagnóstico en lo urbano-cotidiano. DBSCAN identifica esta zona como densa porque la contradicción belleza-abandono es un patrón discursivo propio y recurrente.
+- Tono: Mixto
+
+---
+
+### Grupo 4 — "Gobierno ausente, gente cálida"
+- Tema central: Crítica directa a la gestión gubernamental como causa del deterioro, contrastada con el valor de la comunidad y las personas locales.
+- Interpretación: La cadena bigrámica "ciudad gobierno → gobierno querer → querer hacer → hacer crecer → crecer inseguridad → inseguridad descuidado" construye una narrativa causal explícita: la inacción o negligencia gubernamental es el origen del problema. Sin embargo, el bigrama "calidad gente" introduce un contrapeso afectivo que matiza el rechazo total. Este grupo no solo describe el problema sino que apunta a su responsable institucional, lo que lo distingue de otros clusters con tonos más fatalistas o resignados.
+- Tono: Negativo / Propositivo
+
+---
+
+### Grupo 5 — "Deterioro infraestructural desde adentro"
+- Tema central: Denuncia detallada y geográficamente situada del abandono físico de Salamanca, narrada por residentes con conocimiento profundo de la ciudad.
+- Interpretación: Este cluster concentra las voces más informadas y específicas del corpus. La respuesta más extensa del conjunto aparece aquí, describiendo con precisión el deterioro de plazas, calles sin pavimento, áreas verdes descuidadas y rancherías periféricas olvidadas. La referencia a los "sueldos de petroleros" como explicación irónica de los precios elevados revela un conocimiento socioeconómico local agudo. DBSCAN los agrupa porque su densidad semántica en torno al descuido infraestructural es altamente específica y no dispersa.
+- Tono: Negativo
+
+---
+
+### Grupo 6 — "Rechazo radical y deseo de escapar"
+- Tema central: Expresión de malestar extremo ante la situación de Salamanca, manifestado como deseo urgente de abandonar la ciudad.
+- Interpretación: El bigrama "sáquenme / ayuda" alcanza el score TF-IDF más alto de todo el análisis de bigramas (0.5), lo que indica una concentración semántica excepcionalmente nítida. Las respuestas son breves, cargadas emocionalmente y sin argumentación desarrollada, lo que sugiere una saturación afectiva que no encuentra palabras más elaboradas. La cadena "faltar cosa → cosa Salamanca → Salamanca empezar → empezar inseguridad" dibuja una ecuación simple: lo que le falta a la ciudad lo ocupa la inseguridad. DBSCAN identifica esta zona como una isla densa y aislada del espacio semántico, precisamente por su radicalidad expresiva.
+- Tono: Negativo (intenso)
+
+---
+
+## SÍNTESIS
+
+DBSCAN produce una segmentación más granular y emocionalmente diferenciada que el clustering jerárquico. Al operar por densidad, aisla patrones discursivos muy específicos: el visitante desinformado, el foráneo adaptado, la contradicción belleza-abandono, y el rechazo radical. El cluster mayoritario agrupa la ambivalencia general, mientras los periféricos capturan posiciones extremas o singulares. La inseguridad, el abandono gubernamental y la refinería son ejes transversales. El método revela que la experiencia de Salamanca no es uniforme sino estratificada por vínculos, trayectorias y grados de conocimiento local.
+
+--- FIN ---

@@ -1,0 +1,50 @@
+--- INICIO ---
+
+## Análisis Cualitativo de Opiniones Turísticas — Clustering DBSCAN (Bigramas)
+
+### Grupo 0 — "Percepción general de inseguridad"
+
+* Tema central: Evaluaciones generales de Salamanca donde predominan preocupaciones por inseguridad, contaminación y condiciones urbanas.
+* Interpretación: Este grupo concentra la mayor densidad semántica de opiniones generales sobre la ciudad. Los comentarios describen a Salamanca como un lugar con algunos aspectos positivos para vivir, pero fuertemente marcado por la inseguridad, la violencia regional y la imagen industrial asociada a la refinería. También aparecen referencias a costos de transporte y a la experiencia cotidiana de los habitantes.
+* Tono: negativo
+
+### Grupo 1 — "Experiencia limitada del visitante"
+
+* Tema central: Opiniones de personas que tienen poco contacto con la ciudad o solo la visitan ocasionalmente.
+* Interpretación: Las respuestas reflejan conocimiento parcial del destino, generalmente asociado a visitas breves o motivos específicos como la universidad. Las percepciones se construyen a partir de experiencias limitadas, por lo que destacan elementos puntuales como el jardín principal o la calidez de la gente, sin una evaluación profunda del destino turístico.
+* Tono: neutro
+
+### Grupo 2 — "Adaptación de residentes foráneos"
+
+* Tema central: Experiencias de personas que viven o pasan temporadas en Salamanca y se adaptan a sus condiciones.
+* Interpretación: Este grupo incluye opiniones de estudiantes o residentes temporales que perciben la ciudad como un lugar relativamente accesible para vivir. Aunque reconocen problemas de inseguridad o gestión pública, también resaltan la convivencia social, los precios accesibles y la resiliencia de la comunidad. La experiencia es más cotidiana que turística.
+* Tono: mixto
+
+### Grupo 3 — "Potencial turístico desaprovechado"
+
+* Tema central: Reconocimiento del potencial turístico de la ciudad acompañado de críticas al abandono urbano.
+* Interpretación: Los comentarios destacan que Salamanca podría tener mayor atractivo turístico, pero se percibe descuidada y con falta de mantenimiento. La presencia de vandalismo, escasez de infraestructura urbana y problemas ambientales refuerzan la idea de un destino con posibilidades no desarrolladas.
+* Tono: propositivo
+
+### Grupo 4 — "Críticas a gobierno y seguridad"
+
+* Tema central: Evaluación crítica sobre la gestión gubernamental y su relación con la inseguridad y el desarrollo urbano.
+* Interpretación: Las opiniones señalan que la ciudad podría mejorar si existieran políticas públicas orientadas al desarrollo urbano y turístico. Se percibe una relación directa entre la falta de gestión gubernamental, el aumento de inseguridad y el deterioro de espacios urbanos. También aparecen menciones positivas a la calidez de la gente.
+* Tono: negativo
+
+### Grupo 5 — "Infraestructura descuidada y desigual"
+
+* Tema central: Críticas al estado de la infraestructura urbana y al mantenimiento de espacios públicos.
+* Interpretación: Este grupo describe con mayor detalle el deterioro de calles, plazas, áreas verdes y zonas periféricas. La narrativa enfatiza la falta de mantenimiento y las desigualdades en la oferta urbana respecto a ciudades cercanas. Aunque algunos mencionan que existen atractivos turísticos potenciales, el abandono urbano domina la percepción.
+* Tono: negativo
+
+### Grupo 6 — "Reacción emocional negativa"
+
+* Tema central: Expresiones emocionales intensas que reflejan frustración o rechazo hacia la ciudad.
+* Interpretación: Este pequeño grupo incluye respuestas muy breves y expresivas que muestran malestar o desesperación respecto a la experiencia en Salamanca. Las expresiones no describen aspectos específicos del destino, sino que transmiten una reacción emocional negativa generalizada.
+* Tono: negativo
+
+## SÍNTESIS
+
+El análisis con DBSCAN identifica núcleos semánticos claros dentro de las opiniones. El núcleo principal refleja percepciones negativas relacionadas con inseguridad, contaminación y la imagen industrial de la ciudad. Otros grupos destacan experiencias de residentes temporales o visitantes con contacto limitado. De forma recurrente aparece la narrativa de “potencial turístico desaprovechado”, vinculada al descuido urbano y a la falta de gestión pública. En conjunto, Salamanca es percibida más como ciudad funcional para vivir o estudiar que como un destino turístico plenamente desarrollado.
+--- FIN ---

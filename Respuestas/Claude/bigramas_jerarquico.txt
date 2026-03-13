@@ -1,0 +1,36 @@
+--- INICIO ---
+## Análisis Cualitativo — Clustering Jerárquico Ward | Bigramas | UMAP | 4 Clusters
+
+### Grupo 0 — "Salamanca: vivir entre atractivos e inseguridad"
+- Tema central: Evaluación general de Salamanca como lugar para vivir y visitar, marcada por la tensión entre atributos positivos y condiciones de inseguridad y descuido.
+- Interpretación: Al ser el cluster más grande (84 documentos), agrupa la percepción mayoritaria y heterogénea de los respondentes. Los bigramas dominantes —"lugar vivir", "lugar atractivo", "lugar lindo"— conviven con "lugar inseguro" y referencias al deterioro urbano, reflejando una valoración ambivalente. La gastronomía, el paisaje y ciertos espacios públicos son reconocidos, pero la inseguridad, la gestión gubernamental deficiente y la contaminación de la refinería erosionan cualquier imagen positiva sostenida.
+- Tono: Mixto
+
+---
+
+### Grupo 1 — "Potencial turístico brutalmente abandonado"
+- Tema central: Reconocimiento explícito de un potencial turístico real en Salamanca que ha sido sistemáticamente desaprovechado por negligencia institucional.
+- Interpretación: La cadena bigramica "ciudad potencial → potencial turístico → turístico brutalmente → brutalmente abandonado → abandonado descuidar" constituye casi una oración completa que sintetiza la postura del grupo: hay valor, pero nadie lo cuida. La tensión "peligroso bonito" —bigrama de mayor score TF-IDF— encapsula la contradicción central: una ciudad con cualidades estéticas o culturales reales que coexisten con condiciones que la hacen poco segura. El desconocimiento del centro histórico por parte de algunos visitantes refuerza la idea de una oferta turística invisible o inaccesible.
+- Tono: Mixto / Propositivo
+
+---
+
+### Grupo 2 — "Ciudad habitable para quien se adapta"
+- Tema central: Experiencia de residentes y foráneos que han encontrado en Salamanca un lugar funcional para establecerse, pese a sus limitaciones.
+- Interpretación: El bigrama dominante "asentar foráneo" revela que este grupo está conformado principalmente por personas que llegaron de fuera y han construido una relación pragmática con la ciudad. La resiliencia aparece como categoría valorativa: Salamanca no es ideal, pero es habitable. La inseguridad y la gestión gubernamental se reconocen como problemas, pero se compensan con la calidez de la gente, los precios accesibles y la posibilidad de conocer el lugar gradualmente. La adaptación es la estrategia, no la satisfacción.
+- Tono: Mixto (con tendencia positiva)
+
+---
+
+### Grupo 3 — "Descuido estructural y frustración ciudadana"
+- Tema central: Denuncia del deterioro físico e institucional de Salamanca, expresada con frustración intensa por residentes que conocen la ciudad desde adentro.
+- Interpretación: El bigrama "sáquenme / ayuda" con el mayor score TF-IDF marca el tono emocional del cluster: una sensación de atrapamiento y desesperanza. Las críticas son concretas y detalladas —infraestructura en ruinas, calles sin pavimento, áreas verdes descuidadas, precios elevados desconectados de la realidad salarial local— lo que sugiere que son voces de residentes con conocimiento profundo de la ciudad. La mención de las rancherías periféricas amplía el diagnóstico más allá del centro, indicando un deterioro sistémico y no focalizado.
+- Tono: Negativo
+
+---
+
+## SÍNTESIS
+
+Con solo 4 clusters, el análisis de bigramas ofrece una lectura más concentrada y estructural que el de unigramas. Emerge con claridad un patrón narrativo compartido: Salamanca posee atributos reales —gastronomía, paisaje, calidez social— pero una gestión institucional percibida como negligente los neutraliza. La inseguridad y el descuido físico son constantes transversales. El análisis distingue entre quienes evalúan la ciudad desde fuera (visitantes críticos), quienes se han adaptado a vivir en ella, y quienes, desde adentro, denuncian su deterioro con mayor intensidad y especificidad.
+
+--- FIN ---

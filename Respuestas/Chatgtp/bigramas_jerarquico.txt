@@ -1,0 +1,32 @@
+--- INICIO ---
+
+## Análisis Cualitativo de Opiniones Turísticas — Clustering Jerárquico (Bigramas)
+
+### Grupo 0 — "Evaluación general de la ciudad"
+
+* Tema central: Opiniones amplias sobre Salamanca como lugar para vivir o visitar, combinando percepciones de inseguridad, atractivo y características urbanas.
+* Interpretación: Este grupo reúne la gran mayoría de respuestas y refleja evaluaciones generales de la ciudad. Los comentarios combinan percepciones negativas —como inseguridad, contaminación o falta de actividades— con menciones ocasionales a aspectos positivos como gastronomía o algunos lugares agradables. La ciudad aparece descrita más como un espacio cotidiano para vivir que como un destino turístico consolidado.
+* Tono: mixto
+
+### Grupo 1 — "Potencial turístico desaprovechado"
+
+* Tema central: Percepción de que Salamanca tiene recursos turísticos pero se encuentra descuidada o abandonada.
+* Interpretación: Los comentarios enfatizan la idea de que la ciudad posee cualidades que podrían atraer turismo, pero que no se han desarrollado adecuadamente. Aparecen referencias a abandono urbano, suciedad o falta de mantenimiento, lo que genera la sensación de que el potencial turístico existe pero no se aprovecha. La evaluación combina reconocimiento del potencial con frustración por la falta de gestión.
+* Tono: propositivo
+
+### Grupo 2 — "Experiencia de residentes foráneos"
+
+* Tema central: Percepción de Salamanca como lugar para asentarse o vivir, especialmente desde la experiencia de personas externas a la ciudad.
+* Interpretación: Este grupo refleja opiniones de estudiantes o visitantes recurrentes que han desarrollado cierta relación cotidiana con la ciudad. Se reconocen aspectos positivos como precios accesibles, convivencia social y hospitalidad, aunque también se menciona la inseguridad como un problema constante. El discurso suele mostrar adaptación al entorno más que entusiasmo turístico.
+* Tono: mixto
+
+### Grupo 3 — "Crítica estructural y abandono urbano"
+
+* Tema central: Evaluación crítica sobre el estado de infraestructura y desarrollo urbano de Salamanca.
+* Interpretación: Las respuestas de este grupo presentan críticas directas al deterioro urbano, falta de mantenimiento e infraestructura deficiente. La idea de “potencial turístico abandonado” aparece con fuerza, junto con comentarios sobre descuido de calles, áreas verdes y espacios públicos. Aunque ocasionalmente se reconoce que podría ser un buen lugar para turistas, predomina la percepción de abandono institucional.
+* Tono: negativo
+
+## SÍNTESIS
+
+El análisis con bigramas revela cuatro patrones principales de percepción sobre Salamanca. La mayoría de opiniones corresponden a evaluaciones generales donde conviven críticas a inseguridad y falta de atractivos con menciones puntuales positivas. También emerge con fuerza la narrativa de “potencial turístico desaprovechado”, asociada al abandono urbano y a la falta de gestión. Otro grupo refleja experiencias de residentes o estudiantes foráneos que se adaptan al entorno. En conjunto, las percepciones sugieren que Salamanca es vista más como ciudad funcional para vivir que como destino turístico consolidado.
+--- FIN ---

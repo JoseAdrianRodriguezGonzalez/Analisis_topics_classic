@@ -1,0 +1,78 @@
+--- INICIO ---
+## Análisis Cualitativo — Clustering Jerárquico Ward | Unigramas | UMAP | 10 Clusters
+
+### Grupo 0 — "Ciudad con potencial pero insegura"
+- Tema central: Percepción general de Salamanca como ciudad con cierto atractivo pero limitada por la inseguridad y el abandono.
+- Interpretación: Los turistas y visitantes reconocen que Salamanca podría ofrecer experiencias interesantes, pero la inseguridad y el descuido urbano dominan la narrativa. Las palabras "aventura" y "llamativo" sugieren que algunos encuentran algo que explorar, aunque el contexto negativo prevalece. Se percibe una ciudad que no logra capitalizar su potencial por falta de atención gubernamental y social.
+- Tono: Mixto (con tendencia negativa)
+
+---
+
+### Grupo 1 — "Descuido urbano e insatisfacción ciudadana"
+- Tema central: Crítica al estado físico y de gestión de la ciudad, percibida como descuidada y poco atractiva para el turismo.
+- Interpretación: Este grupo articula una insatisfacción concreta con la infraestructura urbana: falta de árboles, baches, vandalismo y suciedad asociada a la refinería. Los respondentes, en su mayoría foráneos jóvenes, expresan que la ciudad no cuida sus espacios públicos. La presencia de la UG como sede universitaria contrasta con una imagen urbana deteriorada, lo que genera disonancia entre expectativa institucional y realidad cotidiana.
+- Tono: Negativo
+
+---
+
+### Grupo 2 — "Inseguridad vivida desde adentro"
+- Tema central: Experiencias de residentes que limitan su movilidad cotidiana debido a la inseguridad percibida.
+- Interpretación: A diferencia de otros clusters, aquí el enunciador es principalmente residente o persona con vínculos locales. La inseguridad no es un dato abstracto sino una condición que modifica el comportamiento: evitar salir, restringirse al mandado, circular poco. El término "neutral" en TF-IDF revela que algunos intentan matizar su opinión, aunque el peso emocional es claramente negativo. La contaminación del aire también emerge como queja encarnada en la experiencia diaria.
+- Tono: Negativo
+
+---
+
+### Grupo 3 — "Ciudad lind pero con mucho por mejorar"
+- Tema central: Reconocimiento de cualidades positivas de Salamanca coexistiendo con críticas estructurales y propuestas de cambio.
+- Interpretación: Este grupo es el más propositivo y matizado. Los respondentes valoran la gastronomía, las ferias tradicionales y el potencial del centro histórico, pero señalan deficiencias en seguridad, mantenimiento y vida nocturna. La respuesta más extensa del corpus aparece aquí, reflejando un perfil reflexivo e informado. El término "cambiar" como palabra clave sugiere una demanda de transformación más que un rechazo total a la ciudad.
+- Tono: Mixto / Propositivo
+
+---
+
+### Grupo 4 — "Lugar promedio sin oferta turística clara"
+- Tema central: Salamanca percibida como un destino turístico débil, sin atractivos distintivos más allá de lo cotidiano.
+- Interpretación: Los respondentes de este grupo, varios de ellos foráneos, expresan que Salamanca no logra comunicar ni ofrecer experiencias turísticas memorables. La palabra "turisticamente" con alto IDF local refuerza que el juicio se hace explícitamente desde esa dimensión. La referencia a los mercados como único punto positivo indica que la oferta percibida es escasa y poco diversificada. La postura es de indiferencia más que de rechazo activo.
+- Tono: Negativo / Neutral
+
+---
+
+### Grupo 5 — "Inseguridad y contaminación como barreras"
+- Tema central: Rechazo a la ciudad por condiciones de inseguridad y contaminación que la hacen poco habitable y menos aún visitable.
+- Interpretación: El cluster concentra expresiones de malestar intenso, incluyendo la frase "sáquenme de aquí", que sintetiza una sensación de atrapamiento. La contaminación (vinculada a PEMEX) y la inseguridad se presentan como condiciones estructurales irresolubles desde la perspectiva del visitante o residente. La palabra "adaptar" sugiere que algunos han normalizado estas condiciones por necesidad, no por conformidad.
+- Tono: Negativo (con matices de resignación)
+
+---
+
+### Grupo 6 — "Gastronomía sí, turismo no"
+- Tema central: Reconocimiento de la oferta gastronómica como atributo positivo, contrastado con la ausencia de atractivos turísticos significativos.
+- Interpretación: La gastronomía emerge aquí como el único diferenciador positivo percibido, mientras que la inseguridad, la contaminación por PEMEX y la falta de destinos turísticos de valor dominan el resto de la evaluación. El afecto hacia la ciudad está mediado por vínculos personales (amigos, familia) más que por el lugar en sí mismo. La expresión "vete de aquí lo más pronto posible" coexiste con apreciaciones moderadas, lo que ilustra la polarización interna del grupo.
+- Tono: Mixto (con tendencia negativa)
+
+---
+
+### Grupo 7 — "Peligro nocturno y deterioro urbano"
+- Tema central: Percepción de Salamanca como ciudad peligrosa especialmente de noche, con infraestructura y gestión deficientes.
+- Interpretación: El riesgo nocturno es el eje articulador de este grupo. Las palabras "noche", "salir" y "feo" revelan una ciudad que restringe la vida pública después de cierta hora. La crítica al gobierno es explícita, y se menciona un "toque de queda no oficial" como síntoma del deterioro de la vida urbana. Sin embargo, también aparecen reconocimientos al paisaje natural y la cultura local, aunque como potencial no aprovechado.
+- Tono: Negativo / Propositivo
+
+---
+
+### Grupo 8 — "Sin interés turístico, con pequeñas virtudes"
+- Tema central: Salamanca descartada como destino de interés turístico, aunque con algunos atributos funcionales menores.
+- Interpretación: Este pequeño grupo articula un rechazo directo a la ciudad como punto de interés, citando contaminación, peligrosidad y falta de atractivos. No obstante, emergen matices: la ausencia de tráfico y los tiempos de traslado cortos son mencionados como ventajas prácticas. La dualidad "peligroso pero bonito" en una respuesta sugiere que hay una belleza percibida que no alcanza a compensar los problemas estructurales.
+- Tono: Negativo / Mixto
+
+---
+
+### Grupo 9 — "Potencial turístico abandonado"
+- Tema central: Salamanca reconocida como ciudad con potencial turístico real pero sistemáticamente desaprovechado por negligencia.
+- Interpretación: La expresión "brutalmente abandonada y descuidada" funciona como síntesis conceptual del cluster. A diferencia de otros grupos que simplemente critican, aquí se asume que existe un capital turístico genuino que no ha sido desarrollado. La mención de actividades al aire libre (hiking, rutas de bici, vistas) refuerza la idea de recursos naturales y urbanos sin articulación en una oferta turística coherente. El lamento es por la oportunidad perdida, no solo por el estado actual.
+- Tono: Mixto / Propositivo
+
+---
+
+## SÍNTESIS
+
+El análisis revela una percepción dominantemente negativa de Salamanca como destino turístico, articulada en torno a tres ejes transversales: inseguridad, contaminación (vinculada a la refinería PEMEX) y descuido gubernamental. Los clusters muestran gradaciones que van desde el rechazo total hasta el reconocimiento matizado de atributos positivos como la gastronomía, las tradiciones y el entorno natural. Destaca la tensión entre el potencial percibido y la realidad vivida. Los respondentes jóvenes y foráneos son los más críticos, mientras quienes tienen vínculos afectivos con la ciudad ofrecen lecturas más ambivalentes. La ciudad aparece como un lugar que habita, no que se visita.
+
+--- FIN ---

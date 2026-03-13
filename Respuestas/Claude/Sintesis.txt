@@ -1,0 +1,77 @@
+--- INICIO SÍNTESIS CRUZADA ---
+
+## TEMAS ROBUSTOS
+
+### Inseguridad como condición estructural que modifica comportamientos — aparece en: Jerárquico Unigramas, Jerárquico Bigramas, DBSCAN Bigramas, Jerárquico Trigramas, LDA Unigramas, LDA Unigramas+Bigramas
+- Interpretación integrada: Es el único patrón verdaderamente universal del corpus: sin excepción, todos los métodos y todas las granularidades léxicas lo capturan. La inseguridad no aparece solo como evaluación abstracta sino como factor que transforma conductas concretas —evitar salir, restringirse al hogar, circular únicamente por necesidad. Crucialmente, varios métodos coinciden en señalar que la inseguridad ya no se experimenta como emergencia sino como condición normalizada: la ciudad se habita a pesar de ella, no sin ella. La inseguridad funciona además como explicación causal de otros problemas: el cierre de locales, la pérdida de vida nocturna, el deterioro de la gastronomía y la cultura.
+
+---
+
+### Refinería PEMEX como símbolo del deterioro ambiental e identitario — aparece en: Jerárquico Unigramas, Jerárquico Bigramas, DBSCAN Bigramas, Jerárquico Trigramas, LDA Unigramas, LDA Unigramas+Bigramas
+- Interpretación integrada: La refinería es el referente negativo más consistente del corpus. Todos los métodos la capturan, aunque con énfasis distintos: como fuente de contaminación sensorial (olor, humo, aire sucio), como elemento que degrada la imagen turística de la ciudad, y como símbolo de una identidad industrial incompatible con el turismo. Varios métodos señalan la crítica a la instalación de una sede universitaria en este contexto como disonancia institucional percibida. La refinería condensa en un solo objeto la queja ambiental, económica y reputacional de la ciudad.
+
+---
+
+### Potencial turístico reconocido pero no desarrollado — aparece en: Jerárquico Unigramas, Jerárquico Bigramas, DBSCAN Bigramas, Jerárquico Trigramas, LDA Unigramas, LDA Unigramas+Bigramas
+- Interpretación integrada: La expresión "brutalmente abandonada y descuidada" se convierte en el corpus en algo próximo a un eslogan colectivo, recurrente en todos los métodos. El potencial no es abstracto: gastronomía, paisaje natural, centro histórico, actividades al aire libre y ferias tradicionales son activos nombrados con precisión. La brecha entre lo que la ciudad tiene y lo que gestiona o comunica es el núcleo de este patrón. El lamento es siempre por oportunidad perdida, no solo por estado presente, lo que lo distingue del rechazo simple.
+
+---
+
+### Descuido urbano e infraestructura deteriorada — aparece en: Jerárquico Unigramas, Jerárquico Bigramas, DBSCAN Bigramas, Jerárquico Trigramas, LDA Unigramas, LDA Unigramas+Bigramas
+- Interpretación integrada: El deterioro físico de la ciudad —calles sin pavimento, baches, áreas verdes descuidadas, vandalismo, falta de mantenimiento en plazas y galerías— es identificado por todos los métodos como dimensión autónoma del problema, distinguible de la inseguridad aunque relacionada con ella. Los métodos de mayor granularidad léxica (trigramas, LDA bigramas) sitúan geográficamente el problema, extendiendo el diagnóstico más allá del centro hacia la zona sur y las rancherías periféricas. El deterioro se percibe como resultado de omisión institucional deliberada, no de falta de recursos.
+
+---
+
+### Gobierno municipal como responsable de los problemas — aparece en: Jerárquico Unigramas, Jerárquico Bigramas, DBSCAN Bigramas, Jerárquico Trigramas, LDA Unigramas, LDA Unigramas+Bigramas
+- Interpretación integrada: La atribución causal al gobierno local es transversal a todos los métodos, aunque con matices distintos. En algunos emerge como indiferencia ("al gobierno no le interesa"), en otros como negligencia activa, y en los más propositivos como demanda de acción. Ningún método produce un grupo que defienda la gestión municipal; la crítica institucional es unánime. Esto distingue a este patrón de otras quejas sectoriales: no es una percepción parcial sino un consenso estructural del corpus.
+
+---
+
+### Gastronomía como único atributo positivo consistente — aparece en: Jerárquico Unigramas, Jerárquico Bigramas, Jerárquico Trigramas, LDA Unigramas, LDA Unigramas+Bigramas
+- Interpretación integrada: Cinco de los seis métodos identifican la gastronomía —nieves, empanadas, antojitos, tacos, ferias del elote y el nopal— como el activo positivo más robusto de la ciudad. Aparece siempre en tensión con el resto de la evaluación: la gastronomía es reconocida, pero no es suficiente para convertir a Salamanca en destino. Esta tensión —"buena gastronomía, pero no es un lugar atractivo para visitar"— es formulada casi idénticamente en múltiples respuestas y es capturada de forma consistente por diferentes métodos y granularidades.
+
+---
+
+### Foráneos que se adaptan y encuentran habitabilidad — aparece en: Jerárquico Bigramas, DBSCAN Bigramas, Jerárquico Trigramas, LDA Unigramas, LDA Unigramas+Bigramas
+- Interpretación integrada: Cinco métodos identifican un perfil específico —el foráneo que llegó a Salamanca por estudios o trabajo y ha desarrollado una relación pragmática y relativamente positiva con la ciudad. La "resiliencia" del lugar y la calidez de su gente son los atributos que anclan este vínculo. La adaptación no implica satisfacción plena; implica haber construido estrategias para convivir con las limitaciones. Este perfil produce las evaluaciones más favorables del corpus y constituye el contrapeso sistemático al rechazo generalizado.
+
+---
+
+## TEMAS ÚNICOS
+
+### Autoexclusión epistémica del encuestado — solo en: DBSCAN Bigramas
+- Interpretación: DBSCAN aísla como zona densa propia a un grupo de respondentes que reconocen explícitamente no conocer la ciudad lo suficiente para opinar —especialmente el centro histórico— y lo declaran directamente en su respuesta. Este patrón discursivo de "no puedo opinar porque no he visto" es semánticamente tan específico que ningún otro método lo segrega como grupo propio; en los demás, estas respuestas se disuelven en el cluster mayoritario. Es un hallazgo metodológico relevante: una fracción del corpus no evalúa la ciudad sino su propio nivel de acceso a ella.
+
+---
+
+### Transporte público como barrera cotidiana — solo en: LDA Unigramas+Bigramas
+- Interpretación: Aunque el transporte caro aparece mencionado en otros métodos, solo el LDA con unigramas y bigramas lo constituye como tópico autónomo con peso propio. La especificidad del horario de corte (7pm), el costo del Uber como alternativa y la queja sobre el "precio de estudiante" son detalles que los métodos de clustering dispersan entre clusters mayores. LDA los agrupa porque identifica una co-ocurrencia temática densa entre transporte, costo, horarios y perfil estudiantil que los otros modelos no priorizan como dimensión independiente.
+
+---
+
+### Experiencia afectiva universitaria y vínculos de pertenencia — solo en: Jerárquico Trigramas
+- Interpretación: El análisis trigráfico es el único que segrega como grupo propio a quienes articulan su relación con Salamanca a través del lenguaje del afecto y la pertenencia universitaria: "nací", "visito por la universidad", "me gusta el jardín principal", "la calidez de la gente". Los trigramas capturan esta secuencia narrativa —origen, visita, valoración de espacio cotidiano— con una precisión que los unigramas y bigramas fragmentan. Es el único grupo con tono predominantemente positivo en todo el conjunto de análisis.
+
+---
+
+### Rechazo radical como posición discursiva diferenciada — solo en: DBSCAN Bigramas
+- Interpretación: DBSCAN es el único método que aisla como cluster propio las respuestas de máxima intensidad emocional negativa —"sáquenme de aquí", "vete lo más pronto posible"— separándolas del resto de la crítica. En los demás métodos, estas respuestas se integran en clusters de evaluación negativa general. La capacidad de DBSCAN para identificar zonas de alta densidad semántica le permite reconocer que la radicalidad expresiva es en sí misma un patrón discursivo, no solo una variante de intensidad dentro de la crítica general.
+
+---
+
+### Vida nocturna restringida como síntoma de deterioro — solo en: Jerárquico Unigramas
+- Interpretación: Solo el clustering jerárquico con unigramas identifica el "toque de queda no oficial" —la vida nocturna que termina cada vez más temprano— como elemento articulador de un grupo. En los demás métodos este elemento aparece disperso o subsumido en las quejas de inseguridad general. Su aparición como cluster propio en el análisis unigrama sugiere que este fenómeno tiene una especificidad semántica que la granularidad léxica más fina tiende a diluir al incorporarlo en cadenas causales más amplias.
+
+---
+
+## NARRATIVA FINAL
+
+Las percepciones de los visitantes y residentes encuestados sobre Salamanca, Guanajuato, configuran un diagnóstico consistente y multidimensional que trasciende los métodos de análisis empleados. La ciudad es percibida de forma dominantemente negativa como destino turístico, aunque esta evaluación no es homogénea: se estratifica según el tipo de vínculo que el encuestado mantiene con ella.
+
+La inseguridad constituye el eje articulador central de todas las percepciones. No se trata de un dato estadístico sino de una condición vivida que modifica comportamientos concretos: residentes que evitan salir, visitantes que restringen su circulación a espacios considerados seguros, y foráneos que han normalizado el riesgo como parte del costo de habitar la ciudad. La refinería PEMEX funciona como segundo eje estructural, condensando en un solo referente las quejas ambientales —contaminación del aire, olor, humo— y las reputacionales: una ciudad que se identifica como industrial antes que como turística o cultural.
+
+Frente a este diagnóstico negativo, emerge con robustez un reconocimiento del potencial no desarrollado. La gastronomía, el centro histórico, el paisaje natural, las ferias tradicionales y la calidez de la gente son activos genuinos nombrados con precisión por múltiples respondentes. Sin embargo, la brecha entre estos activos y su traducción en oferta turística estructurada se atribuye de forma unánime a la negligencia gubernamental. El lamento colectivo no es por ausencia de recursos, sino por omisión institucional sostenida.
+
+El perfil del respondente condiciona significativamente la evaluación: los foráneos que se han asentado en la ciudad producen las valoraciones más positivas, mientras que los visitantes ocasionales y los residentes más críticos coinciden en no recomendar Salamanca como destino. La ciudad aparece, en síntesis, como un lugar que se habita por necesidad o afecto, no que se visita por elección.
+
+--- FIN SÍNTESIS CRUZADA ---

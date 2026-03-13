@@ -1,0 +1,95 @@
+TOP 5 PALABRAS POR CLUSTER
+Metodo: UNIGRAMAS | JERARQUICO
+==================================================
+
+Cluster 0 (28 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar                       0.127240    1.875469                 9
+  2     salamanca                   0.096622    1.980829                 8
+  3     aventura                    0.086957    3.079442                 2
+  4     ciudad                      0.084041    1.980829                 8
+  5     inseguridad                 0.068879    1.875469                 9
+
+Cluster 1 (18 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     salamanca                   0.159741    1.747214                 8
+  2     lugar                       0.148346    1.641854                 9
+  3     ciudad                      0.135200    1.747214                 8
+  4     descuidado                  0.095165    2.335001                 4
+  5     opinion                     0.078273    2.558145                 3
+
+Cluster 2 (12 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar                       0.140408    1.955511                 4
+  2     vivir                       0.103057    2.178655                 3
+  3     neutral                     0.083333    2.871802                 1
+  4     inseguridad                 0.077134    2.178655                 3
+  5     ciudad                      0.075107    2.178655                 3
+
+Cluster 3 (11 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar                       0.167242    1.405465                 7
+  2     cosa                        0.120143    2.098612                 3
+  3     peligroso                   0.114234    2.386294                 2
+  4     cambiar                     0.102929    2.386294                 2
+  5     lindo                       0.102929    2.386294                 2
+
+Cluster 4 (7 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar                       0.230483    1.559616                 3
+  2     vivir                       0.163539    1.847298                 2
+  3     general                     0.117484    1.847298                 2
+  4     cosa                        0.090447    1.847298                 2
+  5     turisticamente              0.089352    2.252763                 1
+
+Cluster 5 (14 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar                       0.111755    1.847298                 5
+  2     ciudad                      0.089323    2.252763                 3
+  3     vetir                       0.076923    2.945910                 1
+  4     inseguro                    0.065202    2.540445                 2
+  5     comida                      0.062160    2.252763                 3
+
+Cluster 6 (7 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar                       0.204338    1.287682                 5
+  2     vetir                       0.142857    2.386294                 1
+  3     visitar                     0.126300    1.980829                 2
+  4     atractivo                   0.113044    1.693147                 3
+  5     gastronomia                 0.106417    1.980829                 2
+
+Cluster 7 (11 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     salamanca                   0.096825    1.875469                 4
+  2     peligroso                   0.096542    2.386294                 2
+  3     noche                       0.096542    2.386294                 2
+  4     salir                       0.095693    2.098612                 3
+  5     feo                         0.094426    2.098612                 3
+
+Cluster 8 (4 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar                       0.228019    1.510826                 2
+  2     peligroso                   0.228019    1.510826                 2
+  3     inseguro                    0.196322    1.916291                 1
+  4     bonito                      0.196322    1.916291                 1
+  5     inter                       0.092891    1.916291                 1
+
+Cluster 9 (4 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     ciudad                      0.232864    1.287682                 2
+  2     abandonado                  0.141131    1.693147                 1
+  3     potencial                   0.141131    1.693147                 1
+  4     brutalmente                 0.141131    1.693147                 1
+  5     turistico                   0.141131    1.693147                 1
+
+==================================================
