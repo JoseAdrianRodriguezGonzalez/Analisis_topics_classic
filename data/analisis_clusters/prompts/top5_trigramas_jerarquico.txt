@@ -1,0 +1,95 @@
+TOP 5 PALABRAS POR CLUSTER
+Metodo: TRIGRAMAS | JERARQUICO
+==================================================
+
+Cluster 0 (12 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     oler feo refineria          0.111111    2.609438                 1
+  2     lugar peligroso adaptar     0.111111    2.609438                 1
+  3     promedio ofrecer turisticamente   0.078567    2.609438                 1
+  4     lugar promedio ofrecer      0.078567    2.609438                 1
+  5     lugar pequeno atraccion     0.078567    2.609438                 1
+
+Cluster 1 (12 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     llevar tiempo vivir         0.074536    2.466337                 2
+  2     tiempo vivir general        0.074536    2.466337                 2
+  3     vivir general evito         0.074536    2.466337                 2
+  4     general evito salir         0.074536    2.466337                 2
+  5     evito salir inseguridad     0.074536    2.466337                 2
+
+Cluster 2 (18 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     gastronomia lugar atractivo   0.094281    2.673976                 2
+  2     lugar atractivo visitar     0.094281    2.673976                 2
+  3     transporte caro comida      0.047140    3.079442                 1
+  4     inseguro transporte caro    0.047140    3.079442                 1
+  5     lugar lindo cosa            0.047140    3.079442                 1
+
+Cluster 3 (6 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     punto malo malo             0.102062    1.916291                 1
+  2     naci visito universidad     0.102062    1.916291                 1
+  3     intentar cosa comodidad     0.102062    1.916291                 1
+  4     malo intentar cosa          0.102062    1.916291                 1
+  5     malo malo intentar          0.102062    1.916291                 1
+
+Cluster 4 (20 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar asentar foraneo       0.142857    2.609438                 2
+  2     oler feo refineria          0.071429    3.014903                 1
+  3     lugar sucio aire            0.035714    3.014903                 1
+  4     sucio aire nivel            0.035714    3.014903                 1
+  5     aire nivel inseguridad      0.035714    3.014903                 1
+
+Cluster 5 (18 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     peligroso salir noche       0.047140    3.079442                 1
+  2     lugar pequeno atraccion     0.047140    3.079442                 1
+  3     pequeno atraccion llamativo   0.047140    3.079442                 1
+  4     feo peligroso salir         0.047140    3.079442                 1
+  5     encuesta visitar centro     0.029814    3.079442                 1
+
+Cluster 6 (6 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     lugar peligroso adaptar     0.500000    1.405465                 1
+  2     pesimo sistema transporte   0.098058    1.405465                 1
+  3     calle gobierno hablar       0.098058    1.405465                 1
+  4     hablar cultura valorar      0.098058    1.405465                 1
+  5     valorar paisaje natural     0.098058    1.405465                 1
+
+Cluster 7 (4 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     inseguro contaminado aburrido   0.149071    1.693147                 1
+  2     provenir inseguridad falta   0.149071    1.693147                 1
+  3     lugar inseguro contaminado   0.149071    1.693147                 1
+  4     falta zona recreativo       0.149071    1.693147                 1
+  5     atractivo apto turismo      0.149071    1.693147                 1
+
+Cluster 8 (2 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     ciudad potencial turistico   0.250000    1.405465                 1
+  2     potencial turistico brutalmente   0.250000    1.405465                 1
+  3     turistico brutalmente abandonado   0.250000    1.405465                 1
+  4     brutalmente abandonado descuidar   0.250000    1.405465                 1
+  5     cerca refineria disgustar   0.158114    1.405465                 1
+
+Cluster 9 (2 documentos):
+  Rank  Palabra                        Score   IDF local  Docs con término
+  ----- ------------------------- ----------  ----------  ----------------
+  1     potencial especial gastronomia   0.288675    1.405465                 1
+  2     especial gastronomia actividad   0.288675    1.405465                 1
+  3     gastronomia actividad cultural   0.288675    1.405465                 1
+  4     finta ciudad general        0.114708    1.405465                 1
+  5     quedar recomendar vengar    0.114708    1.405465                 1
+
+==================================================
