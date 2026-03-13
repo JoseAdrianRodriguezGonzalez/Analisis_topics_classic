@@ -1,0 +1,7 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+9,1,salamanca ciudad opinion,0.353553,1.405465,1,2
+9,2,ciudad opinion descuidado,0.353553,1.405465,1,2
+9,3,brutalmente abandonado descuidar,0.25,1.405465,1,2
+9,4,turistico brutalmente abandonado,0.25,1.405465,1,2
+9,5,potencial turistico brutalmente,0.25,1.405465,1,2
+9,6,ciudad potencial turistico,0.25,1.405465,1,2

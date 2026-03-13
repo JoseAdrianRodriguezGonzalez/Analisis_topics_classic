@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+7,1,evito salir inseguridad,0.149071,1.693147,1,4
+7,2,general evito salir,0.149071,1.693147,1,4
+7,3,vivir general evito,0.149071,1.693147,1,4
+7,4,tiempo vivir general,0.149071,1.693147,1,4
+7,5,llevar tiempo vivir,0.149071,1.693147,1,4
+7,6,principal calid gente,0.136083,1.693147,1,4
+7,7,jardin principal calid,0.136083,1.693147,1,4
+7,8,gustar jardin principal,0.136083,1.693147,1,4
+7,9,universidad gustar jardin,0.136083,1.693147,1,4
+7,10,visito universidad gustar,0.136083,1.693147,1,4
+7,11,naci visito universidad,0.136083,1.693147,1,4
+7,12,social estancia visita,0.100504,1.693147,1,4
+7,13,atraccion social estancia,0.100504,1.693147,1,4
+7,14,tanto atraccion social,0.100504,1.693147,1,4
+7,15,aparte tanto atraccion,0.100504,1.693147,1,4

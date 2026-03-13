@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+1,1,visitar centro,0.136083,1.693147,1,4
+1,2,encuesta visitar,0.136083,1.693147,1,4
+1,3,preguntar encuesta,0.136083,1.693147,1,4
+1,4,aspecto preguntar,0.136083,1.693147,1,4
+1,5,mayoria aspecto,0.136083,1.693147,1,4
+1,6,desconocer mayoria,0.136083,1.693147,1,4
+1,7,calid gente,0.125988,1.693147,1,4
+1,8,principal calid,0.125988,1.693147,1,4
+1,9,jardin principal,0.125988,1.693147,1,4
+1,10,gustar jardin,0.125988,1.693147,1,4
+1,11,universidad gustar,0.125988,1.693147,1,4
+1,12,naci visito,0.125988,1.693147,1,4
+1,13,visito universidad,0.125988,1.693147,1,4
+1,14,inseguridad suciedad,0.100504,1.693147,1,4
+1,15,tanto inseguridad,0.100504,1.693147,1,4

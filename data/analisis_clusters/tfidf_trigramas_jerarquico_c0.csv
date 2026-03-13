@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+0,1,lugar peligroso adaptar,0.074074,3.233592,2,34
+0,2,oler feo refineria,0.037037,3.639057,1,34
+0,3,lugar asentar foraneo,0.037037,3.639057,1,34
+0,4,aburrido atractivo apto,0.033127,3.233592,2,34
+0,5,atractivo apto turismo,0.033127,3.233592,2,34
+0,6,inseguro contaminado aburrido,0.033127,3.233592,2,34
+0,7,lugar inseguro contaminado,0.033127,3.233592,2,34
+0,8,contaminado aburrido atractivo,0.033127,3.233592,2,34
+0,9,gastronomia lugar atractivo,0.026189,3.639057,1,34
+0,10,pequeno atraccion llamativo,0.026189,3.639057,1,34
+0,11,lugar atractivo visitar,0.026189,3.639057,1,34
+0,12,lugar pequeno atraccion,0.026189,3.639057,1,34
+0,13,especial gastronomia actividad,0.021383,3.639057,1,34
+0,14,seguridad delincuencia municipio,0.021383,3.639057,1,34
+0,15,general contaminacion seguridad,0.021383,3.639057,1,34

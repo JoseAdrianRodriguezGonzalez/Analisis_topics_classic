@@ -1,0 +1,7 @@
+pandas
+spacy
+nltk
+openpyxl
+regex
+matplotlib
+wordcloud

@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+5,1,salamanca descuidado,0.149071,1.510826,2,4
+5,2,ciudad potencial,0.111803,1.916291,1,4
+5,3,brutalmente abandonado,0.111803,1.916291,1,4
+5,4,potencial turistico,0.111803,1.916291,1,4
+5,5,turistico brutalmente,0.111803,1.916291,1,4
+5,6,abandonado descuidar,0.111803,1.916291,1,4
+5,7,variedad punto,0.083333,1.916291,1,4
+5,8,turista variedad,0.083333,1.916291,1,4
+5,9,excelente turista,0.083333,1.916291,1,4
+5,10,lugar excelente,0.083333,1.916291,1,4
+5,11,lugar relativamente,0.083333,1.916291,1,4
+5,12,comodo vivir,0.083333,1.916291,1,4
+5,13,relativamente comodo,0.083333,1.916291,1,4
+5,14,inter lugar,0.083333,1.916291,1,4
+5,15,punto inter,0.083333,1.916291,1,4

@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+2,1,oler feo refineria,0.1,2.704748,1,14
+2,2,peligroso salir noche,0.070711,2.704748,1,14
+2,3,feo peligroso salir,0.070711,2.704748,1,14
+2,4,lugar atractivo visitar,0.070711,2.704748,1,14
+2,5,gastronomia lugar atractivo,0.070711,2.704748,1,14
+2,6,desconocer mayoria aspecto,0.044721,2.704748,1,14
+2,7,mayoria aspecto preguntar,0.044721,2.704748,1,14
+2,8,aspecto preguntar encuesta,0.044721,2.704748,1,14
+2,9,preguntar encuesta visitar,0.044721,2.704748,1,14
+2,10,encuesta visitar centro,0.044721,2.704748,1,14
+2,11,lugar punto inter,0.040825,2.704748,1,14
+2,12,inter demasiado contaminacion,0.040825,2.704748,1,14
+2,13,punto inter demasiado,0.040825,2.704748,1,14
+2,14,peligroso interesante poder,0.040825,2.704748,1,14
+2,15,contaminacion peligroso interesante,0.040825,2.704748,1,14

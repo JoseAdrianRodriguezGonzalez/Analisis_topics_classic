@@ -1,0 +1,8 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+6,1,saquenmir ayudo,0.5,1.405465,1,4
+6,2,salamanca empezar,0.204124,1.405465,1,4
+6,3,cosa salamanca,0.204124,1.405465,1,4
+6,4,faltar cosa,0.204124,1.405465,1,4
+6,5,ayudar general,0.204124,1.405465,1,4
+6,6,inseguridad ayudar,0.204124,1.405465,1,4
+6,7,empezar inseguridad,0.204124,1.405465,1,4

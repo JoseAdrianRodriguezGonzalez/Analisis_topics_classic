@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+1,1,punto malo malo,0.08165,2.098612,1,8
+1,2,comodidad convivencia mayormente,0.08165,2.098612,1,8
+1,3,cosa comodidad convivencia,0.08165,2.098612,1,8
+1,4,intentar cosa comodidad,0.08165,2.098612,1,8
+1,5,malo intentar cosa,0.08165,2.098612,1,8
+1,6,malo malo intentar,0.08165,2.098612,1,8
+1,7,principal calid gente,0.08165,2.098612,1,8
+1,8,naci visito universidad,0.08165,2.098612,1,8
+1,9,jardin principal calid,0.08165,2.098612,1,8
+1,10,gustar jardin principal,0.08165,2.098612,1,8
+1,11,universidad gustar jardin,0.08165,2.098612,1,8
+1,12,visito universidad gustar,0.08165,2.098612,1,8
+1,13,ciudad sucio mexico,0.063246,2.098612,1,8
+1,14,tanto inseguridad suciedad,0.063246,2.098612,1,8
+1,15,ciudad tanto inseguridad,0.063246,2.098612,1,8

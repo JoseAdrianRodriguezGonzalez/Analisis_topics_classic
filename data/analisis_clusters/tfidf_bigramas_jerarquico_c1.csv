@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+1,1,asentar foraneo,0.176777,2.098612,2,8
+1,2,lugar asentar,0.176777,2.098612,2,8
+1,3,lugar inseguro,0.125,2.504077,1,8
+1,4,peligroso adaptar,0.088388,2.504077,1,8
+1,5,lugar peligroso,0.088388,2.504077,1,8
+1,6,salir inseguridad,0.051031,2.504077,1,8
+1,7,evito salir,0.051031,2.504077,1,8
+1,8,encuesta visitar,0.051031,2.504077,1,8
+1,9,general evito,0.051031,2.504077,1,8
+1,10,vivir general,0.051031,2.504077,1,8
+1,11,tiempo vivir,0.051031,2.504077,1,8
+1,12,llevar tiempo,0.051031,2.504077,1,8
+1,13,visitar centro,0.051031,2.504077,1,8
+1,14,preguntar encuesta,0.051031,2.504077,1,8
+1,15,aspecto preguntar,0.051031,2.504077,1,8

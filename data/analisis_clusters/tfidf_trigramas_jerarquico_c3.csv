@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+3,1,salamanca ciudad gobierno,0.08165,2.299283,2,12
+3,2,crecer inseguridad descuidado,0.08165,2.299283,2,12
+3,3,hacer crecer inseguridad,0.08165,2.299283,2,12
+3,4,querer hacer crecer,0.08165,2.299283,2,12
+3,5,ciudad gobierno querer,0.08165,2.299283,2,12
+3,6,gobierno querer hacer,0.08165,2.299283,2,12
+3,7,lugar promedio ofrecer,0.070711,2.704748,1,12
+3,8,promedio ofrecer turisticamente,0.070711,2.704748,1,12
+3,9,inseguro transporte caro,0.070711,2.704748,1,12
+3,10,transporte caro comida,0.070711,2.704748,1,12
+3,11,potencial especial gastronomia,0.057735,2.704748,1,12
+3,12,especial gastronomia actividad,0.057735,2.704748,1,12
+3,13,gastronomia actividad cultural,0.057735,2.704748,1,12
+3,14,evito salir inseguridad,0.044721,2.704748,1,12
+3,15,tiempo vivir general,0.044721,2.704748,1,12

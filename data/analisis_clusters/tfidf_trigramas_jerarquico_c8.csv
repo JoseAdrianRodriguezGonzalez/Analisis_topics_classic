@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+8,1,aire nivel inseguridad,0.1,2.299283,2,14
+8,2,nivel inseguridad alto,0.1,2.299283,2,14
+8,3,lugar sucio aire,0.1,2.299283,2,14
+8,4,sucio aire nivel,0.1,2.299283,2,14
+8,5,lugar asentar foraneo,0.1,2.704748,1,14
+8,6,lugar lindo cosa,0.070711,2.704748,1,14
+8,7,lindo cosa cambiar,0.070711,2.704748,1,14
+8,8,general contaminacion seguridad,0.057735,2.704748,1,14
+8,9,seguridad delincuencia municipio,0.057735,2.704748,1,14
+8,10,contaminacion seguridad delincuencia,0.057735,2.704748,1,14
+8,11,falta arbol atencion,0.037796,2.704748,1,14
+8,12,arbol atencion bache,0.037796,2.704748,1,14
+8,13,ciudad lugar ver,0.037796,2.704748,1,14
+8,14,lugar ver bandalizado,0.037796,2.704748,1,14
+8,15,bache ciudad lugar,0.037796,2.704748,1,14

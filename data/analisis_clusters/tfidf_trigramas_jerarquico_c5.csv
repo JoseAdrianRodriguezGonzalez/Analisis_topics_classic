@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+5,1,lugar ver bandalizado,0.188982,1.405465,1,2
+5,2,ciudad lugar ver,0.188982,1.405465,1,2
+5,3,bache ciudad lugar,0.188982,1.405465,1,2
+5,4,atencion bache ciudad,0.188982,1.405465,1,2
+5,5,arbol atencion bache,0.188982,1.405465,1,2
+5,6,falta arbol atencion,0.188982,1.405465,1,2
+5,7,ciudad falta arbol,0.188982,1.405465,1,2
+5,8,restaurante valor agregado,0.133631,1.405465,1,2
+5,9,bici restaurante valor,0.133631,1.405465,1,2
+5,10,ruta bici restaurante,0.133631,1.405465,1,2
+5,11,hiking ruta bici,0.133631,1.405465,1,2
+5,12,bonitas hiking ruta,0.133631,1.405465,1,2
+5,13,vistas bonitas hiking,0.133631,1.405465,1,2
+5,14,ciudad vistas bonitas,0.133631,1.405465,1,2
+5,15,afuera ciudad vistas,0.133631,1.405465,1,2

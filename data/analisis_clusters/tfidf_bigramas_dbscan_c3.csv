@@ -1,0 +1,15 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+3,1,peligroso bonito,0.333333,1.693147,1,4
+3,2,abandonado descuidar,0.149071,1.693147,1,4
+3,3,brutalmente abandonado,0.149071,1.693147,1,4
+3,4,turistico brutalmente,0.149071,1.693147,1,4
+3,5,potencial turistico,0.149071,1.693147,1,4
+3,6,ciudad potencial,0.149071,1.693147,1,4
+3,7,ver bandalizado,0.117851,1.693147,1,4
+3,8,lugar ver,0.117851,1.693147,1,4
+3,9,ciudad lugar,0.117851,1.693147,1,4
+3,10,bache ciudad,0.117851,1.693147,1,4
+3,11,atencion bache,0.117851,1.693147,1,4
+3,12,arbol atencion,0.117851,1.693147,1,4
+3,13,falta arbol,0.117851,1.693147,1,4
+3,14,ciudad falta,0.117851,1.693147,1,4

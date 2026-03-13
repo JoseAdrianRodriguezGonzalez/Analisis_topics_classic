@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+4,1,ciudad oportunidad laboral,0.105409,1.693147,1,4
+4,2,insegura recreacion contaminacion,0.105409,1.693147,1,4
+4,3,recreacion contaminacion persona,0.105409,1.693147,1,4
+4,4,calidad vida zona,0.105409,1.693147,1,4
+4,5,vida zona insegura,0.105409,1.693147,1,4
+4,6,zona insegura recreacion,0.105409,1.693147,1,4
+4,7,decente calidad vida,0.105409,1.693147,1,4
+4,8,estudiantil decente calidad,0.105409,1.693147,1,4
+4,9,laboral estudiantil decente,0.105409,1.693147,1,4
+4,10,oportunidad laboral estudiantil,0.105409,1.693147,1,4
+4,11,ciudad visualmente bonito,0.09245,1.693147,1,4
+4,12,visitar ciudad visualmente,0.09245,1.693147,1,4
+4,13,querer visitar ciudad,0.09245,1.693147,1,4
+4,14,gente querer visitar,0.09245,1.693147,1,4
+4,15,motivir gente querer,0.09245,1.693147,1,4

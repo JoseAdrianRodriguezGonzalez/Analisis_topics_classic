@@ -1,0 +1,16 @@
+﻿cluster,rank,palabra,score_centroide,idf_local,df_en_cluster,n_docs_cluster
+6,1,pequeno atraccion llamativo,0.117851,2.252763,1,6
+6,2,lugar pequeno atraccion,0.117851,2.252763,1,6
+6,3,brutalmente abandonado descuidar,0.083333,2.252763,1,6
+6,4,turistico brutalmente abandonado,0.083333,2.252763,1,6
+6,5,potencial turistico brutalmente,0.083333,2.252763,1,6
+6,6,ciudad potencial turistico,0.083333,2.252763,1,6
+6,7,inter lugar relativamente,0.058926,2.252763,1,6
+6,8,punto inter lugar,0.058926,2.252763,1,6
+6,9,variedad punto inter,0.058926,2.252763,1,6
+6,10,turista variedad punto,0.058926,2.252763,1,6
+6,11,excelente turista variedad,0.058926,2.252763,1,6
+6,12,lugar excelente turista,0.058926,2.252763,1,6
+6,13,relativamente comodo vivir,0.058926,2.252763,1,6
+6,14,lugar relativamente comodo,0.058926,2.252763,1,6
+6,15,sucio mexico cerca,0.052705,2.252763,1,6
