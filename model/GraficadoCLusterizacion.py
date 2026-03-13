@@ -23,6 +23,8 @@ Estructura de salida:
 import json
 import os
 import warnings
+import re
+from collections import Counter
 
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -42,32 +44,32 @@ warnings.filterwarnings('ignore')
 # CONFIGURACION
 # ======================================================
 
-DIR_DATOS  = '../data/processed/'
-DIR_BASE   = '../data/clusterizacion/'
-PATH_NLP   = DIR_DATOS + 'data_nlp.csv'
+DIR_DATOS = '../data/processed/'
+DIR_BASE = '../data/clusterizacion/'
+PATH_NLP = DIR_DATOS + 'data_nlp.csv'
 
 ARCHIVOS_TFIDF = {
     'unigramas': DIR_DATOS + 'TF_IDF_normalizado_unigramas.csv',
-    'bigramas' : DIR_DATOS + 'TF_IDF_normalizado_bigramas.csv',
+    'bigramas': DIR_DATOS + 'TF_IDF_normalizado_bigramas.csv',
     'trigramas': DIR_DATOS + 'TF_IDF_normalizado_trigramas.csv',
 }
 
 ARCHIVOS_RANKING = {
     'unigramas': DIR_DATOS + 'rankings_unigrams.csv',
-    'bigramas' : DIR_DATOS + 'rankings_bigrams.csv',
+    'bigramas': DIR_DATOS + 'rankings_bigrams.csv',
     'trigramas': DIR_DATOS + 'rankings_trigrams.csv',
 }
 
 CARPETA_NGRAMA = {
     'unigramas': 'Unigramas',
-    'bigramas' : 'Bigramas',
+    'bigramas': 'Bigramas',
     'trigramas': 'Trigramas',
 }
 
 # Modelos que reciben etiquetas cualitativas
 MODELOS_SELECCIONADOS = {
     'unigramas': [('jerarquico', 'UMAP')],
-    'bigramas' : [('jerarquico', 'UMAP'), ('dbscan', 'UMAP')],
+    'bigramas': [('jerarquico', 'UMAP'), ('dbscan', 'UMAP')],
     'trigramas': [('jerarquico', 'PCA')],
 }
 
@@ -104,22 +106,21 @@ ETIQUETAS_CUALITATIVAS = {
         6: 'Reacción emocional negativa',
     },
     ('trigramas', 'jerarquico'): {
-        0:  'Ciudad promedio sin atractivos',
-        1:  'Vida cotidiana condicionada por inseguridad',
-        2:  'Reconocimiento gastronómico con limitaciones',
-        3:  'Vínculos personales y experiencias locales',
-        4:  'Contaminación, inseguridad y percepción urbana',
-        5:  'Inseguridad y falta de oferta recreativa',
-        6:  'Potencial cultural y natural desaprovechado',
-        7:  'Ciudad insegura y poco recreativa',
-        8:  'Potencial turístico abandonado',
-        9:  'Potencial gastronómico y cultural',
+        0: 'Ciudad promedio sin atractivos',
+        1: 'Vida cotidiana condicionada por inseguridad',
+        2: 'Reconocimiento gastronómico con limitaciones',
+        3: 'Vínculos personales y experiences locales',
+        4: 'Contaminación, inseguridad y percepción urbana',
+        5: 'Inseguridad y falta de oferta recreativa',
+        6: 'Potencial cultural y natural desaprovechado',
+        7: 'Ciudad insegura y poco recreativa',
+        8: 'Potencial turístico abandonado',
+        9: 'Potencial gastronómico y cultural',
     },
 }
 
 sns.set_theme(style='whitegrid', palette='tab10', font='DejaVu Sans')
 PALETTE_TAB10 = sns.color_palette('tab10', 20)
-
 
 # ======================================================
 # CREAR CARPETAS
@@ -136,7 +137,7 @@ for carpeta_ng in CARPETA_NGRAMA.values():
 # ======================================================
 
 def cargar_matriz(path):
-    df   = pd.read_csv(path)
+    df = pd.read_csv(path)
     mask = df.values.sum(axis=1) != 0
     return df.values[mask].astype(float), np.where(mask)[0], df.columns.tolist()
 
@@ -185,12 +186,18 @@ def label_largo(cid, etiq_dict):
     return f'C{cid}'
 
 
+def clean_for_text(text):
+    text = re.sub(r'[\r\n\t]+', ' ', text)
+    text = text.replace('"', '').replace("'", '').replace('“', '').replace('”', '').replace('—', '-')
+    return text.strip()
+
+
 # ======================================================
 # GRAFICAS — scatter, silhouette, elbow, dendrograma
 # ======================================================
 
 def graficar_scatter_clusters(X_red, etiquetas, titulo, path_out,
-                               reduccion, es_dbscan=False, etiq_dict=None):
+                              reduccion, es_dbscan=False, etiq_dict=None):
     ids_validos = sorted([c for c in set(etiquetas) if c != -1])
     palette = sns.color_palette('tab10', n_colors=max(len(ids_validos), 1))
 
@@ -222,10 +229,10 @@ def graficar_scatter_clusters(X_red, etiquetas, titulo, path_out,
 
 
 def graficar_silhouette_detalle(X_red, etiquetas, titulo, path_out, etiq_dict=None):
-    valores  = silhouette_samples(X_red, etiquetas)
+    valores = silhouette_samples(X_red, etiquetas)
     promedio = valores.mean()
-    ids      = sorted(set(etiquetas))
-    palette  = sns.color_palette('tab10', n_colors=len(ids))
+    ids = sorted(set(etiquetas))
+    palette = sns.color_palette('tab10', n_colors=len(ids))
 
     fig, ax = plt.subplots(figsize=(9, 5))
     y = 0
@@ -233,7 +240,7 @@ def graficar_silhouette_detalle(X_red, etiquetas, titulo, path_out, etiq_dict=No
 
     for ci, cid in enumerate(ids):
         vals = np.sort(valores[etiquetas == cid])
-        h    = len(vals)
+        h = len(vals)
         ax.barh(range(y, y + h), vals, height=1.0,
                 color=palette[ci % len(palette)],
                 edgecolor='none', alpha=0.88)
@@ -279,6 +286,7 @@ def graficar_elbow(X_red, codo_k, titulo, path_out):
     plt.close()
 
 
+# Dendrograma Original (Preservado)
 def graficar_dendrograma(X, metodo, titulo, path_out, max_hojas=50):
     Z = linkage(X, method=metodo)
     fig, ax = plt.subplots(figsize=(14, 5))
@@ -294,12 +302,65 @@ def graficar_dendrograma(X, metodo, titulo, path_out, max_hojas=50):
     plt.close()
 
 
+# NUEVO V2: Dendrograma con Tópicos calculados dinámicamente
+def graficar_dendrograma_etiquetado(X, etiquetas, etiq_dict, metodo, titulo, path_out, max_hojas=50):
+    Z = linkage(X, method=metodo)
+    fig, ax = plt.subplots(figsize=(16, 8))
+
+    # 1. Dibujar el dendrograma normal
+    R = dendrogram(Z, ax=ax, truncate_mode='lastp', p=max_hojas,
+                   leaf_rotation=45, leaf_font_size=9,
+                   color_threshold=0.7 * max(Z[:, 2]))
+
+    # 2. Rastrear qué cluster domina en cada nodo del árbol (Mapeo de Scipy)
+    n_samples = len(etiquetas)
+    # Diccionario para guardar qué documentos hay en cada nodo (originales + fusionados)
+    node_clusters = {i: [etiquetas[i]] for i in range(n_samples)}
+
+    for i, row in enumerate(Z):
+        izq, der = int(row[0]), int(row[1])
+        # El nuevo nodo creado tiene el ID: n_samples + i
+        node_clusters[n_samples + i] = node_clusters[izq] + node_clusters[der]
+
+    # 3. Generar las nuevas etiquetas para las hojas visibles
+    nuevas_etiquetas_eje = []
+
+    for leaf_node in R['leaves']:
+        docs_en_hoja = node_clusters[leaf_node]
+        validos = [c for c in docs_en_hoja if c != -1]
+
+        if not validos:
+            validos = [-1]
+
+        # Cluster más común en esta rama
+        dom_c = Counter(validos).most_common(1)[0][0]
+
+        if dom_c == -1:
+            texto_tema = "Ruido"
+        else:
+            texto_tema = etiq_dict.get(dom_c, f"Tema {dom_c}")
+
+        if len(texto_tema) > 35:
+            texto_tema = texto_tema[:32] + "..."
+
+        etiqueta_final = f"C{dom_c}: {texto_tema}\n({len(docs_en_hoja)} docs)"
+        nuevas_etiquetas_eje.append(etiqueta_final)
+
+    # 4. Inyectar nuestros textos en el eje X
+    ax.set_xticklabels(nuevas_etiquetas_eje, rotation=45, ha='right', fontsize=9, fontweight='bold')
+
+    ax.set_title(titulo, fontsize=15, fontweight='bold', pad=15)
+    ax.set_ylabel('Distancia (Disimilitud)', fontsize=11)
+    ax.set_xlabel('Tema predominante por rama', fontsize=12, labelpad=10)
+
+    sns.despine(bottom=True)
+    plt.tight_layout()
+    plt.savefig(path_out, dpi=300, bbox_inches='tight')
+    plt.close()
+
+
 # ======================================================
-# DEMOGRAFIA — estilo imagenes de referencia
-# Barras horizontales 100% apiladas
-# Eje Y = variable demografica | Eje X = % participacion
-# Leyenda: "Temas Identificados" con "C0: Etiqueta"
-# Solo para modelos seleccionados; resto usa etiquetas simples
+# DEMOGRAFIA
 # ======================================================
 
 def graficar_demografia(meta, etiquetas, variable, titulo, path_out,
@@ -331,19 +392,17 @@ def graficar_demografia(meta, etiquetas, variable, titulo, path_out,
     if col_var not in df.columns or df[col_var].isna().all():
         return
 
-    # Tabla: filas = valores de la variable, columnas = cluster_id
     tabla = df.groupby([col_var, 'cluster']).size().unstack(fill_value=0)
     tabla_pct = tabla.div(tabla.sum(axis=1), axis=0) * 100
 
     ids_cluster = sorted(tabla_pct.columns.tolist())
-    n_clusters  = len(ids_cluster)
-    palette     = sns.color_palette('tab10', n_colors=n_clusters)
-    color_map   = {cid: palette[i] for i, cid in enumerate(ids_cluster)}
+    n_clusters = len(ids_cluster)
+    palette = sns.color_palette('tab10', n_colors=n_clusters)
+    color_map = {cid: palette[i] for i, cid in enumerate(ids_cluster)}
 
     n_grupos = len(tabla_pct)
-    fig, ax  = plt.subplots(figsize=(12, max(4, n_grupos * 1.1 + 1.5)))
+    fig, ax = plt.subplots(figsize=(12, max(4, n_grupos * 1.1 + 1.5)))
 
-    # Dibujar barras apiladas manualmente para controlar colores exactos
     lefts = np.zeros(n_grupos)
     grupos = tabla_pct.index.tolist()
 
@@ -355,20 +414,17 @@ def graficar_demografia(meta, etiquetas, variable, titulo, path_out,
                 label=label_corto(cid, etiq_dict))
         lefts += vals
 
-    # Eje X en porcentaje
     ax.set_xlim(0, 100)
     ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{int(x)}%'))
     ax.set_xlabel('Porcentaje de participación', fontsize=11)
     ax.set_ylabel(label_eje, fontsize=11)
     ax.set_title(titulo_grafica, fontsize=14, fontweight='bold', pad=14)
 
-    # Leyenda estilo referencia: título "Temas Identificados"
     ax.legend(title='Temas Identificados',
               bbox_to_anchor=(1.02, 1), loc='upper left',
               fontsize=8.5, title_fontsize=10,
               framealpha=0.95, edgecolor='#cccccc')
 
-    # Grid vertical sutil
     ax.xaxis.grid(True, linestyle='--', alpha=0.4, color='gray')
     ax.set_axisbelow(True)
     sns.despine(left=False, bottom=False)
@@ -379,19 +435,11 @@ def graficar_demografia(meta, etiquetas, variable, titulo, path_out,
 
 # ======================================================
 # FRECUENCIAS DE NGRAM POR CLUSTER
-# Barras horizontales con gradiente plasma, top N terminos
-# Una figura por cluster, guardada en dir_red
-# Solo para modelos seleccionados
 # ======================================================
 
 def graficar_ngram_por_cluster(X, vocabulario, etiquetas, ngrama, modelo,
-                                reduccion, dir_red, es_dbscan=False,
-                                etiq_dict=None, top_n=15):
-    '''
-    Para cada cluster del modelo seleccionado genera un grafico de barras
-    horizontales con los top_n terminos mas frecuentes (suma de TF-IDF
-    de los documentos del cluster), con degradado de color plasma.
-    '''
+                               reduccion, dir_red, es_dbscan=False,
+                               etiq_dict=None, top_n=15):
     ids_cluster = sorted([c for c in set(etiquetas) if c != -1])
     cmap = plt.get_cmap('plasma')
 
@@ -400,18 +448,15 @@ def graficar_ngram_por_cluster(X, vocabulario, etiquetas, ngrama, modelo,
         if mask.sum() == 0:
             continue
 
-        # Suma de pesos TF-IDF del cluster
         pesos = X[mask].sum(axis=0)
         indices_top = np.argsort(pesos)[-top_n:][::-1]
         palabras = [vocabulario[i] for i in indices_top]
-        valores  = [pesos[i] for i in indices_top]
+        valores = [pesos[i] for i in indices_top]
 
-        # Ordenar ascendente para barh (la mayor queda arriba)
         orden = np.argsort(valores)
         palabras = [palabras[i] for i in orden]
-        valores  = [valores[i]  for i in orden]
+        valores = [valores[i] for i in orden]
 
-        # Gradiente de color segun posicion
         n = len(palabras)
         colores = [cmap(0.2 + 0.6 * (i / max(n - 1, 1))) for i in range(n)]
 
@@ -426,7 +471,6 @@ def graficar_ngram_por_cluster(X, vocabulario, etiquetas, ngrama, modelo,
         ax.set_xlabel('Peso TF-IDF acumulado', fontsize=10)
         ax.set_ylabel(ngrama.capitalize(), fontsize=10)
 
-        # Valor al final de cada barra
         for bar, val in zip(bars, valores):
             ax.text(bar.get_width() + max(valores) * 0.01,
                     bar.get_y() + bar.get_height() / 2,
@@ -444,6 +488,63 @@ def graficar_ngram_por_cluster(X, vocabulario, etiquetas, ngrama, modelo,
 
 
 # ======================================================
+# NUEVO: BOLSA DE PALABRAS COMO HEATMAP
+# ======================================================
+
+def graficar_heatmap_palabras_cluster(X, vocabulario, etiquetas, etiq_dict, titulo, path_out, top_n_words=10):
+    ids_validos = sorted([c for c in set(etiquetas) if c != -1])
+    if not ids_validos or len(ids_validos) < 2:
+        return
+
+    cluster_weights = []
+    cluster_keywords_list = []
+
+    for cid in ids_validos:
+        mask = etiquetas == cid
+        if mask.sum() == 0:
+            continue
+
+        pesos = X[mask].sum(axis=0)
+        indices_top = np.argsort(pesos)[-top_n_words:][::-1]
+
+        cluster_keywords_list.extend([vocabulario[i] for i in indices_top])
+        cluster_weights.append(pesos)
+
+    matriz_completa = np.stack(cluster_weights)
+
+    df_pesos = pd.DataFrame(matriz_completa, columns=vocabulario).T
+    df_pesos.columns = [label_corto(c, etiq_dict) for c in ids_validos]
+
+    palabras_unicas = list(set(cluster_keywords_list))
+    if not palabras_unicas:
+        return
+
+    df_subset = df_pesos.loc[palabras_unicas]
+
+    df_subset['cluster_max'] = df_subset.idxmax(axis=1)
+    df_subset = df_subset.sort_values(by=['cluster_max'])
+    df_final = df_subset.drop(columns=['cluster_max'])
+
+    n_palabras_final = len(df_final)
+    fig, ax = plt.subplots(figsize=(12, max(8, n_palabras_final * 0.3 + 2)))
+
+    df_final_norm = df_final.div(df_final.sum(axis=0), axis=1) * 100
+
+    sns.heatmap(df_final_norm, cmap='plasma', ax=ax, annot=False,
+                fmt='.2f', cbar_kws={'label': 'Peso Relativo Global (%)'})
+
+    ax.set_title(titulo, fontsize=16, fontweight='bold', pad=20)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=30, ha='right', fontsize=9)
+    ax.set_yticklabels(ax.get_yticklabels(), fontsize=8)
+    ax.set_xlabel('Temas Identificados (Modelo Seleccionado)', fontsize=12)
+    ax.set_ylabel('Palabras Clave (Top N Global)', fontsize=12)
+
+    plt.tight_layout()
+    plt.savefig(path_out, dpi=300, bbox_inches='tight')
+    plt.close()
+
+
+# ======================================================
 # PIPELINE PRINCIPAL
 # ======================================================
 
@@ -453,34 +554,34 @@ with open(os.path.join(DIR_BASE, 'etiquetas_mejores.json'), 'r', encoding='utf-8
     etiquetas_mejores = json.load(f)
 
 for _, fila in df_mejores.iterrows():
-    ngrama     = fila['ngrama']
-    modelo     = fila['modelo']
-    reduccion  = fila['reduccion']
-    hiperpar   = fila['hiperparametros']
+    ngrama = fila['ngrama']
+    modelo = fila['modelo']
+    reduccion = fila['reduccion']
+    hiperpar = fila['hiperparametros']
     n_clusters = int(fila['n_clusters'])
-    codo_k     = fila.get('codo_k', None)
+    codo_k = fila.get('codo_k', None)
 
-    key      = f"{ngrama}|{modelo}|{reduccion}|{hiperpar}"
+    key = f"{ngrama}|{modelo}|{reduccion}|{hiperpar}"
     etiq_lst = etiquetas_mejores.get(key)
     if etiq_lst is None:
         print(f'Sin etiquetas para {key}, saltando.')
         continue
 
-    etiquetas   = np.array(etiq_lst)
-    es_dbscan   = (modelo == 'dbscan')
+    etiquetas = np.array(etiq_lst)
+    es_dbscan = (modelo == 'dbscan')
     seleccionado = es_seleccionado(ngrama, modelo)
-    etiq_dict   = get_etiq_dict(ngrama, modelo) if seleccionado else None
+    etiq_dict = get_etiq_dict(ngrama, modelo) if seleccionado else None
 
     print(f'{ngrama} | {modelo} | {reduccion} | {hiperpar} | seleccionado={seleccionado}')
 
     X, idx_val, vocab = cargar_matriz(ARCHIVOS_TFIDF[ngrama])
-    meta              = cargar_metadatos(PATH_NLP, idx_val)
-    X_red             = reducir(X, reduccion)
+    meta = cargar_metadatos(PATH_NLP, idx_val)
+    X_red = reducir(X, reduccion)
 
     dir_red = dir_grafica(ngrama, reduccion)
     prefijo = f'{ngrama}_{modelo}'
 
-    # -- Scatter --
+    # -- Scatter (Preservado) --
     graficar_scatter_clusters(
         X_red, etiquetas,
         titulo=f'{modelo.upper()} ({hiperpar}) — {ngrama} [{reduccion}]',
@@ -488,9 +589,9 @@ for _, fila in df_mejores.iterrows():
         reduccion=reduccion, es_dbscan=es_dbscan, etiq_dict=etiq_dict,
     )
 
-    # -- Silhouette --
+    # -- Silhouette (Preservado) --
     etiq_v = etiquetas[etiquetas != -1] if es_dbscan else etiquetas
-    X_v    = X_red[etiquetas != -1]     if es_dbscan else X_red
+    X_v = X_red[etiquetas != -1] if es_dbscan else X_red
     if len(set(etiq_v)) >= 2:
         graficar_silhouette_detalle(
             X_v, etiq_v,
@@ -499,7 +600,7 @@ for _, fila in df_mejores.iterrows():
             etiq_dict=etiq_dict,
         )
 
-    # -- Elbow (solo kmeans) --
+    # -- Elbow (solo kmeans, Preservado) --
     if modelo == 'kmeans' and not pd.isna(codo_k):
         graficar_elbow(
             X_red, int(codo_k),
@@ -507,16 +608,39 @@ for _, fila in df_mejores.iterrows():
             path_out=os.path.join(dir_red, f'elbow_{prefijo}.png'),
         )
 
-    # -- Dendrograma (solo jerarquico) --
+    # -- Dendrograma (solo jerarquico, Preservado original) --
     if modelo == 'jerarquico':
         metodo_jer = hiperpar.split('metodo=')[-1]
         graficar_dendrograma(
             X_red, metodo_jer,
-            titulo=f'Dendrograma — Jerarquico {metodo_jer} {ngrama} [{reduccion}]',
-            path_out=os.path.join(dir_red, f'dendrograma_{prefijo}.png'),
+            titulo=f'Dendrograma (Original) — Jerárquico {metodo_jer} {ngrama} [{reduccion}]',
+            path_out=os.path.join(dir_red, f'dendrograma_{prefijo}_orig.png'),
         )
 
-    # -- Demografia (todos los modelos, estilo referencia para seleccionados) --
+    # -- Dendrograma V2 (Etiquetado, NUEVO) --
+    if modelo == 'jerarquico' and seleccionado:
+        metodo_jer = hiperpar.split('metodo=')[-1]
+        graficar_dendrograma_etiquetado(
+            X_red, etiquetas, etiq_dict, metodo_jer,
+            titulo=f'Dendrograma de Tópicos (V2) — {modelo.capitalize()} {metodo_jer} {ngrama}',
+            path_out=os.path.join(dir_red, f'dendrograma_{prefijo}_etiquetado.png'),
+            max_hojas=30
+        )
+
+    # -- Heatmap de Palabras Clave (NUEVO) --
+    if seleccionado:
+        titulo_heatmap = (
+            f'Matriz de Calor (Heatmap) — Palabras Clave por Tema\n'
+            f'({modelo.upper()}, {reduccion}) — {ngrama.capitalize()}'
+        )
+        graficar_heatmap_palabras_cluster(
+            X, vocab, etiquetas, etiq_dict,
+            titulo=titulo_heatmap,
+            path_out=os.path.join(dir_red, f'heatmap_palabras_{prefijo}.png'),
+            top_n_words=10
+        )
+
+    # -- Demografia (Preservado) --
     dir_demos = os.path.join(DIR_BASE, 'DEMOS', CARPETA_NGRAMA[ngrama], reduccion)
     for var in ['genero', 'lugar', 'edad']:
         titulo_demo = (
@@ -530,7 +654,7 @@ for _, fila in df_mejores.iterrows():
             etiq_dict=etiq_dict,
         )
 
-    # -- Frecuencias de ngram por cluster (solo seleccionados) --
+    # -- Frecuencias de ngram por cluster (solo seleccionados, Preservado) --
     if seleccionado:
         graficar_ngram_por_cluster(
             X, vocab, etiquetas, ngrama, modelo, reduccion,
@@ -538,4 +662,4 @@ for _, fila in df_mejores.iterrows():
             etiq_dict=etiq_dict, top_n=15,
         )
 
-print('\nGraficacion completada.')
+print('\nGraficación completada.')
