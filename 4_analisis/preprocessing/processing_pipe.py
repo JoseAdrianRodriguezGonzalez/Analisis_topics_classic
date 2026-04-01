@@ -6,9 +6,9 @@ def process_pipeline(input_path):
     df = pd.read_csv(input_path, encoding="utf-8")
     df = normalize_columns(df)
 
-    results_stage_1_2 = []
-    results_stage_3 = []
-    json_output = []
+    spanish_results = []
+    english_results = []
+    mixed_results = []
 
     for idx, row in df.iterrows():
         comentario = row["comentarios"]
@@ -17,12 +17,19 @@ def process_pipeline(input_path):
         text = normalize_text(comentario)
         text = remove_noise(text)
 
-        pos_tags, noun_phrases, entities, entity_density = linguistic_analysis(text)
+        # Detection
+        lang = detect_language_type(text)
+        nlp = get_nlp_model(lang)
 
-        clean_text = heavy_processing(text)
+        if nlp is None:
+            mixed_results.append({"indice": idx, "comentario": text})
+            continue
+
+        pos_tags, noun_phrases, entities, entity_density = linguistic_analysis(text, nlp)
+        clean_text = heavy_processing(text, nlp)
 
         # CSV 1 
-        results_stage_1_2.append({
+        results_1_2 = {
             "indice": idx,
             "estrellas": estrellas,
             "comentario": text,
@@ -30,22 +37,19 @@ def process_pipeline(input_path):
             "noun_phrases": noun_phrases,
             "entities": entities,
             "entity_density": entity_density
-        })
+        }
 
         # CSV 2 
-        results_stage_3.append({
+        results_3 = {
             "indice": idx,
             "comentario_clean": clean_text
-        })
+        }
+    
+        if lang == "es":
+            spanish_results.append((results_1_2, results_3))
+        elif lang == "en":
+            english_results.append((results_1_2, results_3))
+        else:
+            mixed_results.append({"indice": idx, "comentario": text})
 
-        # JSON
-        json_output.append({
-            "indice": idx,
-            "comentario": text,
-            "pos_tags": pos_tags,
-            "noun_phrases": noun_phrases,
-            "entities": entities,
-            "entity_density": entity_density
-        })
-
-    return results_stage_1_2, results_stage_3, json_output
+    return spanish_results, english_results, mixed_results
