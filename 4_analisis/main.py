@@ -3,7 +3,7 @@ from preprocessing.individual_functions import *
 from preprocessing.processing_pipe import process_pipeline
 
 def main():
-    input_file = "raw_data/data.csv"
+    input_file = "data/raw/huatulco.csv"
     create_data_folders()
 
     spanish, english, mixed = process_pipeline(input_file)
