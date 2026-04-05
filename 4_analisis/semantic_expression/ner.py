@@ -2,7 +2,7 @@ from numpy import e
 import pandas as pd 
 from collections import Counter, defaultdict
 import json
-
+from rapidfuzz import fuzz
 from preprocessing.individual_functions import normalize_ner
 def read_json(src):
     with open(src)as f:
@@ -45,3 +45,45 @@ def aggregate_entities(cleaned):
         })
     result.sort(key=lambda x :x["count"],reverse=True)
     return result
+def merge_similar_entities(entities,threshold=90):
+    merged=[]
+    used=[False]*len(entities)
+    for i,base in enumerate(entities):
+        if used[i]:
+            continue
+        base_text=base["text"]
+        new_entity={
+            "text":base["text"],
+            "label":base["label"],
+            "count":base["count"],
+            "indices":set(base["indices"])
+        }
+        for j in range(i+1,len(entities)):
+            if used[j]:
+                continue
+            compare=entities[j]
+            comp_text=compare["text"]
+            if fuzz.ratio(base_text,comp_text)>=threshold:
+                new_entity["count"]+=compare["count"]
+                new_entity["indices"].update(compare["indices"])
+                used[j]=True
+        used[i]=True 
+        new_entity["indices"]=list(new_entity["indices"])
+        merged.append(new_entity)
+    return merged
+def enrichment_text(groups,original,top_k=5):
+    original_map={
+        row["indice"]:row 
+        for row in original 
+    }
+    for i,base in enumerate(groups):
+        phrases=[]
+        for index in base["indices"]:
+            if index not in original_map:
+                continue 
+            phrases.extend(original_map[index]["noun_phrases"])
+        counter=Counter(phrases)
+        top_phrases=[p for p,_ in counter.most_common(top_k)]
+        groups[i]["top_noun_phrases"]=top_phrases
+        groups[i]["noun_phrases_freq"]=dict(counter)
+    return groups 

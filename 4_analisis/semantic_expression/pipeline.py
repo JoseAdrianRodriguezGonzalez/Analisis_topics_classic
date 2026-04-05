@@ -4,4 +4,6 @@ def pipe():
     data=read_json("data/data_spanish/analysis.json")
     cleaned=clean_entities(data)
     aggregate=aggregate_entities(cleaned)
-    print(aggregate)
+    merged=merge_similar_entities(aggregate)
+    noun=enrichment_text(merged,data)
+    
