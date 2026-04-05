@@ -1,5 +1,6 @@
 import os
 import re
+from langdetect.utils import unicode_block
 import spacy
 import json
 import pandas as pd
@@ -65,7 +66,11 @@ def normalize_text(text):
     text = str(text)
     text = re.sub(r'\s+', ' ', text).strip()
     return text
-
+def normalize_ner(text):
+    text=text.lower().strip()
+    text=unidecode(text)
+    text=re.sub(r'\s+',' ',text)
+    return text
 def remove_noise(text):
     text = re.sub(r'<.*?>', '', text)
     text = re.sub(r'[^\w\s.,]', '', text)

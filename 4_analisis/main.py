@@ -1,6 +1,7 @@
 import pandas as pd
 from preprocessing.individual_functions import *
 from preprocessing.processing_pipe import process_pipeline
+from semantic_expression.pipeline import pipe
 def preprocessing_complete(input_file):
     create_data_folders()
     spanish, english, mixed = process_pipeline(input_file)
@@ -11,6 +12,7 @@ def preprocessing_complete(input_file):
         print("⚠️  File generated for mixed results.")
     print("\nPipeline executed successfully.")
 def main():
-    preprocessing_complete("data/raw/huatulco.csv")
+    ##preprocessing_complete("data/raw/huatulco.csv")
+    pipe()
 if __name__ == "__main__":
     main()
