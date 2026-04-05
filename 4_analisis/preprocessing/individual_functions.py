@@ -70,7 +70,9 @@ def remove_noise(text):
     text = re.sub(r'<.*?>', '', text)
     text = re.sub(r'[^\w\s.,]', '', text)
     return text
-
+def remove_light_noise(text):
+    text=re.sub(r'<*:?>','',text)
+    return text
 def tokenize(text, nlp):
     document = nlp(text)
     return [token.text for token in document]
@@ -81,15 +83,10 @@ def tokenize(text, nlp):
 # =================================== #
 def linguistic_analysis(text, nlp):
     document = nlp(text)
-
     pos_tags = [token.pos_ for  token in document]
-
     noun_phrases = [chunk.text for chunk in document.noun_chunks]
-
     entities = [{"text": ent.text, "label": ent.label_} for ent in document.ents]
-
     entity_density = len(document.ents) / len(document) if len(document) > 0 else 0
-
     return pos_tags, noun_phrases, entities, entity_density
 
 # =================================== #
@@ -121,21 +118,14 @@ def create_data_folders():
         os.makedirs(path, exist_ok = True)
 
 def save_results(results, folder):
-
     if len(results) == 0:
-        return
-
+        return 
     stage_1_2 = [r[0] for r in results]
     stage_3 = [r[1] for r in results]
-
     base_path = f"data/{folder}"
-
     os.makedirs(base_path, exist_ok = True)
-
     pd.DataFrame(stage_1_2).to_csv(f"{base_path}/analysis.csv", index=False)
     pd.DataFrame(stage_3).to_csv(f"{base_path}/clean.csv", index=False)
-
     with open(f"{base_path}/analysis.json", "w", encoding="utf-8") as f:
         json.dump(stage_1_2, f, indent=4, ensure_ascii=False)
-
     print(f"Results saved in {base_path}")

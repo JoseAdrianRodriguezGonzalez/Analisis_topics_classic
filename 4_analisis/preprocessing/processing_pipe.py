@@ -15,8 +15,7 @@ def process_pipeline(input_path):
         estrellas = row.get("cantidad_de_estrellas", None)
 
         text = normalize_text(comentario)
-        text = remove_noise(text)
-
+        text=remove_light_noise(text)
         # Detection
         lang = detect_language_type(text)
         nlp = get_nlp_model(lang)
@@ -26,6 +25,7 @@ def process_pipeline(input_path):
             continue
 
         pos_tags, noun_phrases, entities, entity_density = linguistic_analysis(text, nlp)
+        text = remove_noise(text)
         clean_text = heavy_processing(text, nlp)
 
         # CSV 1 
