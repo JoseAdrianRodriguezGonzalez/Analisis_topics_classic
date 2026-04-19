@@ -1,3 +1,4 @@
+from enum import unique
 import os
 import re
 from langdetect.utils import unicode_block
@@ -134,3 +135,54 @@ def save_results(results, folder):
     with open(f"{base_path}/analysis.json", "w", encoding="utf-8") as f:
         json.dump(stage_1_2, f, indent=4, ensure_ascii=False)
     print(f"Results saved in {base_path}")
+def normalize_df(df,source,location):
+    df=df.copy()
+    df=df.loc[:,~df.columns.str.contains("^Unnamed")]
+    df.columns=df.columns.str.lower()
+    text_cols=["comment","comentarios","comentario","texto","review_text"]
+    df["text"]=None
+    for col in text_cols:
+        if col in df.columns:
+            df["text"]=df[col]
+            break 
+    rating_cols = ["rating", "estrellas", "cantidad de estrellas"]
+
+    df["stars"] = None
+    for col in rating_cols:
+        if col in df.columns:
+            df["stars"] = df[col]
+            break
+    df["stars"]=pd.to_numeric(df["stars"],errors="coerce")
+    df["source"]=source 
+    df["location"]=location 
+    df=df[["text","stars","source","location"]]
+    df=df[df["text"].notna()]
+    return df
+def csv_to_dictionary(src:str)->pd.DataFrame:
+    folders=os.listdir(src)
+    all_dfs =[]
+    for folder in folders:
+        path_folder=os.path.join(src,folder)
+        for file in os.listdir(path_folder):
+            path_file=os.path.join(path_folder,file)
+            df=read_csv_safe(path_file)
+            location=os.path.splitext(file)[0]
+            source=folder 
+            df=normalize_df(df,source,location)
+            all_dfs.append(df)
+    master_df=pd.concat(all_dfs,ignore_index=True)
+    return master_df
+def create_csv_master(src,out):
+    if os.path.exists(out):
+        return pd.read_csv(out)
+    unique_df=csv_to_dictionary(src)
+    unique_df.to_csv(out,index=False)
+    return unique_df
+def read_csv_safe(path):
+    try:
+        return pd.read_csv(path,encoding="utf-8")
+    except UnicodeDecodeError:
+        try:
+            return pd.read_csv(path,encoding="cp1252")
+        except:
+            return pd.read_csv(path,encoding="latin-1")
