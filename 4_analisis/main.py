@@ -4,7 +4,7 @@ from preprocessing.processing_pipe import process_pipeline
 from semantic_expression.pipeline import pipe
 from feature_engineering.vocabulary import build_vocabulary_from_clean
 from feature_engineering.features import run_feature_pipeline
-
+from clustering.clustering_pipeline import run_clustering_pipeline
 
 
 def preprocessing_complete(input_file):
@@ -21,5 +21,6 @@ def main():
     pipe()
     build_vocabulary_from_clean()
     run_feature_pipeline()
+    run_clustering_pipeline()
 if __name__ == "__main__":
     main()
