@@ -1,12 +1,16 @@
 import pandas as pd
+#primer paso 
 from preprocessing.individual_functions import *
 from preprocessing.processing_pipe import process_pipeline
-from semantic_expression.pipeline import pipe
+# paso 2 
 from feature_engineering.vocabulary import build_vocabulary_from_clean
 from feature_engineering.features import run_feature_pipeline
+# paso 3 y 4  
+from semantic_expression.pipeline import pipe
+# paso 5 
 from clustering.clustering_pipeline import run_clustering_pipeline
 
-
+main_csv="data/raw/complete.csv"
 def preprocessing_complete(input_file):
     create_data_folders()
     spanish, english, mixed = process_pipeline(input_file)
@@ -17,7 +21,8 @@ def preprocessing_complete(input_file):
         print("⚠️  File generated for mixed results.")
     print("\nPipeline executed successfully.")
 def main():
-    preprocessing_complete("data/raw/huatulco.csv")
+    df=create_csv_master("data/raw",main_csv)  
+    preprocessing_complete(main_csv)
     pipe()
     build_vocabulary_from_clean()
     run_feature_pipeline()

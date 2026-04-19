@@ -11,8 +11,8 @@ def process_pipeline(input_path):
     mixed_results = []
 
     for idx, row in df.iterrows():
-        comentario = row["comentarios"]
-        estrellas = row.get("cantidad_de_estrellas", None)
+        comentario = row["text"]
+        estrellas = row.get("stars", None)
 
         text = normalize_text(comentario)
         text=remove_light_noise(text)
