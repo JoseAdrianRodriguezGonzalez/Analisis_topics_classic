@@ -22,10 +22,15 @@ def preprocessing_complete(input_file):
     print("\nPipeline executed successfully.")
 def main():
     df=create_csv_master("data/raw",main_csv)  
+    print("Primera fase: preprocesamiento")
     preprocessing_complete(main_csv)
+    print("Segunda fase: embeddings y topicos ")
     pipe()
+    print("Tercera fase: construccion de vocabulario")
     build_vocabulary_from_clean()
+    print("Tercera fase: Ingeniera de caracteristicas")
     run_feature_pipeline()
+    print("Cuarta fase: creacion de clusters")
     run_clustering_pipeline()
 if __name__ == "__main__":
     main()

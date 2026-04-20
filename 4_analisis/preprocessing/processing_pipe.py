@@ -11,6 +11,7 @@ def process_pipeline(input_path):
     mixed_results = []
 
     for idx, row in df.iterrows():
+        print(f"Procesando comentario {idx}/{len(df)}")
         comentario = row["text"]
         estrellas = row.get("stars", None)
 
