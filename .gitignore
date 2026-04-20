@@ -4,3 +4,10 @@ __pycache__/
 *.csv
 *.json
 !raw_data/data.csv
+data/
+models/
+*.npy
+*.pkl
+*.csv
+
+# pero si necesitas conservar datasets crudos, puedes ajustar luego
