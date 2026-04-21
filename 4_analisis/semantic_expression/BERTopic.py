@@ -19,7 +19,7 @@ class BERTopic_analysis():
         self.reduction=reduction
         self.embedding=embedding
         self.docs=docs 
-    def set_model_umap(self,n_neighbors=15,n_components=5,min_dist=0.0,metric='cosine',**kwargs):
+    def set_model_umap(self,n_neighbors=30,n_components=8,min_dist=0.0,metric='cosine',**kwargs):
         umap_model = UMAP(
             n_neighbors=n_neighbors,
             n_components=n_components,
@@ -27,7 +27,7 @@ class BERTopic_analysis():
             metric=metric 
         )
         return umap_model 
-    def set_model_hdbscan(self, min_cluster_size=30,metric='euclidean',cluster_selection_method='eom',prediction_data=True,**kwargs):
+    def set_model_hdbscan(self, min_cluster_size=15,metric='euclidean',cluster_selection_method='eom',prediction_data=True,**kwargs):
         hdbscan_model = HDBSCAN(min_cluster_size=min_cluster_size,metric=metric,cluster_selection_method=cluster_selection_method,prediction_data=prediction_data)
         return hdbscan_model
     def embedding_extraction(self,docs,embedding,device="cuda"):
