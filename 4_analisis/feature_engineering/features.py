@@ -156,7 +156,7 @@ def run_feature_pipeline(
     df_analysis.to_csv("data/unified/analysis_unified.csv")
     df_clean=pd.read_csv(data_clean_path)
     df = df_clean.merge(df_analysis, on="indice", how="left")
-    cleaned_series = df['comentario_cleaned']
+    cleaned_series = df['comentario']
     corpus_list    = cleaned_series.tolist()
     json_file=load_all_analysis_json(DATA_DIR)
     with open("data/unified/analysis_json_unified.json","w") as f:

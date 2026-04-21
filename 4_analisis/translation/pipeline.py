@@ -3,7 +3,7 @@ def normalize_language(df,text_col="comentario_clean",lang_col="lang"):
     translator=Translator()
     df=df.copy()
     mask_translate=df[lang_col].isin(["en","mix","mixed"])
-    texts_to_translate=df.loc[mask_translate,text_col].tolist()
+    texts_to_translate=(df.loc[mask_translate,text_col].fillna("").astype(str).tolist())
     if len(texts_to_translate)>0:
 
         print(f"Traduciendo {len(texts_to_translate)} textos...")
