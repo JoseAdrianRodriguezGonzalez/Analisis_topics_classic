@@ -79,7 +79,7 @@ PATH_TFIDF_PKL = DATA_DIR / 'models' / 'tfidf.pkl'
 PATH_YAKE_PKL  = DATA_DIR / 'models' / 'yake_vectorizer.pkl'
 
 # Corpus limpio necesario para transformar los vectorizadores 
-PATH_CLEAN_CSV = DATA_DIR / 'data_spanish' / 'clean.csv'
+PATH_CLEAN_CSV = DATA_DIR / 'translations' / 'normalized_spanish.csv'
 COLUMNA_TEXTO  = 'comentario_clean'
 
 # Columnas demográficas/metadatos a excluir antes de clusterizar features NLP

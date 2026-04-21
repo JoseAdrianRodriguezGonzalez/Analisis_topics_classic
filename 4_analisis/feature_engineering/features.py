@@ -25,9 +25,9 @@ Uso directo:
 import logging
 import sys
 from pathlib import Path
-
+import json
 import pandas as pd
-
+import os 
 # Rutas base del proyecto
 BASE_DIR      = Path(__file__).resolve().parents[1]
 DATA_DIR      = BASE_DIR / 'data'
@@ -35,7 +35,7 @@ PROCESSED_DIR = DATA_DIR / 'processed'
 FEATURES_DIR  = DATA_DIR / 'features'
 
 # Archivos de entrada - Lee directamente del preprocessing
-PATH_DATA_CLEAN   = DATA_DIR / 'data_spanish' / 'clean.csv'
+PATH_DATA_CLEAN   = DATA_DIR / 'translations' / 'normalized_spanish.csv'
 PATH_DATA_ANALYSIS = DATA_DIR / 'data_spanish' / 'analysis.csv'
 PATH_VOCAB_UNI    = PROCESSED_DIR / 'rankings_unigrams.csv'
 PATH_ANALYSIS_JSON = DATA_DIR / 'data_spanish' / 'analysis.json'
@@ -53,7 +53,41 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+def load_all_analysis_csv(data_dir):
+    paths = [
+        data_dir / 'data_spanish' / 'analysis.csv',
+        data_dir / 'data_english' / 'analysis.csv',
+        data_dir / 'data_mixed'   / 'analysis.csv',
+    ]
+    dfs = []
+    for p in paths:
+        if p.exists():
+            df = pd.read_csv(p)
+            dfs.append(df)
+    df_all = pd.concat(dfs, ignore_index=True)
+    df_all = df_all.drop_duplicates(subset=["indice"])
 
+    return df_all
+def load_all_analysis_json(data_dir):
+    paths = [
+        data_dir / 'data_spanish' / 'analysis.json',
+        data_dir / 'data_english' / 'analysis.json',
+        data_dir / 'data_mixed'   / 'analysis.json',
+    ]
+    all_data = []
+    for p in paths:
+        if p.exists():
+            with open(p, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                all_data.extend(data)
+    seen = set()
+    unique = []
+    for row in all_data:
+        idx = row["indice"]
+        if idx not in seen:
+            unique.append(row)
+            seen.add(idx)
+    return unique
 def _load_corpus(clean_path: Path, analysis_path: Path | None = None) -> pd.DataFrame:
     '''
     Carga los comentarios limpios desde clean.csv y opcionalmente mergeea
@@ -117,9 +151,16 @@ def run_feature_pipeline(
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
     # Carga del corpus desde clean.csv + metadatos de analysis.csv
-    df = _load_corpus(Path(data_clean_path), Path(data_analysis_path))
+    os.makedirs("data/unified",exist_ok=True)
+    df_analysis=load_all_analysis_csv(DATA_DIR)
+    df_analysis.to_csv("data/unified/analysis_unified.csv")
+    df_clean=pd.read_csv(data_clean_path)
+    df = df_clean.merge(df_analysis, on="indice", how="left")
     cleaned_series = df['comentario_cleaned']
     corpus_list    = cleaned_series.tolist()
+    json_file=load_all_analysis_json(DATA_DIR)
+    with open("data/unified/analysis_json_unified.json","w") as f:
+                json.dump(json_file,f)
 
     # Carga del modelo spaCy (se comparte entre pos y entity features)
     nlp = load_spacy_model()
@@ -153,7 +194,7 @@ def run_feature_pipeline(
     entity_feats = compute_entity_features(
         cleaned_series    = cleaned_series,
         nlp               = nlp,
-        analysis_json_path = analysis_json_path,
+        analysis_json_path = "data/unified/analysis_json_unified.json",
     )
 
     # Construccion del DataFrame final

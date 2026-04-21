@@ -91,3 +91,31 @@ def pipe():
     topic_info.to_csv("data/results/topics.csv", index=False)
     topicBERT.model.save("data/models/bertopic_model")
     print(topic_info.head())
+def pipe_microtopics():
+    df=pd.read_csv("data/results/docs_with_topics.csv")
+    micro_results=[]
+    doc_entities=build_doc_entity_map([
+        "data/data_spanish/analysis.json",
+            "data/data_english/analysis.json",
+            "data/data_mixed/analysis.json"
+    ])
+    for region in df["location"].unique():
+        for topic in df["topic"].unique():
+            subset=df[
+                (df["location"]==region)&(df["topic"]==topic)
+            ]
+            if len(subset) <30:
+                continue
+            texts=enrich_texts_with_ner(subset,doc_entities)
+            model=BERTopic_analysis(None,None,None,texts)
+            topics_micro,_ =model.fit()
+            subset=subset.copy()
+            subset["microtopic"]=topics_micro
+            subset["parent_topic"]=topic
+            subset["region"]=region
+            micro_results.append(subset)
+    if len(micro_results)>0:
+        df_micro=pd.concat(micro_results,ignore_index=True)
+        df_micro.to_csv("data/results/microtopics.csv",index=False)
+
+
