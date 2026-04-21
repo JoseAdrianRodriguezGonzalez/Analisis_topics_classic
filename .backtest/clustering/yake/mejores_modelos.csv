@@ -1,0 +1,4 @@
+﻿rank,modelo,score_ranking,silhouette,n_clusters,n_ruido,inercia,codo_k,hiperparametros
+1,hdbscan,0.428543,0.605981,584,14546,,,"min_cluster_size=15,min_samples=10"
+1,jerarquico,0.560641,0.560641,2,0,,,"k=2,metodo=average"
+1,kmeans,0.966667,0.47723,2,0,1007093.9375,3.0,k=2

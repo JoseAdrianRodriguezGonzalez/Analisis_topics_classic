@@ -1,0 +1,12 @@
+﻿fuente,modelo,score_ranking,silhouette,n_clusters,n_ruido,hiperparametros
+yake,hdbscan,0.428543,0.605981,584,14546,"min_cluster_size=15,min_samples=10"
+features,hdbscan,0.321585,0.472894,1676,15890,"min_cluster_size=5,min_samples=5"
+embeddings,hdbscan,0.189037,0.285097,176,16738,"min_cluster_size=30,min_samples=10"
+embeddings,jerarquico,0.644061,0.644061,2,0,"k=2,metodo=average"
+tfidf,jerarquico,0.601312,0.601312,2,0,"k=2,metodo=average"
+yake,jerarquico,0.560641,0.560641,2,0,"k=2,metodo=average"
+features,jerarquico,0.543868,0.543868,3,0,"k=3,metodo=ward"
+features,kmeans,1.0,0.542695,3,0,k=3
+yake,kmeans,0.966667,0.47723,2,0,k=2
+embeddings,kmeans,0.833333,0.427209,8,0,k=8
+tfidf,kmeans,0.80358,0.372067,2,0,k=2
