@@ -4,6 +4,7 @@ from .ner import *
 from .vectorization import *
 from .BERTopic import *
 import joblib
+from tqdm import tqdm
 def build_features(texts):
     X_tfidf,vectorizer = compute_tfidf(texts)
     yake_keywords=extract_yake(texts)
@@ -94,14 +95,15 @@ def pipe():
     print(topic_info.head())
 def pipe_microtopics():
     df=pd.read_csv("data/results/docs_with_topics.csv")
+    df["comentario_clean"]=df["comentario_clean"].fillna("").astype(str)
     micro_results=[]
     doc_entities=build_doc_entity_map([
         "data/data_spanish/analysis.json",
             "data/data_english/analysis.json",
             "data/data_mixed/analysis.json"
     ])
-    for region in df["location"].unique():
-        for topic in df["topic"].unique():
+    for region in tqdm(df["location"].unique(),desc="Regions"):
+        for topic in tqdm(df["topic"].unique(), desc=f"Topics {region}",leave=False):
             subset=df[
                 (df["location"]==region)&(df["topic"]==topic)
             ]
