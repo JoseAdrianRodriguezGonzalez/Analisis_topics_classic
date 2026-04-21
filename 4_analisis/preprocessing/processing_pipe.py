@@ -22,8 +22,8 @@ def process_pipeline(input_path):
         nlp = get_nlp_model(lang)
 
         if nlp is None:
-            mixed_results.append({"indice": idx, "comentario": text})
-            continue
+            nlp = get_nlp_model("es")
+            lang = "mix"
 
         pos_tags, noun_phrases, entities, entity_density = linguistic_analysis(text, nlp)
         text = remove_noise(text)
@@ -43,7 +43,8 @@ def process_pipeline(input_path):
         # CSV 2 
         results_3 = {
             "indice": idx,
-            "comentario_clean": clean_text
+            "comentario_clean": clean_text,
+            "lang":lang
         }
     
         if lang == "es":
@@ -51,6 +52,6 @@ def process_pipeline(input_path):
         elif lang == "en":
             english_results.append((results_1_2, results_3))
         else:
-            mixed_results.append({"indice": idx, "comentario": text})
+            mixed_results.append((results_1_2,results_3))
 
     return spanish_results, english_results, mixed_results

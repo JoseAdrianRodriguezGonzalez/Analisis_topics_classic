@@ -32,7 +32,7 @@ def pipe():
     create_folder("data/models")
     create_folder("data/results")
     analysis_ner=extract_group_ner("data/data_spanish/analysis.json")
-    df=pd.read_csv("data/data_spanish/clean.csv")
+    df=pd.read_csv("data/translations/normalized_spanish.csv")
     texts=df["comentario_clean"].astype(str).to_list()
     features=build_features(texts)
     top_words=get_top_tfidf_words(features["X_tfidf"],features["vectorizer"])
