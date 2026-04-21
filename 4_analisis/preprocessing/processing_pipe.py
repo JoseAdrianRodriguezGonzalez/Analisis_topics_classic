@@ -44,7 +44,8 @@ def process_pipeline(input_path):
         results_3 = {
             "indice": idx,
             "comentario_clean": clean_text,
-            "lang":lang
+            "lang":lang,
+            "location":row["location"]
         }
     
         if lang == "es":

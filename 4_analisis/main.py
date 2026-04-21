@@ -1,4 +1,3 @@
-from operator import index
 import pandas as pd
 #primer paso 
 from preprocessing.individual_functions import *
