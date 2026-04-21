@@ -65,6 +65,7 @@ def pipe():
     create_folder("data/results")
     analysis_ner=extract_group_ner()
     df=pd.read_csv("data/translations/normalized_spanish.csv")
+    df["comentario_clean"]=df["comentario_clean"].fillna("").astype(str)
     doc_entities=build_doc_entity_map([
         "data/data_spanish/analysis.json",
         "data/data_english/analysis.json",
