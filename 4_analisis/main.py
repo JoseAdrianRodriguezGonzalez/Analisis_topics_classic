@@ -32,9 +32,9 @@ def preprocessing_complete(input_file):
     df_joined.to_csv("data/translations/joined.csv",index=False)
     print("Dataframe con el idioma junto creado")
 def main():
-    df=create_csv_master("data/raw",main_csv)  
-    print("Primera fase: preprocesamiento")
-    preprocessing_complete(main_csv)
+    #df=create_csv_master("data/raw",main_csv)  
+    #print("Primera fase: preprocesamiento")
+   # preprocessing_complete(main_csv)
     print("Traducir para normalizar spanish")
     df_joined=pd.read_csv("data/translations/joined.csv")
     df=normalize_language(df_joined)
