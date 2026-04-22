@@ -13,6 +13,8 @@ from semantic_expression.pipeline import pipe, pipe_microtopics
 from clustering.clustering_pipeline import run_clustering_pipeline
 # paso 6 enriquecimiento 
 from topic_enrichment.enrichment_pipeline import run_enrichment_pipeline
+#paso 7 analisis 
+from analysis.analysis_pipeline import run_analysis_pipeline
 main_csv="data/raw/complete.csv"
 def preprocessing_complete(input_file):
     create_data_folders()
@@ -52,6 +54,8 @@ def main():
     print("Cuarta fase: creacion de clusters")
 #    run_clustering_pipeline()
     print("sexta fase, enriqueciminetro de topicos")
-    run_enrichment_pipeline()
+#    run_enrichment_pipeline()
+    print("septima fase, analisis")
+    run_analysis_pipeline()
 if __name__ == "__main__":
     main()
