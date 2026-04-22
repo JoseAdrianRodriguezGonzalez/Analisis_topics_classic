@@ -11,7 +11,8 @@ from semantic_expression.vectorization import create_folder
 from semantic_expression.pipeline import pipe, pipe_microtopics
 # paso 5 
 from clustering.clustering_pipeline import run_clustering_pipeline
-
+# paso 6 enriquecimiento 
+from topic_enrichment.enrichment_pipeline import run_enrichment_pipeline
 main_csv="data/raw/complete.csv"
 def preprocessing_complete(input_file):
     create_data_folders()
@@ -33,22 +34,24 @@ def preprocessing_complete(input_file):
     print("Dataframe con el idioma junto creado")
 def main():
     #df=create_csv_master("data/raw",main_csv)  
-    #print("Primera fase: preprocesamiento")
-   # preprocessing_complete(main_csv)
-#    print("Traducir para normalizar spanish")
+    print("Primera fase: preprocesamiento")
+#    preprocessing_complete(main_csv)
+    print("Traducir para normalizar spanish")
 #    df_joined=pd.read_csv("data/translations/joined.csv")
 #    df=normalize_language(df_joined)
 #    df.to_csv("data/translations/normalized_spanish.csv",index=False)
     print("Se normalizo para los embeddings")
     print("Segunda fase: embeddings y topicos ")
-    pipe()
+    #pipe()
     print("Analisis de microtopicos")
-    pipe_microtopics()
+ #   pipe_microtopics()
     print("Tercera fase: construccion de vocabulario")
-    build_vocabulary_from_clean()
+ #   build_vocabulary_from_clean()
     print("Tercera fase: Ingeniera de caracteristicas")
-    run_feature_pipeline()
+#    run_feature_pipeline()
     print("Cuarta fase: creacion de clusters")
-    run_clustering_pipeline()
+#    run_clustering_pipeline()
+    print("sexta fase, enriqueciminetro de topicos")
+    run_enrichment_pipeline()
 if __name__ == "__main__":
     main()
