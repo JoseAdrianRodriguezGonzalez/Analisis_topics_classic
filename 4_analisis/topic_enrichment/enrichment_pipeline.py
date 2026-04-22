@@ -49,7 +49,7 @@ from topic_enrichment.representative_docs import (
     representative_docs_to_dataframe,
 )
 from topic_enrichment.topic_hierarchy import build_full_hierarchy, hierarchy_to_dataframe
-
+from topic_enrichment.topic_naming import name_all_clusters
 # topic_naming se importará aquí cuando esté implementado:
 # from topic_enrichment.topic_naming import name_all_clusters
 
@@ -72,14 +72,14 @@ DATA_DIR = BASE_DIR / 'data'
 DIR_CLUSTERING = DATA_DIR / 'clustering'
 
 # Corpus limpio — se usa en todos los enriquecimientos
-PATH_CLEAN_CSV = DATA_DIR / 'data_spanish' / 'clean.csv'
+PATH_CLEAN_CSV = DATA_DIR / 'translations' / 'normalized_spanish.csv'
 COLUMNA_TEXTO  = 'comentario_clean'
 
 # Salida del bloque 7
 DIR_ENRICHMENT = DATA_DIR / 'topic_enrichment'
 
 # Fuentes disponibles — mismo orden que en clustering_pipeline.py
-FUENTES_DISPONIBLES = ['embeddings', 'features', 'tfidf', 'yake']
+FUENTES_DISPONIBLES = [ 'features', 'tfidf', 'yake']
 
 # Hiperparámetros del enrichment
 TOP_N_KEYWORDS = 15   # keywords a extraer por cluster
@@ -271,7 +271,9 @@ def _enriquecer_modelo(
 
     # --- Paso 3: Topic naming --- PENDIENTE
     # Cuando topic_naming.py esté implementado, se activará aquí:
-    # topic_names = name_all_clusters(keywords_por_cluster, docs_por_cluster)
+    topic_names = name_all_clusters(keywords_por_cluster, docs_por_cluster if X is not None else {})
+    with open(dir_salida / "topic_names.json", "w", encoding="utf-8") as f:
+        json.dump(topic_names, f, ensure_ascii=False, indent=4)
     logger.info(
         '[%s | %s] Topic naming pendiente de implementación — omitido',
         nombre_fuente, nombre_modelo

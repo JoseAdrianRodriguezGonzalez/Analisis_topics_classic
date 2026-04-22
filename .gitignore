@@ -1,13 +1,10 @@
 __pycache__/
 
-# Ignore CSV and JSON files except raw_data
-*.csv
-*.json
 !raw_data/data.csv
 data/
 models/
 *.npy
 *.pkl
 *.csv
-
+*.json
 # pero si necesitas conservar datasets crudos, puedes ajustar luego
