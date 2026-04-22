@@ -65,7 +65,7 @@ logger = logging.getLogger(__name__)
 # RUTAS
 # ======================================================
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / 'data'
 
 # Fuentes producidas por el bloque 6
