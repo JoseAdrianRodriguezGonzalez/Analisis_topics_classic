@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 __pycache__/
 
 !raw_data/data.csv
@@ -8,3 +9,8 @@ models/
 *.csv
 *.json
 # pero si necesitas conservar datasets crudos, puedes ajustar luego
+=======
+data/
+.venv/
+__pycache__/
+>>>>>>> 44cc06a (Entorno local y visualizaciones)
