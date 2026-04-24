@@ -1,3 +1,0 @@
-﻿rank,modelo,score_ranking,silhouette,n_clusters,n_ruido,inercia,codo_k,hiperparametros
-1,jerarquico,0.601312,0.601312,2,0,,,"k=2,metodo=average"
-1,kmeans,0.80358,0.372067,2,0,1063924.875,3.0,k=2
