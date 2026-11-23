@@ -1,0 +1,5 @@
+metric,value
+KMO_global,0.5
+Bartlett_chi2,64.1446340481164
+Bartlett_p,1.1102230246251565e-15
+Factor_analysis_feasible,False
